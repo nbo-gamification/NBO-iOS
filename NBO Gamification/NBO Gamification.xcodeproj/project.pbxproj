@@ -16,6 +16,10 @@
 		2A88AC8E21A3088E005854DD /* NBOUserOfficeProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A88AC8C21A3088E005854DD /* NBOUserOfficeProgressViewController.xib */; };
 		2A88AC9321A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88AC9121A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.swift */; };
 		2A88AC9421A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A88AC9221A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.xib */; };
+		2A88AC9621A31856005854DD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2A88AC9521A31856005854DD /* README.md */; };
+		2A88AC9821A31897005854DD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2A88AC9721A31897005854DD /* README.md */; };
+		2A88AC9A21A318B2005854DD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2A88AC9921A318B2005854DD /* README.md */; };
+		2A88AC9C21A318C0005854DD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2A88AC9B21A318C0005854DD /* README.md */; };
 		2AE1CAF32159806F00D5D419 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE1CAF22159806F00D5D419 /* AppDelegate.swift */; };
 		2AE1CAFA2159807100D5D419 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AE1CAF92159807100D5D419 /* Assets.xcassets */; };
 		2AE1CAFD2159807100D5D419 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AE1CAFB2159807100D5D419 /* LaunchScreen.storyboard */; };
@@ -31,6 +35,10 @@
 		2A88AC8C21A3088E005854DD /* NBOUserOfficeProgressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NBOUserOfficeProgressViewController.xib; sourceTree = "<group>"; };
 		2A88AC9121A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOUserOfficeProgressCollectionViewCell.swift; sourceTree = "<group>"; };
 		2A88AC9221A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NBOUserOfficeProgressCollectionViewCell.xib; sourceTree = "<group>"; };
+		2A88AC9521A31856005854DD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2A88AC9721A31897005854DD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2A88AC9921A318B2005854DD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2A88AC9B21A318C0005854DD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2AE1CAEF2159806F00D5D419 /* NBO Gamification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NBO Gamification.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AE1CAF22159806F00D5D419 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AE1CAF92159807100D5D419 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,6 +107,7 @@
 		2A88AC7B21A077DF005854DD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2A88AC9521A31856005854DD /* README.md */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -116,6 +125,7 @@
 		2A88AC7D21A0788E005854DD /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				2A88AC9721A31897005854DD /* README.md */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -123,6 +133,7 @@
 		2A88AC8821A0AD68005854DD /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				2A88AC9B21A318C0005854DD /* README.md */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -130,6 +141,7 @@
 		2A88AC8921A30439005854DD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2A88AC9921A318B2005854DD /* README.md */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -223,9 +235,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A88AC9821A31897005854DD /* README.md in Resources */,
 				2A88AC8E21A3088E005854DD /* NBOUserOfficeProgressViewController.xib in Resources */,
 				2AE1CAFD2159807100D5D419 /* LaunchScreen.storyboard in Resources */,
+				2A88AC9A21A318B2005854DD /* README.md in Resources */,
+				2A88AC9621A31856005854DD /* README.md in Resources */,
 				2A88AC9421A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.xib in Resources */,
+				2A88AC9C21A318C0005854DD /* README.md in Resources */,
 				2AE1CAFA2159807100D5D419 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
