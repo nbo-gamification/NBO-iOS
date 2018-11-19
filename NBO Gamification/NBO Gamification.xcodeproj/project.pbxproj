@@ -19,6 +19,9 @@
 		2AE1CAF32159806F00D5D419 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE1CAF22159806F00D5D419 /* AppDelegate.swift */; };
 		2AE1CAFA2159807100D5D419 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AE1CAF92159807100D5D419 /* Assets.xcassets */; };
 		2AE1CAFD2159807100D5D419 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AE1CAFB2159807100D5D419 /* LaunchScreen.storyboard */; };
+		FEB442B121A9AD1D009C2896 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB442B021A9AD1D009C2896 /* UIView+extensions.swift */; };
+		FEBB80F421A352D2008B33D8 /* NBOLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBB80F221A352D2008B33D8 /* NBOLoginViewController.swift */; };
+		FEBB80F521A352D2008B33D8 /* NBOLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEBB80F321A352D2008B33D8 /* NBOLoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		2AE1CAF92159807100D5D419 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AE1CAFC2159807100D5D419 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2AE1CAFE2159807100D5D419 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEB442B021A9AD1D009C2896 /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
+		FEBB80F221A352D2008B33D8 /* NBOLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOLoginViewController.swift; sourceTree = "<group>"; };
+		FEBB80F321A352D2008B33D8 /* NBOLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NBOLoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 		2A88AC7921A07794005854DD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FEBB80ED21A351AA008B33D8 /* LoginViewControllers */,
 				2A88AC8B21A3088E005854DD /* NBOUserOfficeProgressViewController.swift */,
 				2A88AC8C21A3088E005854DD /* NBOUserOfficeProgressViewController.xib */,
 			);
@@ -138,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				2AE1CAF12159806F00D5D419 /* NBO Gamification */,
+				FEB442AF21A9AC63009C2896 /* Extensions */,
 				2AE1CAF02159806F00D5D419 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -163,6 +171,23 @@
 				2AE1CAFE2159807100D5D419 /* Info.plist */,
 			);
 			path = "NBO Gamification";
+			sourceTree = "<group>";
+		};
+		FEB442AF21A9AC63009C2896 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FEB442B021A9AD1D009C2896 /* UIView+extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FEBB80ED21A351AA008B33D8 /* LoginViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FEBB80F221A352D2008B33D8 /* NBOLoginViewController.swift */,
+				FEBB80F321A352D2008B33D8 /* NBOLoginViewController.xib */,
+			);
+			path = LoginViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A88AC8E21A3088E005854DD /* NBOUserOfficeProgressViewController.xib in Resources */,
+				FEBB80F521A352D2008B33D8 /* NBOLoginViewController.xib in Resources */,
 				2AE1CAFD2159807100D5D419 /* LaunchScreen.storyboard in Resources */,
 				2A88AC9421A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.xib in Resources */,
 				2AE1CAFA2159807100D5D419 /* Assets.xcassets in Resources */,
@@ -243,8 +269,10 @@
 				2A88AC8D21A3088E005854DD /* NBOUserOfficeProgressViewController.swift in Sources */,
 				2A88AC8721A0AC2F005854DD /* NBOActivitiesCoordinator.swift in Sources */,
 				2A88AC8521A0AC12005854DD /* NBOUserProgressCoordinator.swift in Sources */,
+				FEB442B121A9AD1D009C2896 /* UIView+extensions.swift in Sources */,
 				2A88AC9321A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.swift in Sources */,
 				2A88AC8121A07AF7005854DD /* NBOApplicationCoordinator.swift in Sources */,
+				FEBB80F421A352D2008B33D8 /* NBOLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
