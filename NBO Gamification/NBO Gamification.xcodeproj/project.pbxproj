@@ -7,18 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A88AC7F21A07A9F005854DD /* NBOCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88AC7E21A07A9F005854DD /* NBOCoordinator.swift */; };
+		2A88AC8121A07AF7005854DD /* NBOApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88AC8021A07AF7005854DD /* NBOApplicationCoordinator.swift */; };
+		2A88AC8321A0ABDD005854DD /* NBOLogInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88AC8221A0ABDD005854DD /* NBOLogInCoordinator.swift */; };
+		2A88AC8521A0AC12005854DD /* NBOUserProgressCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88AC8421A0AC12005854DD /* NBOUserProgressCoordinator.swift */; };
+		2A88AC8721A0AC2F005854DD /* NBOActivitiesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88AC8621A0AC2F005854DD /* NBOActivitiesCoordinator.swift */; };
+		2A88AC8D21A3088E005854DD /* NBOUserOfficeProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88AC8B21A3088E005854DD /* NBOUserOfficeProgressViewController.swift */; };
+		2A88AC8E21A3088E005854DD /* NBOUserOfficeProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A88AC8C21A3088E005854DD /* NBOUserOfficeProgressViewController.xib */; };
+		2A88AC9321A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88AC9121A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.swift */; };
+		2A88AC9421A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A88AC9221A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.xib */; };
 		2AE1CAF32159806F00D5D419 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE1CAF22159806F00D5D419 /* AppDelegate.swift */; };
-		2AE1CAF52159806F00D5D419 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE1CAF42159806F00D5D419 /* ViewController.swift */; };
-		2AE1CAF82159806F00D5D419 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AE1CAF62159806F00D5D419 /* Main.storyboard */; };
 		2AE1CAFA2159807100D5D419 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AE1CAF92159807100D5D419 /* Assets.xcassets */; };
 		2AE1CAFD2159807100D5D419 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AE1CAFB2159807100D5D419 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A88AC7E21A07A9F005854DD /* NBOCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOCoordinator.swift; sourceTree = "<group>"; };
+		2A88AC8021A07AF7005854DD /* NBOApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOApplicationCoordinator.swift; sourceTree = "<group>"; };
+		2A88AC8221A0ABDD005854DD /* NBOLogInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOLogInCoordinator.swift; sourceTree = "<group>"; };
+		2A88AC8421A0AC12005854DD /* NBOUserProgressCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOUserProgressCoordinator.swift; sourceTree = "<group>"; };
+		2A88AC8621A0AC2F005854DD /* NBOActivitiesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOActivitiesCoordinator.swift; sourceTree = "<group>"; };
+		2A88AC8B21A3088E005854DD /* NBOUserOfficeProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOUserOfficeProgressViewController.swift; sourceTree = "<group>"; };
+		2A88AC8C21A3088E005854DD /* NBOUserOfficeProgressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NBOUserOfficeProgressViewController.xib; sourceTree = "<group>"; };
+		2A88AC9121A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOUserOfficeProgressCollectionViewCell.swift; sourceTree = "<group>"; };
+		2A88AC9221A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NBOUserOfficeProgressCollectionViewCell.xib; sourceTree = "<group>"; };
 		2AE1CAEF2159806F00D5D419 /* NBO Gamification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NBO Gamification.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AE1CAF22159806F00D5D419 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2AE1CAF42159806F00D5D419 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2AE1CAF72159806F00D5D419 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2AE1CAF92159807100D5D419 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AE1CAFC2159807100D5D419 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2AE1CAFE2159807100D5D419 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,6 +49,91 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A88AC7621A07652005854DD /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				2AE1CAF22159806F00D5D419 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		2A88AC7721A0766B005854DD /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				2AE1CAF92159807100D5D419 /* Assets.xcassets */,
+				2AE1CAFB2159807100D5D419 /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		2A88AC7821A07785005854DD /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				2A88AC7E21A07A9F005854DD /* NBOCoordinator.swift */,
+				2A88AC8021A07AF7005854DD /* NBOApplicationCoordinator.swift */,
+				2A88AC8221A0ABDD005854DD /* NBOLogInCoordinator.swift */,
+				2A88AC8421A0AC12005854DD /* NBOUserProgressCoordinator.swift */,
+				2A88AC8621A0AC2F005854DD /* NBOActivitiesCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		2A88AC7921A07794005854DD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2A88AC8B21A3088E005854DD /* NBOUserOfficeProgressViewController.swift */,
+				2A88AC8C21A3088E005854DD /* NBOUserOfficeProgressViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2A88AC7A21A077AF005854DD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A88AC9121A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.swift */,
+				2A88AC9221A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2A88AC7B21A077DF005854DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2A88AC7C21A0784A005854DD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2A88AC7721A0766B005854DD /* Assets */,
+				2A88AC7921A07794005854DD /* ViewControllers */,
+				2A88AC7A21A077AF005854DD /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2A88AC7D21A0788E005854DD /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		2A88AC8821A0AD68005854DD /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		2A88AC8921A30439005854DD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		2AE1CAE62159806F00D5D419 = {
 			isa = PBXGroup;
 			children = (
@@ -54,11 +153,13 @@
 		2AE1CAF12159806F00D5D419 /* NBO Gamification */ = {
 			isa = PBXGroup;
 			children = (
-				2AE1CAF22159806F00D5D419 /* AppDelegate.swift */,
-				2AE1CAF42159806F00D5D419 /* ViewController.swift */,
-				2AE1CAF62159806F00D5D419 /* Main.storyboard */,
-				2AE1CAF92159807100D5D419 /* Assets.xcassets */,
-				2AE1CAFB2159807100D5D419 /* LaunchScreen.storyboard */,
+				2A88AC7621A07652005854DD /* Application */,
+				2A88AC7821A07785005854DD /* Coordinators */,
+				2A88AC7C21A0784A005854DD /* UI */,
+				2A88AC7B21A077DF005854DD /* Model */,
+				2A88AC7D21A0788E005854DD /* Networking */,
+				2A88AC8921A30439005854DD /* Utils */,
+				2A88AC8821A0AD68005854DD /* Tests */,
 				2AE1CAFE2159807100D5D419 /* Info.plist */,
 			);
 			path = "NBO Gamification";
@@ -122,9 +223,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A88AC8E21A3088E005854DD /* NBOUserOfficeProgressViewController.xib in Resources */,
 				2AE1CAFD2159807100D5D419 /* LaunchScreen.storyboard in Resources */,
+				2A88AC9421A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.xib in Resources */,
 				2AE1CAFA2159807100D5D419 /* Assets.xcassets in Resources */,
-				2AE1CAF82159806F00D5D419 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,22 +237,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AE1CAF52159806F00D5D419 /* ViewController.swift in Sources */,
+				2A88AC7F21A07A9F005854DD /* NBOCoordinator.swift in Sources */,
 				2AE1CAF32159806F00D5D419 /* AppDelegate.swift in Sources */,
+				2A88AC8321A0ABDD005854DD /* NBOLogInCoordinator.swift in Sources */,
+				2A88AC8D21A3088E005854DD /* NBOUserOfficeProgressViewController.swift in Sources */,
+				2A88AC8721A0AC2F005854DD /* NBOActivitiesCoordinator.swift in Sources */,
+				2A88AC8521A0AC12005854DD /* NBOUserProgressCoordinator.swift in Sources */,
+				2A88AC9321A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.swift in Sources */,
+				2A88AC8121A07AF7005854DD /* NBOApplicationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2AE1CAF62159806F00D5D419 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2AE1CAF72159806F00D5D419 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2AE1CAFB2159807100D5D419 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
