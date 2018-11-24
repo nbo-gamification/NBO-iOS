@@ -1,2 +1,2 @@
 # NBO-iOS
-iOS version of the NBO-Gamification software
+iOS version of the NBO-Gamification software 
