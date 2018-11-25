@@ -19,6 +19,18 @@
 		2AE1CAF32159806F00D5D419 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE1CAF22159806F00D5D419 /* AppDelegate.swift */; };
 		2AE1CAFA2159807100D5D419 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AE1CAF92159807100D5D419 /* Assets.xcassets */; };
 		2AE1CAFD2159807100D5D419 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AE1CAFB2159807100D5D419 /* LaunchScreen.storyboard */; };
+		FEC3978C21AA054B00A56756 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEC3978A21AA054B00A56756 /* RealmSwift.framework */; };
+		FEC3978D21AA054B00A56756 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEC3978B21AA054B00A56756 /* Realm.framework */; };
+		FEC3979321AA093100A56756 /* NBOPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC3979221AA093100A56756 /* NBOPlayer.swift */; };
+		FEC3979521AA0B5B00A56756 /* NBOPlayerOfficeProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC3979421AA0B5B00A56756 /* NBOPlayerOfficeProgress.swift */; };
+		FEC3979721AA0B8900A56756 /* NBOOfiice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC3979621AA0B8900A56756 /* NBOOfiice.swift */; };
+		FEC3979921AA26CE00A56756 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC3979821AA26CE00A56756 /* Player.swift */; };
+		FEC3979B21AA27C500A56756 /* Office.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC3979A21AA27C500A56756 /* Office.swift */; };
+		FEC3979D21AA282E00A56756 /* PlayerOfficeProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC3979C21AA282E00A56756 /* PlayerOfficeProgress.swift */; };
+		FEC397A021AA2BDF00A56756 /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC3979F21AA2BDF00A56756 /* PersistenceHelper.swift */; };
+		FEC397A221AA3EEF00A56756 /* NBOPlayer+Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC397A121AA3EEF00A56756 /* NBOPlayer+Persistence.swift */; };
+		FEC397A421AA4C5200A56756 /* NBOOffice+Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC397A321AA4C5200A56756 /* NBOOffice+Persistence.swift */; };
+		FEC397A621AA4EBD00A56756 /* NBOPlayerOfficeProgress+Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC397A521AA4EBD00A56756 /* NBOPlayerOfficeProgress+Persistence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +48,18 @@
 		2AE1CAF92159807100D5D419 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AE1CAFC2159807100D5D419 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2AE1CAFE2159807100D5D419 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEC3978A21AA054B00A56756 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		FEC3978B21AA054B00A56756 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		FEC3979221AA093100A56756 /* NBOPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOPlayer.swift; sourceTree = "<group>"; };
+		FEC3979421AA0B5B00A56756 /* NBOPlayerOfficeProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOPlayerOfficeProgress.swift; sourceTree = "<group>"; };
+		FEC3979621AA0B8900A56756 /* NBOOfiice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOOfiice.swift; sourceTree = "<group>"; };
+		FEC3979821AA26CE00A56756 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		FEC3979A21AA27C500A56756 /* Office.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Office.swift; sourceTree = "<group>"; };
+		FEC3979C21AA282E00A56756 /* PlayerOfficeProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerOfficeProgress.swift; sourceTree = "<group>"; };
+		FEC3979F21AA2BDF00A56756 /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
+		FEC397A121AA3EEF00A56756 /* NBOPlayer+Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NBOPlayer+Persistence.swift"; sourceTree = "<group>"; };
+		FEC397A321AA4C5200A56756 /* NBOOffice+Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NBOOffice+Persistence.swift"; sourceTree = "<group>"; };
+		FEC397A521AA4EBD00A56756 /* NBOPlayerOfficeProgress+Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NBOPlayerOfficeProgress+Persistence.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEC3978C21AA054B00A56756 /* RealmSwift.framework in Frameworks */,
+				FEC3978D21AA054B00A56756 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,13 +122,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		2A88AC7B21A077DF005854DD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		2A88AC7C21A0784A005854DD /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +158,7 @@
 			children = (
 				2AE1CAF12159806F00D5D419 /* NBO Gamification */,
 				2AE1CAF02159806F00D5D419 /* Products */,
+				FEC3978921AA054B00A56756 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,13 +176,55 @@
 				2A88AC7621A07652005854DD /* Application */,
 				2A88AC7821A07785005854DD /* Coordinators */,
 				2A88AC7C21A0784A005854DD /* UI */,
-				2A88AC7B21A077DF005854DD /* Model */,
 				2A88AC7D21A0788E005854DD /* Networking */,
 				2A88AC8921A30439005854DD /* Utils */,
+				FEC3979E21AA2B7B00A56756 /* Persistence */,
+				FEC3979121AA090700A56756 /* Models */,
+				FEC3978821A9ECEC00A56756 /* ImmutableModels */,
 				2A88AC8821A0AD68005854DD /* Tests */,
 				2AE1CAFE2159807100D5D419 /* Info.plist */,
 			);
 			path = "NBO Gamification";
+			sourceTree = "<group>";
+		};
+		FEC3978821A9ECEC00A56756 /* ImmutableModels */ = {
+			isa = PBXGroup;
+			children = (
+				FEC3979821AA26CE00A56756 /* Player.swift */,
+				FEC3979A21AA27C500A56756 /* Office.swift */,
+				FEC3979C21AA282E00A56756 /* PlayerOfficeProgress.swift */,
+			);
+			path = ImmutableModels;
+			sourceTree = "<group>";
+		};
+		FEC3978921AA054B00A56756 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FEC3978B21AA054B00A56756 /* Realm.framework */,
+				FEC3978A21AA054B00A56756 /* RealmSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FEC3979121AA090700A56756 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FEC3979221AA093100A56756 /* NBOPlayer.swift */,
+				FEC3979421AA0B5B00A56756 /* NBOPlayerOfficeProgress.swift */,
+				FEC3979621AA0B8900A56756 /* NBOOfiice.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FEC3979E21AA2B7B00A56756 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				FEC3979F21AA2BDF00A56756 /* PersistenceHelper.swift */,
+				FEC397A121AA3EEF00A56756 /* NBOPlayer+Persistence.swift */,
+				FEC397A321AA4C5200A56756 /* NBOOffice+Persistence.swift */,
+				FEC397A521AA4EBD00A56756 /* NBOPlayerOfficeProgress+Persistence.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +237,7 @@
 				2AE1CAEB2159806F00D5D419 /* Sources */,
 				2AE1CAEC2159806F00D5D419 /* Frameworks */,
 				2AE1CAED2159806F00D5D419 /* Resources */,
+				FEC3978E21AA060000A56756 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -232,19 +295,51 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		FEC3978E21AA060000A56756 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2AE1CAEB2159806F00D5D419 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEC397A421AA4C5200A56756 /* NBOOffice+Persistence.swift in Sources */,
 				2A88AC7F21A07A9F005854DD /* NBOCoordinator.swift in Sources */,
 				2AE1CAF32159806F00D5D419 /* AppDelegate.swift in Sources */,
+				FEC397A621AA4EBD00A56756 /* NBOPlayerOfficeProgress+Persistence.swift in Sources */,
+				FEC397A221AA3EEF00A56756 /* NBOPlayer+Persistence.swift in Sources */,
 				2A88AC8321A0ABDD005854DD /* NBOLogInCoordinator.swift in Sources */,
+				FEC3979521AA0B5B00A56756 /* NBOPlayerOfficeProgress.swift in Sources */,
+				FEC3979921AA26CE00A56756 /* Player.swift in Sources */,
 				2A88AC8D21A3088E005854DD /* NBOUserOfficeProgressViewController.swift in Sources */,
+				FEC3979321AA093100A56756 /* NBOPlayer.swift in Sources */,
 				2A88AC8721A0AC2F005854DD /* NBOActivitiesCoordinator.swift in Sources */,
 				2A88AC8521A0AC12005854DD /* NBOUserProgressCoordinator.swift in Sources */,
 				2A88AC9321A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.swift in Sources */,
+				FEC3979B21AA27C500A56756 /* Office.swift in Sources */,
 				2A88AC8121A07AF7005854DD /* NBOApplicationCoordinator.swift in Sources */,
+				FEC3979721AA0B8900A56756 /* NBOOfiice.swift in Sources */,
+				FEC397A021AA2BDF00A56756 /* PersistenceHelper.swift in Sources */,
+				FEC3979D21AA282E00A56756 /* PlayerOfficeProgress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +476,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "NBO Gamification/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -399,6 +498,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "NBO Gamification/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
