@@ -22,8 +22,20 @@ class NBOApplicationCoordinator : NBOCoordinator {
     override func start() {
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()
-        
-        let initialFlow = NBOUserProgressCoordinator(withViewController: window.rootViewController!)
+
+        let initialFlow = NBOLogInCoordinator(withViewController: window.rootViewController!)
+        initialFlow.coordinatorDelegate = self
         self.pushCoordinator(initialFlow)
     }
+}
+
+extension NBOApplicationCoordinator: NBOLoginCoordinatorDelegate {
+
+    func nboLoginCoordinatorDidFinish(_ coordinator: NBOLogInCoordinator) {
+        popCoordinator(coordinator)
+        let newFlow = NBOUserProgressCoordinator(withViewController: presentingViewController)
+        self.pushCoordinator(newFlow)
+    }
+
+
 }
