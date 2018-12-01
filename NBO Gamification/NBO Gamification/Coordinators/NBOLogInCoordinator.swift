@@ -7,10 +7,28 @@
 //
 
 import UIKit
+import Foundation
+
+protocol NBOLoginCoordinatorDelegate {
+    func nboLoginCoordinatorDidFinish(_ coordinator: NBOLogInCoordinator)
+}
 
 class NBOLogInCoordinator : NBOCoordinator {
-    
+
+    var coordinatorDelegate: NBOLoginCoordinatorDelegate? = nil
+
     override func start() {
 
+        let susiVC = NBOLoginViewController()
+        susiVC.delegate = self
+        self.pushViewController(susiVC)
     }
+}
+
+extension NBOLogInCoordinator: NBOLoginViewControllerDelegate {
+    func viewControllerDidSignIn(_ NBOsusiVC: NBOLoginViewController) {
+        coordinatorDelegate?.nboLoginCoordinatorDidFinish(self)
+    }
+
+
 }
