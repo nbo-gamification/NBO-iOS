@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 protocol NBOLoginCoordinatorDelegate {
-    func nboLoginCoordinatorDidFinish(_ coordinator: NBOLogInCoordinator)
+    func nboLoginCoordinatorDidFinish(_ coordinator: NBOLogInCoordinator, playerOfficeProgressList: [NBOPlayerOfficeProgress])
 }
 
 class NBOLogInCoordinator : NBOCoordinator {
@@ -19,15 +19,24 @@ class NBOLogInCoordinator : NBOCoordinator {
 
     override func start() {
 
-        let susiVC = NBOLoginViewController()
-        susiVC.delegate = self
-        self.pushViewController(susiVC)
+        let loginVC = NBOLoginViewController()
+        // This is going to be used when we remember email and password
+        loginVC.viewData = NBOLoginViewController.ViewData(email: "", pass: "")
+        loginVC.delegate = self
+        self.pushViewController(loginVC)
     }
 }
 
 extension NBOLogInCoordinator: NBOLoginViewControllerDelegate {
-    func viewControllerDidSignIn(_ NBOsusiVC: NBOLoginViewController) {
-        coordinatorDelegate?.nboLoginCoordinatorDidFinish(self)
+    func viewControllerDidSignIn(_ loginVC: NBOLoginViewController, email: String, password: String) {
+        NBOAuthenticationService.login(email: email, password: password, success: {authenticationLoginResponse in
+
+            let playerOfficeProgressList = authenticationLoginResponse.playerOfficeProgressList
+            self.coordinatorDelegate?.nboLoginCoordinatorDidFinish(self, playerOfficeProgressList: playerOfficeProgressList)
+        }, failure: {error in
+            print(error)
+            loginVC.showEmailErrorMessageAnimated(errorToShow: NBOLoginViewController.ErrorMessages.incorrectEmailOrPassword)
+        })
     }
 
 

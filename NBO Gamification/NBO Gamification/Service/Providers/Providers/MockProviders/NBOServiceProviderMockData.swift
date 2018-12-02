@@ -67,3 +67,10 @@ enum NBOMockServiceProviderCategoryOfficeActivity {
     static let socialMendozaActivity3 = NBOCategoryOfficeActivity(id: 1, pointsReward: 5, isActive: true, categoryOffice: NBOMockServiceProviderCategoryOffice.categoryOfficeMendozaSocial, activity: NBOMockServiceProviderActivity.connectActivity3)
 }
 
+enum NBOMockServiceProviderCategoryOfficeActivityAttempt {
+
+    static let assertAtempt = NBOCategoryOfficeActivityAttempt(id: 1, datetime: Date(), result: true, playerCategoryOfficeProgress: NBOMockServiceProviderPlayerCategoryOfficeProgress.progressMendozaSocial, categoryOfficeActivity: NBOMockServiceProviderCategoryOfficeActivity.socialMendozaActivity1
+)
+
+}
+

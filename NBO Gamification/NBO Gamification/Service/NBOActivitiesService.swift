@@ -17,8 +17,8 @@ public class NBOActivitiesService : NBOAppService {
     
     public static func getOfficeActivitiesForCategory(idCategoryOffice: Int, success: @escaping ActivitiesServiceGetOfficeActivitiesForCategorySuccessClosure, failure: @escaping ServiceFailureClosure) {
         
-        activitiesServiceProvider.getOfficeActivitiesForCategory(idCategoryOffice: idCategoryOffice, success: { (categoryOfficeActivityCodableList) in
-            success(categoryOfficeActivityCodableList)
+        activitiesServiceProvider.getOfficeActivitiesForCategory(idCategoryOffice: idCategoryOffice, success: { (categoryOfficeActivityList) in
+            success(categoryOfficeActivityList)
         }) { (error) in
             failure(error)
         }
@@ -26,8 +26,8 @@ public class NBOActivitiesService : NBOAppService {
     
     public static func registerActivityAttempt(result: Bool, idPlayerCategoryOfficeProgress: Int, success: @escaping ActivitiesServiceRegisterActivityAttemptSuccessClosure, failure: @escaping ServiceFailureClosure) {
         
-        activitiesServiceProvider.registerActivityAttempt(result: result, idPlayerCategoryOfficeProgress: idPlayerCategoryOfficeProgress, success: { (categoryOfficeActivityAttemptCodable) in
-            success(categoryOfficeActivityAttemptCodable)
+        activitiesServiceProvider.registerActivityAttempt(result: result, idPlayerCategoryOfficeProgress: idPlayerCategoryOfficeProgress, success: { (categoryOfficeActivityAttempt) in
+            success(categoryOfficeActivityAttempt)
         }) { (error) in
             failure(error)
         }

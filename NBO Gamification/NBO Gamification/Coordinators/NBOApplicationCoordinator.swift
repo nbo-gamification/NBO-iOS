@@ -23,21 +23,19 @@ class NBOApplicationCoordinator : NBOCoordinator {
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()
 
-        let initialFlow = NBOLogInCoordinator(withViewController: window.rootViewController!)
-        initialFlow.coordinatorDelegate = self
-        self.pushCoordinator(initialFlow)
-        
+        let loginCoordinator = NBOLogInCoordinator(withViewController: window.rootViewController!)
+        loginCoordinator.coordinatorDelegate = self
+        self.pushCoordinator(loginCoordinator)
     }
+
 }
 
+//MARK: NBOLoginCoordinatorDelegate
 extension NBOApplicationCoordinator: NBOLoginCoordinatorDelegate {
 
-    func nboLoginCoordinatorDidFinish(_ coordinator: NBOLogInCoordinator) {
+    func nboLoginCoordinatorDidFinish(_ coordinator: NBOLogInCoordinator, playerOfficeProgressList: [NBOPlayerOfficeProgress]) {
         popCoordinator(coordinator)
-        
-        
-        // TODO: pass list of NBOPlayerOfficeProgress to method
-        startUserProgressCoordinatorWithOfficeList([])
+        startUserProgressCoordinatorWithOfficeList(playerOfficeProgressList)
     }
 }
 
@@ -55,10 +53,16 @@ extension NBOApplicationCoordinator {
 
 extension NBOApplicationCoordinator: NBOUserProgressCoordinatorDelegate {
     func userProgressCoordinatorDidSelectCategory(selectedCategoryOffice: NBOPlayerCategoryOfficeProgress, _ coordinator: NBOUserProgressCoordinator) {
-        // TODO: start activities coordinator
+
+        let nboActivitiesCoordinator = NBOActivitiesCoordinator(withViewController: presentingViewController)
+        nboActivitiesCoordinator.coordinatorDelegate = self
+        nboActivitiesCoordinator.selectedCategoryOffice = selectedCategoryOffice
+        nboActivitiesCoordinator.officeProgressTableVC = presentingViewController.childViewControllers.last
+        self.pushCoordinator(nboActivitiesCoordinator)
     }
     
     func userProgressCoordinatorDidSignOut(_ coordinator: NBOUserProgressCoordinator) {
         // TODO: handle sign out
     }
 }
+
