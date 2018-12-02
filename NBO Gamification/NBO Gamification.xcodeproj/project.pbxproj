@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A47C2E821B1FC9A00B2CB75 /* NBOCategoryOfficeActivityCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A47C2E721B1FC9A00B2CB75 /* NBOCategoryOfficeActivityCodable.swift */; };
+		2A47C2EA21B1FD3E00B2CB75 /* NBOActivityCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A47C2E921B1FD3E00B2CB75 /* NBOActivityCodable.swift */; };
+		2A47C2EC21B1FD8700B2CB75 /* NBOActivityTypeCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A47C2EB21B1FD8700B2CB75 /* NBOActivityTypeCodable.swift */; };
+		2A47C2EE21B1FF0000B2CB75 /* NBOCategoryOfficeActivityAttemptCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A47C2ED21B1FF0000B2CB75 /* NBOCategoryOfficeActivityAttemptCodable.swift */; };
+		2A47C2F021B200B300B2CB75 /* NBOAuthenticationServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A47C2EF21B200B300B2CB75 /* NBOAuthenticationServiceProvider.swift */; };
+		2A47C2F221B200C700B2CB75 /* NBOUserProgressServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A47C2F121B200C700B2CB75 /* NBOUserProgressServiceProvider.swift */; };
+		2A47C2F421B200D900B2CB75 /* NBOActivitiesServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A47C2F321B200D900B2CB75 /* NBOActivitiesServiceProvider.swift */; };
+		2A47C2F621B201A300B2CB75 /* NBOAuthenticationServiceMockProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A47C2F521B201A300B2CB75 /* NBOAuthenticationServiceMockProvider.swift */; };
+		2A47C2F821B201B700B2CB75 /* NBOUserProgressServiceMockProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A47C2F721B201B700B2CB75 /* NBOUserProgressServiceMockProvider.swift */; };
+		2A47C2FA21B201C500B2CB75 /* NBOActivitiesServiceMockProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A47C2F921B201C500B2CB75 /* NBOActivitiesServiceMockProvider.swift */; };
+		2A47C2FC21B20E0400B2CB75 /* NBOServiceProviderMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A47C2FB21B20E0400B2CB75 /* NBOServiceProviderMockData.swift */; };
+		2A6801A621ACC0960012015E /* NBOOfficeCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6801A521ACC0960012015E /* NBOOfficeCodable.swift */; };
+		2A6801A821ACC0C80012015E /* NBOPlayerCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6801A721ACC0C80012015E /* NBOPlayerCodable.swift */; };
+		2A6801AA21ACC0F80012015E /* NBOPlayerOfficeProgressCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6801A921ACC0F80012015E /* NBOPlayerOfficeProgressCodable.swift */; };
+		2A6801AC21ACC1510012015E /* NBOOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6801AB21ACC1510012015E /* NBOOffice.swift */; };
+		2A6801AE21ACC1AE0012015E /* NBOPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6801AD21ACC1AE0012015E /* NBOPlayer.swift */; };
+		2A6801B021ACC1E80012015E /* NBOPlayerOfficeProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6801AF21ACC1E80012015E /* NBOPlayerOfficeProgress.swift */; };
 		2A88AC7F21A07A9F005854DD /* NBOCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88AC7E21A07A9F005854DD /* NBOCoordinator.swift */; };
 		2A88AC8121A07AF7005854DD /* NBOApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88AC8021A07AF7005854DD /* NBOApplicationCoordinator.swift */; };
 		2A88AC8321A0ABDD005854DD /* NBOLogInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88AC8221A0ABDD005854DD /* NBOLogInCoordinator.swift */; };
@@ -16,6 +33,42 @@
 		2A88AC8E21A3088E005854DD /* NBOUserOfficeProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A88AC8C21A3088E005854DD /* NBOUserOfficeProgressViewController.xib */; };
 		2A88AC9321A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88AC9121A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.swift */; };
 		2A88AC9421A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A88AC9221A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.xib */; };
+		2A998D3521A865A600B32752 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A998D3421A865A600B32752 /* EndPointType.swift */; };
+		2A998D3721A868A300B32752 /* HTTPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A998D3621A868A300B32752 /* HTTPConstants.swift */; };
+		2A998D3921A869CE00B32752 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A998D3821A869CE00B32752 /* HTTPTask.swift */; };
+		2A998D3B21A86F9000B32752 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A998D3A21A86F9000B32752 /* ParameterEncoding.swift */; };
+		2A998D3D21A870D500B32752 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A998D3C21A870D500B32752 /* NetworkError.swift */; };
+		2A998D3F21A97F3B00B32752 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A998D3E21A97F3B00B32752 /* URLParameterEncoder.swift */; };
+		2A998D4121A9879F00B32752 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A998D4021A9879F00B32752 /* JSONParameterEncoder.swift */; };
+		2A998D4321A9964000B32752 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A998D4221A9964000B32752 /* NetworkRouter.swift */; };
+		2A998D4521A9AAE600B32752 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A998D4421A9AAE600B32752 /* Router.swift */; };
+		2A998D4721A9B21C00B32752 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A998D4621A9B21C00B32752 /* HTTPMethod.swift */; };
+		2A998D4921A9BBCD00B32752 /* NBOGamificationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A998D4821A9BBCD00B32752 /* NBOGamificationAPI.swift */; };
+		2A998D4B21A9BEF500B32752 /* NBONetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A998D4A21A9BEF500B32752 /* NBONetworkManager.swift */; };
+		2A998D4F21AAE6ED00B32752 /* NBOAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A998D4E21AAE6ED00B32752 /* NBOAuthenticationService.swift */; };
+		2A998D5121AAE74B00B32752 /* NBOUserProgressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A998D5021AAE74B00B32752 /* NBOUserProgressService.swift */; };
+		2A998D5321AAE76000B32752 /* NBOActivitiesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A998D5221AAE76000B32752 /* NBOActivitiesService.swift */; };
+		2A998D5521AAE80900B32752 /* NBOAuthenticationServiceProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A998D5421AAE80900B32752 /* NBOAuthenticationServiceProviderProtocol.swift */; };
+		2A998D5721AAE82100B32752 /* NBOUserProgressServiceProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A998D5621AAE82100B32752 /* NBOUserProgressServiceProviderProtocol.swift */; };
+		2A998D5921AAE83600B32752 /* NBOActivitiesServiceProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A998D5821AAE83600B32752 /* NBOActivitiesServiceProviderProtocol.swift */; };
+		2A998D5B21AAE89500B32752 /* NBOAppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A998D5A21AAE89500B32752 /* NBOAppService.swift */; };
+		2A998D5F21AAF86800B32752 /* NBOServiceProviderUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A998D5E21AAF86800B32752 /* NBOServiceProviderUtils.swift */; };
+		2A998D6221AAF95C00B32752 /* NBOServiceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A998D6121AAF95C00B32752 /* NBOServiceUtils.swift */; };
+		2AB07EE621AD724700A71BA5 /* NBOPlayerCategoryOfficeProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB07EE521AD724700A71BA5 /* NBOPlayerCategoryOfficeProgress.swift */; };
+		2AB07EE821AD727D00A71BA5 /* NBOCategoryOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB07EE721AD727D00A71BA5 /* NBOCategoryOffice.swift */; };
+		2AB07EEA21AD729200A71BA5 /* NBOCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB07EE921AD729200A71BA5 /* NBOCategory.swift */; };
+		2AB07EEC21AD72B300A71BA5 /* NBOCategoryOfficeProgressScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB07EEB21AD72B300A71BA5 /* NBOCategoryOfficeProgressScale.swift */; };
+		2AB07EEE21AD72C400A71BA5 /* NBOCategoryOfficeActivityAttempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB07EED21AD72C400A71BA5 /* NBOCategoryOfficeActivityAttempt.swift */; };
+		2AB07EF021AD72F400A71BA5 /* NBOCategoryOfficeActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB07EEF21AD72F400A71BA5 /* NBOCategoryOfficeActivity.swift */; };
+		2AB07EF221AD730600A71BA5 /* NBOActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB07EF121AD730600A71BA5 /* NBOActivity.swift */; };
+		2AB07EF421AD731500A71BA5 /* NBOActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB07EF321AD731500A71BA5 /* NBOActivityType.swift */; };
+		2AB07EF621AD733900A71BA5 /* NBOConnectActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB07EF521AD733900A71BA5 /* NBOConnectActivity.swift */; };
+		2AB07EF821AD734B00A71BA5 /* NBOBriteling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB07EF721AD734B00A71BA5 /* NBOBriteling.swift */; };
+		2AB9A13221B052580052A010 /* NBOAuthenticationServiceLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9A13121B052580052A010 /* NBOAuthenticationServiceLoginResponse.swift */; };
+		2AB9A13421B056CD0052A010 /* NBOPlayerCategoryOfficeProgressCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9A13321B056CD0052A010 /* NBOPlayerCategoryOfficeProgressCodable.swift */; };
+		2AB9A13621B0578E0052A010 /* NBOCategoryOfficeCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9A13521B0578E0052A010 /* NBOCategoryOfficeCodable.swift */; };
+		2AB9A13821B058060052A010 /* NBOCategoryCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9A13721B058060052A010 /* NBOCategoryCodable.swift */; };
+		2AB9A13A21B058CB0052A010 /* NBOCategoryOfficeProgressScaleCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9A13921B058CB0052A010 /* NBOCategoryOfficeProgressScaleCodable.swift */; };
 		2AE1CAF32159806F00D5D419 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE1CAF22159806F00D5D419 /* AppDelegate.swift */; };
 		2AE1CAFA2159807100D5D419 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AE1CAF92159807100D5D419 /* Assets.xcassets */; };
 		2AE1CAFD2159807100D5D419 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AE1CAFB2159807100D5D419 /* LaunchScreen.storyboard */; };
@@ -25,6 +78,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A47C2E721B1FC9A00B2CB75 /* NBOCategoryOfficeActivityCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOCategoryOfficeActivityCodable.swift; sourceTree = "<group>"; };
+		2A47C2E921B1FD3E00B2CB75 /* NBOActivityCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOActivityCodable.swift; sourceTree = "<group>"; };
+		2A47C2EB21B1FD8700B2CB75 /* NBOActivityTypeCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOActivityTypeCodable.swift; sourceTree = "<group>"; };
+		2A47C2ED21B1FF0000B2CB75 /* NBOCategoryOfficeActivityAttemptCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOCategoryOfficeActivityAttemptCodable.swift; sourceTree = "<group>"; };
+		2A47C2EF21B200B300B2CB75 /* NBOAuthenticationServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOAuthenticationServiceProvider.swift; sourceTree = "<group>"; };
+		2A47C2F121B200C700B2CB75 /* NBOUserProgressServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOUserProgressServiceProvider.swift; sourceTree = "<group>"; };
+		2A47C2F321B200D900B2CB75 /* NBOActivitiesServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOActivitiesServiceProvider.swift; sourceTree = "<group>"; };
+		2A47C2F521B201A300B2CB75 /* NBOAuthenticationServiceMockProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOAuthenticationServiceMockProvider.swift; sourceTree = "<group>"; };
+		2A47C2F721B201B700B2CB75 /* NBOUserProgressServiceMockProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOUserProgressServiceMockProvider.swift; sourceTree = "<group>"; };
+		2A47C2F921B201C500B2CB75 /* NBOActivitiesServiceMockProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOActivitiesServiceMockProvider.swift; sourceTree = "<group>"; };
+		2A47C2FB21B20E0400B2CB75 /* NBOServiceProviderMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOServiceProviderMockData.swift; sourceTree = "<group>"; };
+		2A6801A521ACC0960012015E /* NBOOfficeCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOOfficeCodable.swift; sourceTree = "<group>"; };
+		2A6801A721ACC0C80012015E /* NBOPlayerCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOPlayerCodable.swift; sourceTree = "<group>"; };
+		2A6801A921ACC0F80012015E /* NBOPlayerOfficeProgressCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOPlayerOfficeProgressCodable.swift; sourceTree = "<group>"; };
+		2A6801AB21ACC1510012015E /* NBOOffice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOOffice.swift; sourceTree = "<group>"; };
+		2A6801AD21ACC1AE0012015E /* NBOPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOPlayer.swift; sourceTree = "<group>"; };
+		2A6801AF21ACC1E80012015E /* NBOPlayerOfficeProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOPlayerOfficeProgress.swift; sourceTree = "<group>"; };
 		2A88AC7E21A07A9F005854DD /* NBOCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOCoordinator.swift; sourceTree = "<group>"; };
 		2A88AC8021A07AF7005854DD /* NBOApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOApplicationCoordinator.swift; sourceTree = "<group>"; };
 		2A88AC8221A0ABDD005854DD /* NBOLogInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOLogInCoordinator.swift; sourceTree = "<group>"; };
@@ -34,6 +104,42 @@
 		2A88AC8C21A3088E005854DD /* NBOUserOfficeProgressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NBOUserOfficeProgressViewController.xib; sourceTree = "<group>"; };
 		2A88AC9121A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOUserOfficeProgressCollectionViewCell.swift; sourceTree = "<group>"; };
 		2A88AC9221A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NBOUserOfficeProgressCollectionViewCell.xib; sourceTree = "<group>"; };
+		2A998D3421A865A600B32752 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		2A998D3621A868A300B32752 /* HTTPConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPConstants.swift; sourceTree = "<group>"; };
+		2A998D3821A869CE00B32752 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		2A998D3A21A86F9000B32752 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		2A998D3C21A870D500B32752 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		2A998D3E21A97F3B00B32752 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
+		2A998D4021A9879F00B32752 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		2A998D4221A9964000B32752 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		2A998D4421A9AAE600B32752 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		2A998D4621A9B21C00B32752 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		2A998D4821A9BBCD00B32752 /* NBOGamificationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOGamificationAPI.swift; sourceTree = "<group>"; };
+		2A998D4A21A9BEF500B32752 /* NBONetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBONetworkManager.swift; sourceTree = "<group>"; };
+		2A998D4E21AAE6ED00B32752 /* NBOAuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOAuthenticationService.swift; sourceTree = "<group>"; };
+		2A998D5021AAE74B00B32752 /* NBOUserProgressService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOUserProgressService.swift; sourceTree = "<group>"; };
+		2A998D5221AAE76000B32752 /* NBOActivitiesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOActivitiesService.swift; sourceTree = "<group>"; };
+		2A998D5421AAE80900B32752 /* NBOAuthenticationServiceProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOAuthenticationServiceProviderProtocol.swift; sourceTree = "<group>"; };
+		2A998D5621AAE82100B32752 /* NBOUserProgressServiceProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOUserProgressServiceProviderProtocol.swift; sourceTree = "<group>"; };
+		2A998D5821AAE83600B32752 /* NBOActivitiesServiceProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOActivitiesServiceProviderProtocol.swift; sourceTree = "<group>"; };
+		2A998D5A21AAE89500B32752 /* NBOAppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOAppService.swift; sourceTree = "<group>"; };
+		2A998D5E21AAF86800B32752 /* NBOServiceProviderUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOServiceProviderUtils.swift; sourceTree = "<group>"; };
+		2A998D6121AAF95C00B32752 /* NBOServiceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOServiceUtils.swift; sourceTree = "<group>"; };
+		2AB07EE521AD724700A71BA5 /* NBOPlayerCategoryOfficeProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOPlayerCategoryOfficeProgress.swift; sourceTree = "<group>"; };
+		2AB07EE721AD727D00A71BA5 /* NBOCategoryOffice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOCategoryOffice.swift; sourceTree = "<group>"; };
+		2AB07EE921AD729200A71BA5 /* NBOCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOCategory.swift; sourceTree = "<group>"; };
+		2AB07EEB21AD72B300A71BA5 /* NBOCategoryOfficeProgressScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOCategoryOfficeProgressScale.swift; sourceTree = "<group>"; };
+		2AB07EED21AD72C400A71BA5 /* NBOCategoryOfficeActivityAttempt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOCategoryOfficeActivityAttempt.swift; sourceTree = "<group>"; };
+		2AB07EEF21AD72F400A71BA5 /* NBOCategoryOfficeActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOCategoryOfficeActivity.swift; sourceTree = "<group>"; };
+		2AB07EF121AD730600A71BA5 /* NBOActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOActivity.swift; sourceTree = "<group>"; };
+		2AB07EF321AD731500A71BA5 /* NBOActivityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOActivityType.swift; sourceTree = "<group>"; };
+		2AB07EF521AD733900A71BA5 /* NBOConnectActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOConnectActivity.swift; sourceTree = "<group>"; };
+		2AB07EF721AD734B00A71BA5 /* NBOBriteling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOBriteling.swift; sourceTree = "<group>"; };
+		2AB9A13121B052580052A010 /* NBOAuthenticationServiceLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOAuthenticationServiceLoginResponse.swift; sourceTree = "<group>"; };
+		2AB9A13321B056CD0052A010 /* NBOPlayerCategoryOfficeProgressCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOPlayerCategoryOfficeProgressCodable.swift; sourceTree = "<group>"; };
+		2AB9A13521B0578E0052A010 /* NBOCategoryOfficeCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOCategoryOfficeCodable.swift; sourceTree = "<group>"; };
+		2AB9A13721B058060052A010 /* NBOCategoryCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOCategoryCodable.swift; sourceTree = "<group>"; };
+		2AB9A13921B058CB0052A010 /* NBOCategoryOfficeProgressScaleCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOCategoryOfficeProgressScaleCodable.swift; sourceTree = "<group>"; };
 		2AE1CAEF2159806F00D5D419 /* NBO Gamification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NBO Gamification.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AE1CAF22159806F00D5D419 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AE1CAF92159807100D5D419 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +161,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A6801A421ACC04D0012015E /* ModelCodables */ = {
+			isa = PBXGroup;
+			children = (
+				2A47C2E921B1FD3E00B2CB75 /* NBOActivityCodable.swift */,
+				2A47C2EB21B1FD8700B2CB75 /* NBOActivityTypeCodable.swift */,
+				2AB9A13721B058060052A010 /* NBOCategoryCodable.swift */,
+				2AB9A13521B0578E0052A010 /* NBOCategoryOfficeCodable.swift */,
+				2A47C2E721B1FC9A00B2CB75 /* NBOCategoryOfficeActivityCodable.swift */,
+				2A47C2ED21B1FF0000B2CB75 /* NBOCategoryOfficeActivityAttemptCodable.swift */,
+				2AB9A13921B058CB0052A010 /* NBOCategoryOfficeProgressScaleCodable.swift */,
+				2AB9A13321B056CD0052A010 /* NBOPlayerCategoryOfficeProgressCodable.swift */,
+				2A6801A721ACC0C80012015E /* NBOPlayerCodable.swift */,
+				2A6801A921ACC0F80012015E /* NBOPlayerOfficeProgressCodable.swift */,
+				2A6801A521ACC0960012015E /* NBOOfficeCodable.swift */,
+			);
+			path = ModelCodables;
+			sourceTree = "<group>";
+		};
+		2A6801B121ACC3C20012015E /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				2A47C2EF21B200B300B2CB75 /* NBOAuthenticationServiceProvider.swift */,
+				2A47C2F121B200C700B2CB75 /* NBOUserProgressServiceProvider.swift */,
+				2A47C2F321B200D900B2CB75 /* NBOActivitiesServiceProvider.swift */,
+				2A998D6021AAF8CD00B32752 /* MockProviders */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
 		2A88AC7621A07652005854DD /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +241,19 @@
 		2A88AC7B21A077DF005854DD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2AB07EF121AD730600A71BA5 /* NBOActivity.swift */,
+				2AB07EF321AD731500A71BA5 /* NBOActivityType.swift */,
+				2AB07EF721AD734B00A71BA5 /* NBOBriteling.swift */,
+				2AB07EE921AD729200A71BA5 /* NBOCategory.swift */,
+				2AB07EE721AD727D00A71BA5 /* NBOCategoryOffice.swift */,
+				2AB07EEF21AD72F400A71BA5 /* NBOCategoryOfficeActivity.swift */,
+				2AB07EED21AD72C400A71BA5 /* NBOCategoryOfficeActivityAttempt.swift */,
+				2AB07EEB21AD72B300A71BA5 /* NBOCategoryOfficeProgressScale.swift */,
+				2AB07EF521AD733900A71BA5 /* NBOConnectActivity.swift */,
+				2A6801AB21ACC1510012015E /* NBOOffice.swift */,
+				2A6801AD21ACC1AE0012015E /* NBOPlayer.swift */,
+				2AB07EE521AD724700A71BA5 /* NBOPlayerCategoryOfficeProgress.swift */,
+				2A6801AF21ACC1E80012015E /* NBOPlayerOfficeProgress.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -116,6 +264,7 @@
 				2A88AC7721A0766B005854DD /* Assets */,
 				2A88AC7921A07794005854DD /* ViewControllers */,
 				2A88AC7A21A077AF005854DD /* Views */,
+				FEB442AF21A9AC63009C2896 /* Extensions */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -123,6 +272,10 @@
 		2A88AC7D21A0788E005854DD /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				2A998D3021A8653700B32752 /* EndPoint */,
+				2A998D3221A8655B00B32752 /* Manager */,
+				2A998D3121A8654E00B32752 /* Service */,
+				2A998D3321A8656100B32752 /* Encoding */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -141,11 +294,96 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		2A998D3021A8653700B32752 /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				2A998D4821A9BBCD00B32752 /* NBOGamificationAPI.swift */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		2A998D3121A8654E00B32752 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2A998D3421A865A600B32752 /* EndPointType.swift */,
+				2A998D3621A868A300B32752 /* HTTPConstants.swift */,
+				2A998D4621A9B21C00B32752 /* HTTPMethod.swift */,
+				2A998D3821A869CE00B32752 /* HTTPTask.swift */,
+				2A998D3C21A870D500B32752 /* NetworkError.swift */,
+				2A998D4221A9964000B32752 /* NetworkRouter.swift */,
+				2A998D4421A9AAE600B32752 /* Router.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		2A998D3221A8655B00B32752 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				2A998D4A21A9BEF500B32752 /* NBONetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		2A998D3321A8656100B32752 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				2A998D3A21A86F9000B32752 /* ParameterEncoding.swift */,
+				2A998D3E21A97F3B00B32752 /* URLParameterEncoder.swift */,
+				2A998D4021A9879F00B32752 /* JSONParameterEncoder.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		2A998D4C21AAE61200B32752 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2A998D5A21AAE89500B32752 /* NBOAppService.swift */,
+				2A998D4E21AAE6ED00B32752 /* NBOAuthenticationService.swift */,
+				2A998D5021AAE74B00B32752 /* NBOUserProgressService.swift */,
+				2A998D5221AAE76000B32752 /* NBOActivitiesService.swift */,
+				2A998D6121AAF95C00B32752 /* NBOServiceUtils.swift */,
+				2AB9A13021B051BC0052A010 /* Responses */,
+				2A998D4D21AAE63800B32752 /* Providers */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		2A998D4D21AAE63800B32752 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				2A998D5421AAE80900B32752 /* NBOAuthenticationServiceProviderProtocol.swift */,
+				2A998D5621AAE82100B32752 /* NBOUserProgressServiceProviderProtocol.swift */,
+				2A998D5821AAE83600B32752 /* NBOActivitiesServiceProviderProtocol.swift */,
+				2A998D5E21AAF86800B32752 /* NBOServiceProviderUtils.swift */,
+				2A6801B121ACC3C20012015E /* Providers */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		2A998D6021AAF8CD00B32752 /* MockProviders */ = {
+			isa = PBXGroup;
+			children = (
+				2A47C2F521B201A300B2CB75 /* NBOAuthenticationServiceMockProvider.swift */,
+				2A47C2F721B201B700B2CB75 /* NBOUserProgressServiceMockProvider.swift */,
+				2A47C2F921B201C500B2CB75 /* NBOActivitiesServiceMockProvider.swift */,
+				2A47C2FB21B20E0400B2CB75 /* NBOServiceProviderMockData.swift */,
+			);
+			path = MockProviders;
+			sourceTree = "<group>";
+		};
+		2AB9A13021B051BC0052A010 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				2A6801A421ACC04D0012015E /* ModelCodables */,
+				2AB9A13121B052580052A010 /* NBOAuthenticationServiceLoginResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
 		2AE1CAE62159806F00D5D419 = {
 			isa = PBXGroup;
 			children = (
 				2AE1CAF12159806F00D5D419 /* NBO Gamification */,
-				FEB442AF21A9AC63009C2896 /* Extensions */,
 				2AE1CAF02159806F00D5D419 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -165,6 +403,7 @@
 				2A88AC7821A07785005854DD /* Coordinators */,
 				2A88AC7C21A0784A005854DD /* UI */,
 				2A88AC7B21A077DF005854DD /* Model */,
+				2A998D4C21AAE61200B32752 /* Service */,
 				2A88AC7D21A0788E005854DD /* Networking */,
 				2A88AC8921A30439005854DD /* Utils */,
 				2A88AC8821A0AD68005854DD /* Tests */,
@@ -263,16 +502,69 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A47C2E821B1FC9A00B2CB75 /* NBOCategoryOfficeActivityCodable.swift in Sources */,
 				2A88AC7F21A07A9F005854DD /* NBOCoordinator.swift in Sources */,
+				2AB9A13821B058060052A010 /* NBOCategoryCodable.swift in Sources */,
 				2AE1CAF32159806F00D5D419 /* AppDelegate.swift in Sources */,
+				2A998D3521A865A600B32752 /* EndPointType.swift in Sources */,
+				2A47C2F421B200D900B2CB75 /* NBOActivitiesServiceProvider.swift in Sources */,
+				2AB07EE821AD727D00A71BA5 /* NBOCategoryOffice.swift in Sources */,
+				2A6801B021ACC1E80012015E /* NBOPlayerOfficeProgress.swift in Sources */,
+				2A6801AA21ACC0F80012015E /* NBOPlayerOfficeProgressCodable.swift in Sources */,
+				2A998D5321AAE76000B32752 /* NBOActivitiesService.swift in Sources */,
+				2AB07EEA21AD729200A71BA5 /* NBOCategory.swift in Sources */,
+				2A998D5521AAE80900B32752 /* NBOAuthenticationServiceProviderProtocol.swift in Sources */,
+				2A998D4921A9BBCD00B32752 /* NBOGamificationAPI.swift in Sources */,
+				2AB07EF821AD734B00A71BA5 /* NBOBriteling.swift in Sources */,
 				2A88AC8321A0ABDD005854DD /* NBOLogInCoordinator.swift in Sources */,
+				2A47C2FC21B20E0400B2CB75 /* NBOServiceProviderMockData.swift in Sources */,
+				2AB9A13621B0578E0052A010 /* NBOCategoryOfficeCodable.swift in Sources */,
+				2A998D3F21A97F3B00B32752 /* URLParameterEncoder.swift in Sources */,
+				2A998D4121A9879F00B32752 /* JSONParameterEncoder.swift in Sources */,
 				2A88AC8D21A3088E005854DD /* NBOUserOfficeProgressViewController.swift in Sources */,
+				2A6801AC21ACC1510012015E /* NBOOffice.swift in Sources */,
+				2AB9A13A21B058CB0052A010 /* NBOCategoryOfficeProgressScaleCodable.swift in Sources */,
+				2AB9A13221B052580052A010 /* NBOAuthenticationServiceLoginResponse.swift in Sources */,
+				2A6801AE21ACC1AE0012015E /* NBOPlayer.swift in Sources */,
+				2A47C2FA21B201C500B2CB75 /* NBOActivitiesServiceMockProvider.swift in Sources */,
+				2AB9A13421B056CD0052A010 /* NBOPlayerCategoryOfficeProgressCodable.swift in Sources */,
+				2AB07EF021AD72F400A71BA5 /* NBOCategoryOfficeActivity.swift in Sources */,
+				2AB07EEC21AD72B300A71BA5 /* NBOCategoryOfficeProgressScale.swift in Sources */,
+				2A47C2EA21B1FD3E00B2CB75 /* NBOActivityCodable.swift in Sources */,
 				2A88AC8721A0AC2F005854DD /* NBOActivitiesCoordinator.swift in Sources */,
+				2A998D5721AAE82100B32752 /* NBOUserProgressServiceProviderProtocol.swift in Sources */,
+				2AB07EF221AD730600A71BA5 /* NBOActivity.swift in Sources */,
+				2A998D3B21A86F9000B32752 /* ParameterEncoding.swift in Sources */,
+				2A6801A821ACC0C80012015E /* NBOPlayerCodable.swift in Sources */,
+				2A47C2EE21B1FF0000B2CB75 /* NBOCategoryOfficeActivityAttemptCodable.swift in Sources */,
+				2A998D4321A9964000B32752 /* NetworkRouter.swift in Sources */,
+				2A998D4521A9AAE600B32752 /* Router.swift in Sources */,
+				2A998D4B21A9BEF500B32752 /* NBONetworkManager.swift in Sources */,
 				2A88AC8521A0AC12005854DD /* NBOUserProgressCoordinator.swift in Sources */,
 				FEB442B121A9AD1D009C2896 /* UIView+extensions.swift in Sources */,
+				2A47C2EC21B1FD8700B2CB75 /* NBOActivityTypeCodable.swift in Sources */,
+				2A998D3921A869CE00B32752 /* HTTPTask.swift in Sources */,
+				2A998D5121AAE74B00B32752 /* NBOUserProgressService.swift in Sources */,
+				2AB07EF621AD733900A71BA5 /* NBOConnectActivity.swift in Sources */,
 				2A88AC9321A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.swift in Sources */,
+				2A47C2F821B201B700B2CB75 /* NBOUserProgressServiceMockProvider.swift in Sources */,
+				2A47C2F621B201A300B2CB75 /* NBOAuthenticationServiceMockProvider.swift in Sources */,
+				2A998D4721A9B21C00B32752 /* HTTPMethod.swift in Sources */,
+				2AB07EF421AD731500A71BA5 /* NBOActivityType.swift in Sources */,
+				2A998D6221AAF95C00B32752 /* NBOServiceUtils.swift in Sources */,
+				2AB07EEE21AD72C400A71BA5 /* NBOCategoryOfficeActivityAttempt.swift in Sources */,
+				2A998D5B21AAE89500B32752 /* NBOAppService.swift in Sources */,
+				2A47C2F221B200C700B2CB75 /* NBOUserProgressServiceProvider.swift in Sources */,
+				2A998D4F21AAE6ED00B32752 /* NBOAuthenticationService.swift in Sources */,
+				2A998D3D21A870D500B32752 /* NetworkError.swift in Sources */,
+				2A998D5F21AAF86800B32752 /* NBOServiceProviderUtils.swift in Sources */,
+				2A998D3721A868A300B32752 /* HTTPConstants.swift in Sources */,
+				2A47C2F021B200B300B2CB75 /* NBOAuthenticationServiceProvider.swift in Sources */,
+				2A6801A621ACC0960012015E /* NBOOfficeCodable.swift in Sources */,
+				2AB07EE621AD724700A71BA5 /* NBOPlayerCategoryOfficeProgress.swift in Sources */,
 				2A88AC8121A07AF7005854DD /* NBOApplicationCoordinator.swift in Sources */,
 				FEBB80F421A352D2008B33D8 /* NBOLoginViewController.swift in Sources */,
+				2A998D5921AAE83600B32752 /* NBOActivitiesServiceProviderProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
