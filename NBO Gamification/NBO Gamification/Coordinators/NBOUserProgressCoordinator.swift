@@ -8,11 +8,30 @@
 
 import UIKit
 
+protocol NBOUserProgressCoordinatorDelegate {
+    func nboUserProgressCoordinatorDidSelectCategory(_ coordinator: NBOUserProgressCoordinator)
+    func nboUserProgressCoordinatorDidSignOut(_ coordinator: NBOUserProgressCoordinator)
+}
+
 class NBOUserProgressCoordinator : NBOCoordinator {
     
+    var coordinatorDelegate: NBOUserProgressCoordinatorDelegate? = nil
+    var officeList : [NBOOffice]?
+    
     override func start() {
-        let userOfficeProgressVC = NBOUserOfficeProgressViewController()
+        let officeSelectionVC = NBOOfficeSelectionTableViewController()
         
-        self.pushViewController(userOfficeProgressVC)
+        officeSelectionVC.title = "Select Office"
+        
+        officeSelectionVC.delegate = self
+        officeSelectionVC.officeList = officeList ?? []
+        
+        pushViewController(officeSelectionVC)
+    }
+}
+
+extension NBOUserProgressCoordinator: NBOOfficeSelectionViewControllerDelegate {
+    func nboOfficeSelectionViewControllerDidSelectOffice (selectedOffice : NBOOffice, _ NBOOfficeSelectionVC: NBOOfficeSelectionTableViewController) {
+        
     }
 }
