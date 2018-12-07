@@ -8,8 +8,8 @@
 
 import Foundation
 
-public typealias ActivitiesServiceProviderGetOfficeActivitiesForCategorySuccessClosure = (([NBOCategoryOfficeActivityCodable]) -> Void)
-public typealias ActivitiesServiceProviderRegisterActivityAttemptSuccessClosure = ((NBOCategoryOfficeActivityAttemptCodable) -> Void)
+public typealias ActivitiesServiceProviderGetOfficeActivitiesForCategorySuccessClosure = (([NBOCategoryOfficeActivity]) -> Void)
+public typealias ActivitiesServiceProviderRegisterActivityAttemptSuccessClosure = ((NBOCategoryOfficeActivityAttempt) -> Void)
 
 protocol NBOActivitiesServiceProviderProtocol {
     func getOfficeActivitiesForCategory(idCategoryOffice: Int, success: @escaping ActivitiesServiceProviderGetOfficeActivitiesForCategorySuccessClosure, failure: @escaping ServiceProviderFailureClosure)

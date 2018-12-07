@@ -14,12 +14,6 @@ public struct NBOOfficeCodable: Codable {
     public let name: String?
     public let image: String?
     
-    init(id : Int, name : String) {
-        self.id = id
-        self.name = name
-        self.image = nil
-    }
-    
     enum CodingKeys: String, CodingKey {
         case id
         case name

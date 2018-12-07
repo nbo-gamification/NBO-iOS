@@ -40,22 +40,22 @@ extension NBOApplicationCoordinator: NBOLoginCoordinatorDelegate {
 
 // Add User progress funcionality
 extension NBOApplicationCoordinator {
-    func startUserProgressCoordinatorWithOfficeList (_ officeList : [NBOOffice]) {
+    func startUserProgressCoordinatorWithOfficeList (_ officeProgressList : [NBOPlayerOfficeProgress]) {
         
         let userProgressFlow = NBOUserProgressCoordinator(withViewController: presentingViewController)
         userProgressFlow.coordinatorDelegate = self
-        userProgressFlow.officeList = officeList
+        userProgressFlow.officeProgressList = officeProgressList
         
         self.pushCoordinator(userProgressFlow)
     }
 }
 
 extension NBOApplicationCoordinator: NBOUserProgressCoordinatorDelegate {
-    func nboUserProgressCoordinatorDidSelectCategory(_ coordinator: NBOUserProgressCoordinator) {
+    func userProgressCoordinatorDidSelectCategory(selectedCategoryOffice: NBOPlayerCategoryOfficeProgress, _ coordinator: NBOUserProgressCoordinator) {
         
     }
     
-    func nboUserProgressCoordinatorDidSignOut(_ coordinator: NBOUserProgressCoordinator) {
+    func userProgressCoordinatorDidSignOut(_ coordinator: NBOUserProgressCoordinator) {
         
     }
 }

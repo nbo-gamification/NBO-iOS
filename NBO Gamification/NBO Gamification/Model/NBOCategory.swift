@@ -18,4 +18,9 @@ public final class NBOCategory {
         self.id = id
         self.name = name
     }
+    
+    convenience init(id : Int, name : String, description : String) {
+        self.init(id: id, name: name)
+        self.description = description
+    }
 }

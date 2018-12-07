@@ -9,13 +9,13 @@
 import UIKit
 
 protocol NBOOfficeSelectionViewControllerDelegate {
-    func nboOfficeSelectionViewControllerDidSelectOffice (selectedOffice : NBOOffice, _ NBOOfficeSelectionVC: NBOOfficeSelectionTableViewController)
+    func nboOfficeSelectionViewControllerDidSelectOffice (selectedOfficeProgress : NBOPlayerOfficeProgress, _ NBOOfficeSelectionVC: NBOOfficeSelectionTableViewController)
 }
 
 class NBOOfficeSelectionTableViewController: UITableViewController {
     
     var delegate: NBOOfficeSelectionViewControllerDelegate?
-    var officeList : [NBOOffice] = []
+    var officeProgressList : [NBOPlayerOfficeProgress] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,14 +32,14 @@ class NBOOfficeSelectionTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return officeList.count
+        return officeProgressList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : NBOOfficeSelectionTableViewCell = tableView.dequeueReusableCell(withIdentifier: NBOOfficeSelectionTableViewCell.cellIdentifier, for: indexPath) as! NBOOfficeSelectionTableViewCell
-        let office = officeList[indexPath.row]
+        let officeProgress = officeProgressList[indexPath.row]
         
-        cell.officeName?.text = office.name
+        cell.officeName?.text = officeProgress.office.name
         
         return cell
     }
@@ -47,6 +47,6 @@ class NBOOfficeSelectionTableViewController: UITableViewController {
     // MARK: - Table view delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.nboOfficeSelectionViewControllerDidSelectOffice(selectedOffice: officeList[indexPath.row], self)
+        delegate?.nboOfficeSelectionViewControllerDidSelectOffice(selectedOfficeProgress: officeProgressList[indexPath.row], self)
     }
 }

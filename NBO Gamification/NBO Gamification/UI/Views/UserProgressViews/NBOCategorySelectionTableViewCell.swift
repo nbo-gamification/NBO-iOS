@@ -33,7 +33,7 @@ class NBOCategorySelectionTableViewCell: UITableViewCell {
     
     override func updateConstraints() {
         
-        categoryCompletionBarTrailingConstraint.constant
+        
         
         
         super.updateConstraints()

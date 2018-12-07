@@ -16,14 +16,6 @@ public struct NBOCategoryOfficeActivityAttemptCodable : Codable {
     public let playerCategoryOfficeProgress : NBOPlayerCategoryOfficeProgressCodable?
     public let categoryOfficeActivity : NBOCategoryOfficeActivityCodable?
     
-    init(id : Int, datetime : Date, result : Bool, playerCategoryOfficeProgress : NBOPlayerCategoryOfficeProgressCodable, categoryOfficeActivity : NBOCategoryOfficeActivityCodable) {
-        self.id = id
-        self.datetime = datetime
-        self.result = result
-        self.playerCategoryOfficeProgress = playerCategoryOfficeProgress
-        self.categoryOfficeActivity = categoryOfficeActivity
-    }
-    
     enum CodingKeys: String, CodingKey {
         case id
         case datetime

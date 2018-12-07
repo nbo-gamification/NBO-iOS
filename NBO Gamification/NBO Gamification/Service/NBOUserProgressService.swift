@@ -8,7 +8,7 @@
 
 import Foundation
 
-public typealias UserProgressServiceSelectOfficeSuccessClosure = (([NBOPlayerCategoryOfficeProgressCodable]) -> Void)
+public typealias UserProgressServiceSelectOfficeSuccessClosure = (([NBOPlayerCategoryOfficeProgress]) -> Void)
 
 public class NBOUserProgressService : NBOAppService {
     

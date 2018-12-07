@@ -16,14 +16,6 @@ public struct NBOCategoryOfficeActivityCodable : Codable {
     public let categoryOffice : NBOCategoryOfficeCodable?
     public let activity : NBOActivityCodable?
     
-    init(id : Int, pointsReward : Int, isActive : Bool, categoryOffice : NBOCategoryOfficeCodable, activity : NBOActivityCodable) {
-        self.id = id
-        self.pointsReward = pointsReward
-        self.isActive = isActive
-        self.categoryOffice = categoryOffice
-        self.activity = activity
-    }
-    
     enum CodingKeys: String, CodingKey {
         case id
         case pointsReward

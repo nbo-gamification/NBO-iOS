@@ -19,16 +19,6 @@ public struct NBOActivityCodable : Codable {
     public let instructions : String?
     public let solutionCode : String?
     
-    init(id : Int, description : String, isActive : Bool, type : NBOActivityTypeCodable, instructions : String, solutionCode : String) {
-        self.id = id
-        self.description = description
-        self.isActive = isActive
-        self.type = type
-        
-        self.instructions = instructions
-        self.solutionCode = solutionCode
-    }
-    
     enum CodingKeys: String, CodingKey {
         case id
         case description
