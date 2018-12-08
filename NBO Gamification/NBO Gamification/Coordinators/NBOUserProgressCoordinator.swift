@@ -9,14 +9,14 @@
 import UIKit
 
 protocol NBOUserProgressCoordinatorDelegate {
-    func nboUserProgressCoordinatorDidSelectCategory(_ coordinator: NBOUserProgressCoordinator)
-    func nboUserProgressCoordinatorDidSignOut(_ coordinator: NBOUserProgressCoordinator)
+    func userProgressCoordinatorDidSelectCategory(selectedCategoryOffice: NBOPlayerCategoryOfficeProgress, _ coordinator: NBOUserProgressCoordinator)
+    func userProgressCoordinatorDidSignOut(_ coordinator: NBOUserProgressCoordinator)
 }
 
 class NBOUserProgressCoordinator : NBOCoordinator {
     
     var coordinatorDelegate: NBOUserProgressCoordinatorDelegate? = nil
-    var officeList : [NBOOffice]?
+    var officeProgressList : [NBOPlayerOfficeProgress]?
     
     override func start() {
         let officeSelectionVC = NBOOfficeSelectionTableViewController()
@@ -24,14 +24,35 @@ class NBOUserProgressCoordinator : NBOCoordinator {
         officeSelectionVC.title = "Select Office"
         
         officeSelectionVC.delegate = self
-        officeSelectionVC.officeList = officeList ?? []
+        officeSelectionVC.officeProgressList = officeProgressList ?? []
         
         pushViewController(officeSelectionVC)
     }
 }
 
-extension NBOUserProgressCoordinator: NBOOfficeSelectionViewControllerDelegate {
-    func nboOfficeSelectionViewControllerDidSelectOffice (selectedOffice : NBOOffice, _ NBOOfficeSelectionVC: NBOOfficeSelectionTableViewController) {
+extension NBOUserProgressCoordinator : NBOOfficeSelectionViewControllerDelegate {
+    func nboOfficeSelectionViewControllerDidSelectOffice (selectedOfficeProgress : NBOPlayerOfficeProgress, _ NBOOfficeSelectionVC: NBOOfficeSelectionTableViewController) {
         
+        NBOUserProgressService.selectOffice(idPlayerOfficeProgress: selectedOfficeProgress.id, success: { (playerCategoryOfficeProgressList) in
+            
+            let categorySelectionVC = NBOUserOfficeProgressTableViewController()
+            
+            categorySelectionVC.title = "Choose a category"
+            
+            categorySelectionVC.delegate = self
+            categorySelectionVC.categoryOfficeProgressList = playerCategoryOfficeProgressList
+            
+            self.pushViewController(categorySelectionVC)
+        
+        }) { (error) in
+            // TODO: handle error in service call
+            print(error.localizedDescription)
+        }
+    }
+}
+
+extension NBOUserProgressCoordinator : NBOUserOfficeProgressViewControllerDelegate {
+    func userOfficeProgressViewControllerDidSelectCategoryOfficeProgress(selectedCategoryOffice: NBOPlayerCategoryOfficeProgress, _ NBOUserOfficeProgressVC: NBOUserOfficeProgressTableViewController) {
+        coordinatorDelegate?.userProgressCoordinatorDidSelectCategory(selectedCategoryOffice: selectedCategoryOffice, self)
     }
 }

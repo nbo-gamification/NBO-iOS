@@ -14,12 +14,6 @@ public struct NBOPlayerCategoryOfficeProgressCodable : Codable {
     public let totalPoints : Int?
     public let categoryOffice : NBOCategoryOfficeCodable?
     
-    init(id : Int, totalPoints : Int, categoryOffice : NBOCategoryOfficeCodable) {
-        self.id = id
-        self.totalPoints = totalPoints
-        self.categoryOffice = categoryOffice
-    }
-    
     enum CodingKeys: String, CodingKey {
         case id
         case totalPoints

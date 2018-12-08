@@ -15,13 +15,6 @@ public struct NBOPlayerOfficeProgressCodable: Codable {
     public let office: NBOOfficeCodable?
     public var categoryOfficeProgressList : [NBOPlayerCategoryOfficeProgressCodable]?
     
-    init(id: Int, player: NBOPlayerCodable, office: NBOOfficeCodable, categoryOfficeProgressList : [NBOPlayerCategoryOfficeProgressCodable]) {
-        self.id = id
-        self.player = player
-        self.office = office
-        self.categoryOfficeProgressList = categoryOfficeProgressList
-    }
-    
     enum CodingKeys: String, CodingKey {
         case id
         case player

@@ -13,13 +13,13 @@ public class NBOUserProgressServiceMockProvider : NBOUserProgressServiceProvider
     public func selectOffice(idPlayerOfficeProgress: Int, success: @escaping UserProgressServiceProviderSelectOfficeSuccessClosure, failure: @escaping ServiceProviderFailureClosure) {
         
         switch idPlayerOfficeProgress {
-        case NBOMockServiceProviderPlayerOfficeProgress.player1ProgressMendoza.id!:
+        case NBOMockServiceProviderPlayerOfficeProgress.player1ProgressMendoza.id:
             success([
                 NBOMockServiceProviderPlayerCategoryOfficeProgress.progressMendozaSocial,
                 NBOMockServiceProviderPlayerCategoryOfficeProgress.progressMendozaBuilding,
                 NBOMockServiceProviderPlayerCategoryOfficeProgress.progressMendozaProduct
             ])
-        case NBOMockServiceProviderPlayerOfficeProgress.player1ProgressSF.id!:
+        case NBOMockServiceProviderPlayerOfficeProgress.player1ProgressSF.id:
             success([
                 NBOMockServiceProviderPlayerCategoryOfficeProgress.progressSFSocial,
                 NBOMockServiceProviderPlayerCategoryOfficeProgress.progressSFBuilding,

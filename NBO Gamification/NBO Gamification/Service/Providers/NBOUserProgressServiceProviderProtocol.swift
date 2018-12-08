@@ -8,7 +8,7 @@
 
 import Foundation
 
-public typealias UserProgressServiceProviderSelectOfficeSuccessClosure = (([NBOPlayerCategoryOfficeProgressCodable]) -> Void)
+public typealias UserProgressServiceProviderSelectOfficeSuccessClosure = (([NBOPlayerCategoryOfficeProgress]) -> Void)
 
 protocol NBOUserProgressServiceProviderProtocol {
     func selectOffice(idPlayerOfficeProgress: Int, success: @escaping UserProgressServiceProviderSelectOfficeSuccessClosure, failure: @escaping ServiceProviderFailureClosure)

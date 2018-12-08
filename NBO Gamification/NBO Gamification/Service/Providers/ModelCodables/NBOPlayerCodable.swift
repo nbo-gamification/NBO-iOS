@@ -16,14 +16,6 @@ public struct NBOPlayerCodable: Codable {
     public let password: String?
     public let isActive: Bool?
     
-    init(email : String, firstName : String, lastName : String, password: String, isActive: Bool) {
-        self.email = email
-        self.firstName = firstName
-        self.lastName = lastName
-        self.password = password
-        self.isActive = isActive
-    }
-    
     enum CodingKeys: String, CodingKey {
         case email
         case firstName

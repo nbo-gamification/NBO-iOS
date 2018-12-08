@@ -15,13 +15,6 @@ public struct NBOCategoryOfficeProgressScaleCodable : Codable {
     public let maxPoints : Int?
     public let isActive : Bool?
     
-    init(id : Int, minPoints : Int, maxPoints : Int, isActive : Bool) {
-        self.id = id
-        self.minPoints = minPoints
-        self.maxPoints = maxPoints
-        self.isActive = isActive
-    }
-    
     enum CodingKeys: String, CodingKey {
         case id
         case minPoints

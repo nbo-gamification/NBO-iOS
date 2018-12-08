@@ -8,8 +8,8 @@
 
 import Foundation
 
-public typealias ActivitiesServiceGetOfficeActivitiesForCategorySuccessClosure = (([NBOCategoryOfficeActivityCodable]) -> Void)
-public typealias ActivitiesServiceRegisterActivityAttemptSuccessClosure = ((NBOCategoryOfficeActivityAttemptCodable) -> Void)
+public typealias ActivitiesServiceGetOfficeActivitiesForCategorySuccessClosure = (([NBOCategoryOfficeActivity]) -> Void)
+public typealias ActivitiesServiceRegisterActivityAttemptSuccessClosure = ((NBOCategoryOfficeActivityAttempt) -> Void)
 
 public class NBOActivitiesService : NBOAppService {
     
