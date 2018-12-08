@@ -13,17 +13,17 @@ public class NBOActivitiesServiceMockProvider : NBOActivitiesServiceProviderProt
     public func getOfficeActivitiesForCategory(idCategoryOffice: Int, success: @escaping ActivitiesServiceProviderGetOfficeActivitiesForCategorySuccessClosure, failure: @escaping ServiceProviderFailureClosure) {
         
         switch idCategoryOffice {
-        case NBOMockServiceProviderCategoryOffice.categoryOfficeMendozaSocial.id!:
+        case NBOMockServiceProviderCategoryOffice.categoryOfficeMendozaSocial.id:
             success([NBOMockServiceProviderCategoryOfficeActivity.socialMendozaActivity1, NBOMockServiceProviderCategoryOfficeActivity.socialMendozaActivity2, NBOMockServiceProviderCategoryOfficeActivity.socialMendozaActivity3])
-        case NBOMockServiceProviderCategoryOffice.categoryOfficeMendozaProduct.id!:
+        case NBOMockServiceProviderCategoryOffice.categoryOfficeMendozaProduct.id:
             success([])
-        case NBOMockServiceProviderCategoryOffice.categoryOfficeMendozaBuilding.id!:
+        case NBOMockServiceProviderCategoryOffice.categoryOfficeMendozaBuilding.id:
             success([])
-        case NBOMockServiceProviderCategoryOffice.categoryOfficeSFSocial.id!:
+        case NBOMockServiceProviderCategoryOffice.categoryOfficeSFSocial.id:
             success([])
-        case NBOMockServiceProviderCategoryOffice.categoryOfficeSFProduct.id!:
+        case NBOMockServiceProviderCategoryOffice.categoryOfficeSFProduct.id:
             success([])
-        case NBOMockServiceProviderCategoryOffice.categoryOfficeSFBuilding.id!:
+        case NBOMockServiceProviderCategoryOffice.categoryOfficeSFBuilding.id:
             success([])
         default:
             let error = NSError(domain: "", code: 501, userInfo: nil)

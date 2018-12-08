@@ -22,25 +22,22 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRa-fp-etl">
                         <rect key="frame" x="16" y="11" width="288" height="53"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="53" id="zpU-Em-C6T"/>
+                            <constraint firstAttribute="height" constant="53" id="LcB-0f-S0n"/>
                         </constraints>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ejn-g6-mG6">
-                        <rect key="frame" x="16" y="72" width="1" height="22"/>
-                        <color key="backgroundColor" red="0.39153735039999998" green="0.76934909330000001" blue="0.42817469089999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ejn-g6-mG6">
+                        <rect key="frame" x="17" y="72" width="1" height="22"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="1" id="SCw-xa-ViT"/>
-                            <constraint firstAttribute="height" constant="22" id="nQl-Fr-YVA"/>
+                            <constraint firstAttribute="width" constant="1" id="q0l-Su-xHU"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOS-hn-aWZ">
                         <rect key="frame" x="244" y="72" width="60" height="22"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="60" id="0Zx-G5-3UD"/>
-                            <constraint firstAttribute="height" constant="22" id="NXX-gv-ruE"/>
+                            <constraint firstAttribute="width" constant="60" id="uKv-DD-xRu"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -48,22 +45,22 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="qRa-fp-etl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="0TC-mB-F7z"/>
-                    <constraint firstItem="qRa-fp-etl" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="8i9-60-9dc"/>
-                    <constraint firstItem="Ejn-g6-mG6" firstAttribute="top" secondItem="qRa-fp-etl" secondAttribute="bottom" constant="8" id="AWA-NI-dXZ"/>
-                    <constraint firstItem="xOS-hn-aWZ" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="KO1-j2-Gtx"/>
-                    <constraint firstItem="qRa-fp-etl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="PVr-QA-hn4"/>
-                    <constraint firstItem="xOS-hn-aWZ" firstAttribute="leading" secondItem="Ejn-g6-mG6" secondAttribute="trailing" constant="227" id="Tj3-Hh-WKU"/>
-                    <constraint firstItem="xOS-hn-aWZ" firstAttribute="top" secondItem="qRa-fp-etl" secondAttribute="bottom" constant="8" id="hRU-j4-SOM"/>
-                    <constraint firstItem="Ejn-g6-mG6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="lOs-Oy-3pc"/>
-                    <constraint firstItem="Ejn-g6-mG6" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="pKK-5W-DRZ"/>
+                    <constraint firstItem="xOS-hn-aWZ" firstAttribute="top" secondItem="qRa-fp-etl" secondAttribute="bottom" constant="8" id="JSa-gN-uff"/>
+                    <constraint firstItem="qRa-fp-etl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="SJ8-5k-T3T"/>
+                    <constraint firstItem="qRa-fp-etl" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="SK0-hk-QBX"/>
+                    <constraint firstItem="Ejn-g6-mG6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="1" id="Xc3-Zs-Ls3"/>
+                    <constraint firstItem="xOS-hn-aWZ" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="eCt-vI-LYU"/>
+                    <constraint firstItem="qRa-fp-etl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="pE7-n9-TPH"/>
+                    <constraint firstItem="Ejn-g6-mG6" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="uQs-2X-n7o"/>
+                    <constraint firstItem="xOS-hn-aWZ" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="vXD-H4-ULj"/>
+                    <constraint firstItem="Ejn-g6-mG6" firstAttribute="top" secondItem="qRa-fp-etl" secondAttribute="bottom" constant="8" id="vuP-o8-sJr"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="categoryCompletionBar" destination="Ejn-g6-mG6" id="fHX-Xg-rR2"/>
-                <outlet property="categoryCompletionBarTrailingConstraint" destination="Tj3-Hh-WKU" id="wls-2e-ale"/>
-                <outlet property="categoryComplitionPercentage" destination="xOS-hn-aWZ" id="Rcy-ET-jKh"/>
+                <outlet property="categoryCompletionBarWidth" destination="q0l-Su-xHU" id="1o7-dD-9pR"/>
+                <outlet property="categoryCompletionPercentage" destination="xOS-hn-aWZ" id="Rcy-ET-jKh"/>
                 <outlet property="categoryName" destination="qRa-fp-etl" id="zxX-us-UwX"/>
             </connections>
             <point key="canvasLocation" x="137.59999999999999" y="104.7976011994003"/>

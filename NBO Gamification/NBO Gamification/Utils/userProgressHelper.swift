@@ -17,7 +17,7 @@ class userProgressHelper {
         return ratio > 1 ? 1 : ratio
     }
     
-    static func calculatePercentage (points : Int, totalPoints : Int) -> String {
+    static func calculateCompletionPercentage (points : Int, totalPoints : Int) -> String {
         
         let ratio = calculateCompletionRatio(points: points, totalPoints: totalPoints)
         

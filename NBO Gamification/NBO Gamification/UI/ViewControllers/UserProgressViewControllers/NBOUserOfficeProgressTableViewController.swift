@@ -44,12 +44,16 @@ class NBOUserOfficeProgressTableViewController: UITableViewController {
         let categoryTotalPoints = categoryOfficeProgress.categoryOffice.totalPointsRequired
         
         cell.categoryName?.text = categoryOfficeProgress.categoryOffice.category.name
-        cell.categoryComplitionPercentage?.text = userProgressHelper.calculatePercentage(points: categoryPoints, totalPoints: categoryTotalPoints)
-        cell.categoryCompletion = userProgressHelper.calculateCompletionRatio(points: categoryPoints, totalPoints: categoryTotalPoints)
-        
-        cell.setNeedsUpdateConstraints()
-        
+        cell.categoryCompletionPercentage?.text = userProgressHelper.calculateCompletionPercentage(points: categoryPoints, totalPoints: categoryTotalPoints)
+        cell.categoryCompletionRatio = userProgressHelper.calculateCompletionRatio(points: categoryPoints, totalPoints: categoryTotalPoints)
+                
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let cell : NBOCategorySelectionTableViewCell = cell as! NBOCategorySelectionTableViewCell
+        cell.setCategoryCompletionBarColor()
+        cell.updateCategoryCompletionBarWidth()
     }
  
     // MARK: - Table view delegate
@@ -57,6 +61,4 @@ class NBOUserOfficeProgressTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate?.userOfficeProgressViewControllerDidSelectCategoryOfficeProgress(selectedCategoryOffice: categoryOfficeProgressList[indexPath.row], self)
     }
-    
-    
 }

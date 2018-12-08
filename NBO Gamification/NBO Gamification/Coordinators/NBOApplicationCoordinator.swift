@@ -26,6 +26,7 @@ class NBOApplicationCoordinator : NBOCoordinator {
         let initialFlow = NBOLogInCoordinator(withViewController: window.rootViewController!)
         initialFlow.coordinatorDelegate = self
         self.pushCoordinator(initialFlow)
+        
     }
 }
 
@@ -33,8 +34,10 @@ extension NBOApplicationCoordinator: NBOLoginCoordinatorDelegate {
 
     func nboLoginCoordinatorDidFinish(_ coordinator: NBOLogInCoordinator) {
         popCoordinator(coordinator)
-        let newFlow = NBOUserProgressCoordinator(withViewController: presentingViewController)
-        self.pushCoordinator(newFlow)
+        
+        
+        // TODO: pass list of NBOPlayerOfficeProgress to method
+        startUserProgressCoordinatorWithOfficeList([])
     }
 }
 
@@ -52,10 +55,10 @@ extension NBOApplicationCoordinator {
 
 extension NBOApplicationCoordinator: NBOUserProgressCoordinatorDelegate {
     func userProgressCoordinatorDidSelectCategory(selectedCategoryOffice: NBOPlayerCategoryOfficeProgress, _ coordinator: NBOUserProgressCoordinator) {
-        
+        // TODO: start activities coordinator
     }
     
     func userProgressCoordinatorDidSignOut(_ coordinator: NBOUserProgressCoordinator) {
-        
+        // TODO: handle sign out
     }
 }

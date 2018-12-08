@@ -14,7 +14,7 @@ public class NBOAuthenticationServiceMockProvider : NBOAuthenticationServiceProv
         
         let user_mock = NBOMockServiceProviderPlayer.player1
         
-        if (user_mock.email! == email) {
+        if (user_mock.email == email) {
             
             if (user_mock.password! == password){
                 let response = NBOAuthenticationServiceLoginResponse(player: user_mock, playerOfficeProgressList: [NBOMockServiceProviderPlayerOfficeProgress.player1ProgressMendoza, NBOMockServiceProviderPlayerOfficeProgress.player1ProgressSF])

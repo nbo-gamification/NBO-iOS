@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A438CA921B9C2520033E3EA /* NBOAuthenticationServiceLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A438CA821B9C2520033E3EA /* NBOAuthenticationServiceLoginResponse.swift */; };
+		2A438CAC21BAA9E00033E3EA /* NBOPlayerOfficeProgress+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A438CAB21BAA9E00033E3EA /* NBOPlayerOfficeProgress+extensions.swift */; };
 		2A47C2E821B1FC9A00B2CB75 /* NBOCategoryOfficeActivityCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A47C2E721B1FC9A00B2CB75 /* NBOCategoryOfficeActivityCodable.swift */; };
 		2A47C2EA21B1FD3E00B2CB75 /* NBOActivityCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A47C2E921B1FD3E00B2CB75 /* NBOActivityCodable.swift */; };
 		2A47C2EC21B1FD8700B2CB75 /* NBOActivityTypeCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A47C2EB21B1FD8700B2CB75 /* NBOActivityTypeCodable.swift */; };
@@ -85,6 +86,7 @@
 
 /* Begin PBXFileReference section */
 		2A438CA821B9C2520033E3EA /* NBOAuthenticationServiceLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOAuthenticationServiceLoginResponse.swift; sourceTree = "<group>"; };
+		2A438CAB21BAA9E00033E3EA /* NBOPlayerOfficeProgress+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NBOPlayerOfficeProgress+extensions.swift"; sourceTree = "<group>"; };
 		2A47C2E721B1FC9A00B2CB75 /* NBOCategoryOfficeActivityCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOCategoryOfficeActivityCodable.swift; sourceTree = "<group>"; };
 		2A47C2E921B1FD3E00B2CB75 /* NBOActivityCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOActivityCodable.swift; sourceTree = "<group>"; };
 		2A47C2EB21B1FD8700B2CB75 /* NBOActivityTypeCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOActivityTypeCodable.swift; sourceTree = "<group>"; };
@@ -173,6 +175,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A438CAA21BAA9640033E3EA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2A438CAB21BAA9E00033E3EA /* NBOPlayerOfficeProgress+extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		2A47C31521B5616500B2CB75 /* UserProgressViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +296,7 @@
 				2A6801AD21ACC1AE0012015E /* NBOPlayer.swift */,
 				2AB07EE521AD724700A71BA5 /* NBOPlayerCategoryOfficeProgress.swift */,
 				2A6801AF21ACC1E80012015E /* NBOPlayerOfficeProgress.swift */,
+				2A438CAA21BAA9640033E3EA /* Extensions */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -557,6 +568,7 @@
 				2A47C2FC21B20E0400B2CB75 /* NBOServiceProviderMockData.swift in Sources */,
 				2AB9A13621B0578E0052A010 /* NBOCategoryOfficeCodable.swift in Sources */,
 				2A998D3F21A97F3B00B32752 /* URLParameterEncoder.swift in Sources */,
+				2A438CAC21BAA9E00033E3EA /* NBOPlayerOfficeProgress+extensions.swift in Sources */,
 				2A998D4121A9879F00B32752 /* JSONParameterEncoder.swift in Sources */,
 				2A6801AC21ACC1510012015E /* NBOOffice.swift in Sources */,
 				2AB9A13A21B058CB0052A010 /* NBOCategoryOfficeProgressScaleCodable.swift in Sources */,

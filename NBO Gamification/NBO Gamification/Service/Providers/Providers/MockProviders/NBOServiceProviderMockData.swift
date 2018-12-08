@@ -16,7 +16,7 @@ enum NBOMockServiceProviderCategory {
 
 enum NBOMockServiceProviderPlayer {
     static let player1 = NBOPlayer(email: "dante@evbqa.com", firstName: "Dante", lastName: "Canizo", password: "12345")
-    static let player2 = NBOPlayer(email: "karinap@evbqa.com", firstName: "Karina", lastName: "Pangaro", password: "123456")
+    static let player2 = NBOPlayer(email: "karinap@evbqa.com", firstName: "Karina", lastName: "Pangaro", password: "12345")
 }
 
 enum NBOMockServiceProviderOffice {
@@ -29,7 +29,7 @@ enum NBOMockServiceProviderCategoryOffice {
     static let categoryOfficeMendozaProduct = NBOCategoryOffice(id: 1, totalPointsRequired: 50, isActive: true, office: NBOMockServiceProviderOffice.officeMendoza, category: NBOMockServiceProviderCategory.categoryProduct)
     static let categoryOfficeMendozaBuilding = NBOCategoryOffice(id: 1, totalPointsRequired: 50, isActive: true, office: NBOMockServiceProviderOffice.officeMendoza, category: NBOMockServiceProviderCategory.categoryBuilding)
     
-    static let categoryOfficeSFSocial = NBOCategoryOffice(id: 1, totalPointsRequired: 50, isActive: true, office: NBOMockServiceProviderOffice.officeSanFrancisco, category: NBOMockServiceProviderCategory.categoryBuilding)
+    static let categoryOfficeSFSocial = NBOCategoryOffice(id: 1, totalPointsRequired: 50, isActive: true, office: NBOMockServiceProviderOffice.officeSanFrancisco, category: NBOMockServiceProviderCategory.categorySocial)
     static let categoryOfficeSFProduct = NBOCategoryOffice(id: 1, totalPointsRequired: 50, isActive: true, office: NBOMockServiceProviderOffice.officeSanFrancisco, category: NBOMockServiceProviderCategory.categoryProduct)
     static let categoryOfficeSFBuilding = NBOCategoryOffice(id: 1, totalPointsRequired: 50, isActive: true, office: NBOMockServiceProviderOffice.officeSanFrancisco, category: NBOMockServiceProviderCategory.categoryBuilding)
 }
@@ -37,10 +37,10 @@ enum NBOMockServiceProviderCategoryOffice {
 enum NBOMockServiceProviderPlayerCategoryOfficeProgress {
     static let progressMendozaSocial = NBOPlayerCategoryOfficeProgress(id: 1, totalPoints: 20, categoryOffice: NBOMockServiceProviderCategoryOffice.categoryOfficeMendozaSocial)
     static let progressMendozaProduct = NBOPlayerCategoryOfficeProgress(id: 2, totalPoints: 10, categoryOffice: NBOMockServiceProviderCategoryOffice.categoryOfficeMendozaProduct)
-    static let progressMendozaBuilding = NBOPlayerCategoryOfficeProgress(id: 3, totalPoints: 47, categoryOffice: NBOMockServiceProviderCategoryOffice.categoryOfficeMendozaBuilding)
+    static let progressMendozaBuilding = NBOPlayerCategoryOfficeProgress(id: 3, totalPoints: 50, categoryOffice: NBOMockServiceProviderCategoryOffice.categoryOfficeMendozaBuilding)
     
     static let progressSFSocial = NBOPlayerCategoryOfficeProgress(id: 1, totalPoints: 0, categoryOffice: NBOMockServiceProviderCategoryOffice.categoryOfficeSFSocial)
-    static let progressSFProduct = NBOPlayerCategoryOfficeProgress(id: 2, totalPoints: 50, categoryOffice: NBOMockServiceProviderCategoryOffice.categoryOfficeSFProduct)
+    static let progressSFProduct = NBOPlayerCategoryOfficeProgress(id: 2, totalPoints: 46, categoryOffice: NBOMockServiceProviderCategoryOffice.categoryOfficeSFProduct)
     static let progressSFBuilding = NBOPlayerCategoryOfficeProgress(id: 3, totalPoints: 60, categoryOffice: NBOMockServiceProviderCategoryOffice.categoryOfficeSFBuilding)
 }
 

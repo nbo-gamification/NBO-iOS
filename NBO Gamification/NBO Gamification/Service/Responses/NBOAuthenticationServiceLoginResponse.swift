@@ -10,10 +10,10 @@ import Foundation
 
 public class NBOAuthenticationServiceLoginResponse {
     
-    public let player: NBOPlayerCodable
-    public let playerOfficeProgressList: [NBOPlayerOfficeProgressCodable]
+    public let player: NBOPlayer
+    public let playerOfficeProgressList: [NBOPlayerOfficeProgress]
     
-    init(player: NBOPlayerCodable, playerOfficeProgressList: [NBOPlayerOfficeProgressCodable]) {
+    init(player: NBOPlayer, playerOfficeProgressList: [NBOPlayerOfficeProgress]) {
         self.player = player
         self.playerOfficeProgressList = playerOfficeProgressList
     }
