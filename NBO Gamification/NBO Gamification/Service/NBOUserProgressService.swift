@@ -16,8 +16,8 @@ public class NBOUserProgressService : NBOAppService {
     
     public static func selectOffice(idPlayerOfficeProgress: Int, success: @escaping UserProgressServiceSelectOfficeSuccessClosure, failure: @escaping ServiceFailureClosure) {
         
-        userProgressServiceProvider.selectOffice(idPlayerOfficeProgress: idPlayerOfficeProgress, success: { (playerOfficeProgressCodableList) in
-            success(playerOfficeProgressCodableList)
+        userProgressServiceProvider.selectOffice(idPlayerOfficeProgress: idPlayerOfficeProgress, success: { (playerCategoryOfficeProgressList) in
+            success(playerCategoryOfficeProgressList)
         }) { (error) in
             failure(error)
         }

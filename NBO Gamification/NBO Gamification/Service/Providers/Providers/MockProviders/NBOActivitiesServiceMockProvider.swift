@@ -32,6 +32,12 @@ public class NBOActivitiesServiceMockProvider : NBOActivitiesServiceProviderProt
     }
     
     public func registerActivityAttempt(result: Bool, idPlayerCategoryOfficeProgress: Int, success: @escaping ActivitiesServiceProviderRegisterActivityAttemptSuccessClosure, failure: @escaping ServiceProviderFailureClosure) {
-        
+        switch result {
+        case true:
+            success(NBOMockServiceProviderCategoryOfficeActivityAttempt.assertAtempt)
+        case false:
+            let error = NSError(domain: "", code: 501, userInfo: nil)
+            failure(error)
+        }
     }
 }
