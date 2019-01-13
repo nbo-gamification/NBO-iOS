@@ -22,6 +22,11 @@ class NBOConnectActivityViewController: UIViewController {
 
     var viewData: ViewData?
 
+
+    @IBOutlet weak var scrollView: UIScrollView!
+
+    @IBOutlet weak var connectImage: UIImageView!
+
     @IBOutlet weak var question: UILabel! {
         didSet {
             question.text = self.viewData?.connectActivity?.instructions
@@ -63,9 +68,27 @@ class NBOConnectActivityViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    self.navigationItem.setHidesBackButton(true, animated: true)
+        self.navigationItem.setHidesBackButton(true, animated: true)
         self.navigationItem.rightBarButtonItem = skip
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear), name: Notification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        scrollView.layoutSubviews()
+    }
 
+    @objc func keyboardWillAppear(notification: NSNotification) {
+
+        let keyBoardSize = ScrollViewHelper.getKeyboardSize(notification: notification, view: view)
+        let positionToScroll = CGPoint(x: 0, y: self.connectImage.frame.height)
+        self.scrollView.adjustBottomScrollInstestsAndPosition(bottomIndicatorInsets: keyBoardSize, bottomContentInsets: keyBoardSize, shouldScrollToPosition: positionToScroll)
+    }
+
+    @objc func keyboardWillDisappear() {
+        if scrollView.contentInset.bottom != 0 {
+            self.scrollView.adjustBottomScrollInstestsAndPosition(bottomIndicatorInsets: 0, bottomContentInsets: 0, shouldScrollToPosition: CGPoint(x: 0, y: 0))
+        }
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }

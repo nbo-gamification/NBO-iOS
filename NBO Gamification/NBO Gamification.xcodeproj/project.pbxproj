@@ -79,6 +79,8 @@
 		2AE1CAF32159806F00D5D419 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE1CAF22159806F00D5D419 /* AppDelegate.swift */; };
 		2AE1CAFA2159807100D5D419 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AE1CAF92159807100D5D419 /* Assets.xcassets */; };
 		2AE1CAFD2159807100D5D419 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AE1CAFB2159807100D5D419 /* LaunchScreen.storyboard */; };
+		FE0BE4E721FCB9770050C9D9 /* ScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0BE4E621FCB9770050C9D9 /* ScrollView+Extensions.swift */; };
+		FE0BE4E921FD18810050C9D9 /* scrollViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0BE4E821FD18810050C9D9 /* scrollViewHelper.swift */; };
 		FEB442B121A9AD1D009C2896 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB442B021A9AD1D009C2896 /* UIView+extensions.swift */; };
 		FEBB80F421A352D2008B33D8 /* NBOLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBB80F221A352D2008B33D8 /* NBOLoginViewController.swift */; };
 		FEBB80F521A352D2008B33D8 /* NBOLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEBB80F321A352D2008B33D8 /* NBOLoginViewController.xib */; };
@@ -167,6 +169,8 @@
 		2AE1CAF92159807100D5D419 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AE1CAFC2159807100D5D419 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2AE1CAFE2159807100D5D419 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE0BE4E621FCB9770050C9D9 /* ScrollView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrollView+Extensions.swift"; sourceTree = "<group>"; };
+		FE0BE4E821FD18810050C9D9 /* scrollViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scrollViewHelper.swift; sourceTree = "<group>"; };
 		FEB442B021A9AD1D009C2896 /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
 		FEBB80F221A352D2008B33D8 /* NBOLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOLoginViewController.swift; sourceTree = "<group>"; };
 		FEBB80F321A352D2008B33D8 /* NBOLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NBOLoginViewController.xib; sourceTree = "<group>"; };
@@ -288,8 +292,6 @@
 				FEBB80ED21A351AA008B33D8 /* LoginViewControllers */,
 				FEECFD9421B465BD00BDC757 /* Connect */,
 				FEECFD8D21B356E200BDC757 /* Trivia */,
-				2A88AC8B21A3088E005854DD /* NBOUserOfficeProgressViewController.swift */,
-				2A88AC8C21A3088E005854DD /* NBOUserOfficeProgressViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -357,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				2AD0D49521B7511800810F17 /* userProgressHelper.swift */,
+				FE0BE4E821FD18810050C9D9 /* scrollViewHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 			children = (
 				FEB442B021A9AD1D009C2896 /* UIView+extensions.swift */,
 				2A47C32321B562CC00B2CB75 /* UICell+extensions.swift */,
+				FE0BE4E621FCB9770050C9D9 /* ScrollView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -588,9 +592,7 @@
 				2AD0D49021B744F600810F17 /* NBOCategorySelectionTableViewCell.xib in Resources */,
 				2A47C32221B5629400B2CB75 /* NBOOfficeSelectionTableViewCell.xib in Resources */,
 				FEECFD9821B466A400BDC757 /* NBOConnectActivityViewController.xib in Resources */,
-				2A88AC8E21A3088E005854DD /* NBOUserOfficeProgressViewController.xib in Resources */,
 				FEBB80F521A352D2008B33D8 /* NBOLoginViewController.xib in Resources */,
-				2A88AC9421A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.xib in Resources */,
 				FEECFD9121B35AEC00BDC757 /* NBOTriviaActivityViewController.xib in Resources */,
 				2AE1CAFA2159807100D5D419 /* Assets.xcassets in Resources */,
 			);
@@ -614,6 +616,7 @@
 				2A6801B021ACC1E80012015E /* NBOPlayerOfficeProgress.swift in Sources */,
 				2A6801AA21ACC0F80012015E /* NBOPlayerOfficeProgressCodable.swift in Sources */,
 				2A998D5321AAE76000B32752 /* NBOActivitiesService.swift in Sources */,
+				FE0BE4E921FD18810050C9D9 /* scrollViewHelper.swift in Sources */,
 				2AB07EEA21AD729200A71BA5 /* NBOCategory.swift in Sources */,
 				2A47C32421B562CC00B2CB75 /* UICell+extensions.swift in Sources */,
 				2A998D5521AAE80900B32752 /* NBOAuthenticationServiceProviderProtocol.swift in Sources */,
@@ -674,6 +677,7 @@
 				2AB07EE621AD724700A71BA5 /* NBOPlayerCategoryOfficeProgress.swift in Sources */,
 				2A88AC8121A07AF7005854DD /* NBOApplicationCoordinator.swift in Sources */,
 				FEECFD9021B35AEC00BDC757 /* NBOTriviaActivityViewController.swift in Sources */,
+				FE0BE4E721FCB9770050C9D9 /* ScrollView+Extensions.swift in Sources */,
 				FEBB80F421A352D2008B33D8 /* NBOLoginViewController.swift in Sources */,
 				2A47C31D21B5624900B2CB75 /* NBOOfficeSelectionTableViewController.swift in Sources */,
 				2A998D5921AAE83600B32752 /* NBOActivitiesServiceProviderProtocol.swift in Sources */,

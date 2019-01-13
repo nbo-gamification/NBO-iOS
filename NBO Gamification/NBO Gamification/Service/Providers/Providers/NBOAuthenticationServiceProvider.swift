@@ -11,7 +11,6 @@ import Foundation
 public class NBOAuthenticationServiceProvider : NBOAuthenticationServiceProviderProtocol {
     
     public func login(email: String, password: String, success: @escaping AuthenticationServiceProviderLoginSuccessClosure, failure: @escaping ServiceProviderFailureClosure) {
-        
     }
     
     public func logout(success: @escaping AuthenticationServiceProviderLogoutSuccessClosure, failure: @escaping ServiceProviderFailureClosure) {
