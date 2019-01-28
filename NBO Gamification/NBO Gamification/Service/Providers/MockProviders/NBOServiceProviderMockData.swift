@@ -26,12 +26,12 @@ enum NBOMockServiceProviderOffice {
 
 enum NBOMockServiceProviderCategoryOffice {
     static let categoryOfficeMendozaSocial = NBOCategoryOffice(id: 1, totalPointsRequired: 50, isActive: true, office: NBOMockServiceProviderOffice.officeMendoza, category: NBOMockServiceProviderCategory.categorySocial)
-    static let categoryOfficeMendozaProduct = NBOCategoryOffice(id: 1, totalPointsRequired: 50, isActive: true, office: NBOMockServiceProviderOffice.officeMendoza, category: NBOMockServiceProviderCategory.categoryProduct)
-    static let categoryOfficeMendozaBuilding = NBOCategoryOffice(id: 1, totalPointsRequired: 50, isActive: true, office: NBOMockServiceProviderOffice.officeMendoza, category: NBOMockServiceProviderCategory.categoryBuilding)
+    static let categoryOfficeMendozaProduct = NBOCategoryOffice(id: 2, totalPointsRequired: 50, isActive: true, office: NBOMockServiceProviderOffice.officeMendoza, category: NBOMockServiceProviderCategory.categoryProduct)
+    static let categoryOfficeMendozaBuilding = NBOCategoryOffice(id: 3, totalPointsRequired: 50, isActive: true, office: NBOMockServiceProviderOffice.officeMendoza, category: NBOMockServiceProviderCategory.categoryBuilding)
     
-    static let categoryOfficeSFSocial = NBOCategoryOffice(id: 1, totalPointsRequired: 50, isActive: true, office: NBOMockServiceProviderOffice.officeSanFrancisco, category: NBOMockServiceProviderCategory.categorySocial)
-    static let categoryOfficeSFProduct = NBOCategoryOffice(id: 1, totalPointsRequired: 50, isActive: true, office: NBOMockServiceProviderOffice.officeSanFrancisco, category: NBOMockServiceProviderCategory.categoryProduct)
-    static let categoryOfficeSFBuilding = NBOCategoryOffice(id: 1, totalPointsRequired: 50, isActive: true, office: NBOMockServiceProviderOffice.officeSanFrancisco, category: NBOMockServiceProviderCategory.categoryBuilding)
+    static let categoryOfficeSFSocial = NBOCategoryOffice(id: 4, totalPointsRequired: 50, isActive: true, office: NBOMockServiceProviderOffice.officeSanFrancisco, category: NBOMockServiceProviderCategory.categorySocial)
+    static let categoryOfficeSFProduct = NBOCategoryOffice(id: 5, totalPointsRequired: 50, isActive: true, office: NBOMockServiceProviderOffice.officeSanFrancisco, category: NBOMockServiceProviderCategory.categoryProduct)
+    static let categoryOfficeSFBuilding = NBOCategoryOffice(id: 6, totalPointsRequired: 50, isActive: true, office: NBOMockServiceProviderOffice.officeSanFrancisco, category: NBOMockServiceProviderCategory.categoryBuilding)
 }
 
 enum NBOMockServiceProviderPlayerCategoryOfficeProgress {
@@ -39,11 +39,10 @@ enum NBOMockServiceProviderPlayerCategoryOfficeProgress {
     static let progressMendozaProduct = NBOPlayerCategoryOfficeProgress(id: 2, totalPoints: 10, categoryOffice: NBOMockServiceProviderCategoryOffice.categoryOfficeMendozaProduct)
     static let progressMendozaBuilding = NBOPlayerCategoryOfficeProgress(id: 3, totalPoints: 50, categoryOffice: NBOMockServiceProviderCategoryOffice.categoryOfficeMendozaBuilding)
     
-    static let progressSFSocial = NBOPlayerCategoryOfficeProgress(id: 1, totalPoints: 0, categoryOffice: NBOMockServiceProviderCategoryOffice.categoryOfficeSFSocial)
-    static let progressSFProduct = NBOPlayerCategoryOfficeProgress(id: 2, totalPoints: 46, categoryOffice: NBOMockServiceProviderCategoryOffice.categoryOfficeSFProduct)
-    static let progressSFBuilding = NBOPlayerCategoryOfficeProgress(id: 3, totalPoints: 60, categoryOffice: NBOMockServiceProviderCategoryOffice.categoryOfficeSFBuilding)
+    static let progressSFSocial = NBOPlayerCategoryOfficeProgress(id: 4, totalPoints: 0, categoryOffice: NBOMockServiceProviderCategoryOffice.categoryOfficeSFSocial)
+    static let progressSFProduct = NBOPlayerCategoryOfficeProgress(id: 5, totalPoints: 46, categoryOffice: NBOMockServiceProviderCategoryOffice.categoryOfficeSFProduct)
+    static let progressSFBuilding = NBOPlayerCategoryOfficeProgress(id: 6, totalPoints: 60, categoryOffice: NBOMockServiceProviderCategoryOffice.categoryOfficeSFBuilding)
 }
-
 
 enum NBOMockServiceProviderPlayerOfficeProgress {
     static let player1ProgressMendoza = NBOPlayerOfficeProgress (id: 1, player: NBOMockServiceProviderPlayer.player1, office: NBOMockServiceProviderOffice.officeMendoza, categoryOfficeProgressList: [NBOMockServiceProviderPlayerCategoryOfficeProgress.progressMendozaSocial , NBOMockServiceProviderPlayerCategoryOfficeProgress.progressMendozaProduct , NBOMockServiceProviderPlayerCategoryOfficeProgress.progressMendozaBuilding])
@@ -63,14 +62,11 @@ enum NBOMockServiceProviderActivity {
 
 enum NBOMockServiceProviderCategoryOfficeActivity {
     static let socialMendozaActivity1 = NBOCategoryOfficeActivity(id: 1, pointsReward: 5, isActive: true, categoryOffice: NBOMockServiceProviderCategoryOffice.categoryOfficeMendozaSocial, activity: NBOMockServiceProviderActivity.connectActivity1)
-    static let socialMendozaActivity2 = NBOCategoryOfficeActivity(id: 1, pointsReward: 5, isActive: true, categoryOffice: NBOMockServiceProviderCategoryOffice.categoryOfficeMendozaSocial, activity: NBOMockServiceProviderActivity.connectActivity2)
-    static let socialMendozaActivity3 = NBOCategoryOfficeActivity(id: 1, pointsReward: 5, isActive: true, categoryOffice: NBOMockServiceProviderCategoryOffice.categoryOfficeMendozaSocial, activity: NBOMockServiceProviderActivity.connectActivity3)
+    static let socialMendozaActivity2 = NBOCategoryOfficeActivity(id: 2, pointsReward: 5, isActive: true, categoryOffice: NBOMockServiceProviderCategoryOffice.categoryOfficeMendozaSocial, activity: NBOMockServiceProviderActivity.connectActivity2)
+    static let socialMendozaActivity3 = NBOCategoryOfficeActivity(id: 3, pointsReward: 5, isActive: true, categoryOffice: NBOMockServiceProviderCategoryOffice.categoryOfficeMendozaSocial, activity: NBOMockServiceProviderActivity.connectActivity3)
 }
 
 enum NBOMockServiceProviderCategoryOfficeActivityAttempt {
 
-    static let assertAtempt = NBOCategoryOfficeActivityAttempt(id: 1, datetime: Date(), result: true, playerCategoryOfficeProgress: NBOMockServiceProviderPlayerCategoryOfficeProgress.progressMendozaSocial, categoryOfficeActivity: NBOMockServiceProviderCategoryOfficeActivity.socialMendozaActivity1
-)
-
+    static let assertAtempt = NBOCategoryOfficeActivityAttempt(id: 1, datetime: Date(), result: true, playerCategoryOfficeProgress: NBOMockServiceProviderPlayerCategoryOfficeProgress.progressMendozaSocial, categoryOfficeActivity: NBOMockServiceProviderCategoryOfficeActivity.socialMendozaActivity1)
 }
-

@@ -9,35 +9,40 @@
 import UIKit
 import Foundation
 
-protocol NBOLoginCoordinatorDelegate {
+protocol NBOLoginCoordinatorDelegate : CoordinatorDelegate {
     func nboLoginCoordinatorDidFinish(_ coordinator: NBOLogInCoordinator, playerOfficeProgressList: [NBOPlayerOfficeProgress])
 }
 
 class NBOLogInCoordinator : NBOCoordinator {
-
-    var coordinatorDelegate: NBOLoginCoordinatorDelegate? = nil
-
+    
+    weak var delegate: NBOLoginCoordinatorDelegate? {
+        get { return coordinatorDelegate as? NBOLoginCoordinatorDelegate }
+        set { coordinatorDelegate = newValue }
+    }
+    
     override func start() {
 
         let loginVC = NBOLoginViewController()
         // This is going to be used when we remember email and password
         loginVC.viewData = NBOLoginViewController.ViewData(email: "", pass: "")
         loginVC.delegate = self
-        self.pushViewController(loginVC)
+
+        viewController = loginVC
+        super.start()
     }
 }
 
 extension NBOLogInCoordinator: NBOLoginViewControllerDelegate {
     func viewControllerDidSignIn(_ loginVC: NBOLoginViewController, email: String, password: String) {
-        NBOAuthenticationService.login(email: email, password: password, success: {authenticationLoginResponse in
-
-            let playerOfficeProgressList = authenticationLoginResponse.playerOfficeProgressList
-            self.coordinatorDelegate?.nboLoginCoordinatorDidFinish(self, playerOfficeProgressList: playerOfficeProgressList)
+        NBOAuthenticationService.login(email: email, password: password, success:
+            { authenticationLoginResponse in
+                let playerOfficeProgressList = authenticationLoginResponse.playerOfficeProgressList
+                self.delegate?.coordinatorDidFinish(self, completion: {
+                    self.delegate?.nboLoginCoordinatorDidFinish(self, playerOfficeProgressList: playerOfficeProgressList)
+                })
         }, failure: {error in
             print(error)
             loginVC.showEmailErrorMessageAnimated(errorToShow: NBOLoginViewController.ErrorMessages.incorrectEmailOrPassword)
         })
     }
-
-
 }

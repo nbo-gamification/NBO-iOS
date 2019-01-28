@@ -10,6 +10,10 @@ import UIKit
 
 class NBOTriviaActivityViewController: UIViewController {
 
+    var delegate: NBOActivityViewControllerDelegate?
+    
+    // MARK: Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

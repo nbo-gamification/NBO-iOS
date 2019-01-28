@@ -28,7 +28,7 @@ class NBOCategorySelectionTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    // MARK: - View configuration
+    // MARK: View configuration
     
     func setCategoryCompletionBarColor() {
         

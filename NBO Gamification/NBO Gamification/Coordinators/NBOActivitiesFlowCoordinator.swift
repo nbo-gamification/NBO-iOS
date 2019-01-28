@@ -1,5 +1,5 @@
 //
-//  NBOActivitiesCoordinator.swift
+//  NBOActivitiesFlowCoordinator.swift
 //  NBO Gamification
 //
 //  Created by facundop on 17/11/2018.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class NBOActivitiesCoordinator : NBOCoordinator {
-
-    var selectedCategoryOffice: NBOPlayerCategoryOfficeProgress?
-    var coordinatorDelegate: NBOApplicationCoordinator?
+class NBOActivitiesFlowCoordinator : NBOCoordinator {
+    
+    var activityCoordinators = [NBOActivityCoordinator]()
+    
     var activitiesToShow: [NBOCategoryOfficeActivity] = []
-    var officeProgressTableVC: UIViewController?
+    var selectedCategoryOffice: NBOPlayerCategoryOfficeProgress?
 
     override func start() {
         getActivities(categoryOfficeIdSelected: selectedCategoryOffice?.id)
@@ -31,6 +31,10 @@ class NBOActivitiesCoordinator : NBOCoordinator {
     }
 
     func showActivity() {
+        if self.activitiesToShow.count == 0 {
+            // TODO: show message telling there are no activities
+            self.coordinatorDelegate?.coordinatorDidFinish(self, completion: nil)
+        }
         guard let firstActivity = self.activitiesToShow.first else {return}
         let activityType = firstActivity.activity.type
 
@@ -39,6 +43,7 @@ class NBOActivitiesCoordinator : NBOCoordinator {
             let connectCoordinator = NBOConnectActivityCoordinator(withViewController: self.presentingViewController)
             connectCoordinator.coordinatorDelegate = self
             connectCoordinator.activity = firstActivity.activity as? NBOConnectActivity
+            activityCoordinators.insert(connectCoordinator, at: 0)
             self.pushCoordinator(connectCoordinator)
             }
         case .trivia: do {
@@ -50,35 +55,32 @@ class NBOActivitiesCoordinator : NBOCoordinator {
         }
     }
 
-    func showNewActivity(connectActivityCoordinator: NBOConnectActivityCoordinator, skiped: Bool = false) {
-        popCoordinator(connectActivityCoordinator)
-        if skiped {
-            let firstActivity = self.activitiesToShow.first
-            self.activitiesToShow.removeFirst(1)
-            self.activitiesToShow.append(firstActivity!)
-        } else {
-            self.activitiesToShow.removeFirst(1)
-            if self.activitiesToShow.count == 0 {
-                popCoordinator(self)
-                popViewController(officeProgressTableVC)
-                return
-            }
+    func goToNextActivity(from currentActivityCoordinator: NBOActivityCoordinator, skipped: Bool = false) {
+        let currentActivity = self.activitiesToShow.first
+        self.activitiesToShow.removeFirst(1)
+        if skipped {
+            self.activitiesToShow.append(currentActivity!)
         }
         showActivity()
     }
 }
 
+// MARK: NBOActivityCoordinatorDelegate
 
-//MARK:NBOConnectActivityCoordinatorDelegate
-extension NBOActivitiesCoordinator: NBOConnectActivityCoordinatorDelegate {
-    func activityDidSkip(connectActivityCoordinator: NBOConnectActivityCoordinator) {
-        showNewActivity(connectActivityCoordinator: connectActivityCoordinator, skiped: true)
+extension NBOActivitiesFlowCoordinator: NBOActivityCoordinatorDelegate {
+    func activityDidExit(_ activityCoordinator: NBOActivityCoordinator, completion: (() -> Void)?) {
+        for activityCoordinator in activityCoordinators {
+            popCoordinator(activityCoordinator, animated: false)
+        }
     }
-
-
-    func activityDidSubmit(connectActivityCoordinator: NBOConnectActivityCoordinator, categoryOfficeActivityAttempt: NBOCategoryOfficeActivityAttempt) {
+    
+    func activityDidSkip(_ activityCoordinator: NBOActivityCoordinator, completion: (() -> Void)?) {
+        goToNextActivity(from: activityCoordinator, skipped: true)
+    }
+    
+    func activityDidSubmit(_ activityCoordinator: NBOActivityCoordinator, categoryOfficeActivityAttempt: NBOCategoryOfficeActivityAttempt) {
         if categoryOfficeActivityAttempt.result {
-            showNewActivity(connectActivityCoordinator: connectActivityCoordinator)
+            goToNextActivity(from: activityCoordinator)
         }
     }
 }

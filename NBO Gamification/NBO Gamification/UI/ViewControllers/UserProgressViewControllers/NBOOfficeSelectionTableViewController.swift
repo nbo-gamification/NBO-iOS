@@ -21,9 +21,11 @@ class NBOOfficeSelectionTableViewController: UITableViewController {
         super.viewDidLoad()
 
         self.tableView.register(UINib(nibName: NBOOfficeSelectionTableViewCell.cellIdentifier, bundle: nil), forCellReuseIdentifier: NBOOfficeSelectionTableViewCell.cellIdentifier)
+        
+        self.navigationItem.hidesBackButton = true
     }
-
-    // MARK: - Table view data source
+    
+    // MARK: Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         
@@ -44,7 +46,7 @@ class NBOOfficeSelectionTableViewController: UITableViewController {
         return cell
     }
     
-    // MARK: - Table view delegate
+    // MARK: Table view delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate?.nboOfficeSelectionViewControllerDidSelectOffice(selectedOfficeProgress: officeProgressList[indexPath.row], self)

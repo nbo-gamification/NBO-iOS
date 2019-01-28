@@ -26,7 +26,7 @@ public class NBOActivitiesServiceMockProvider : NBOActivitiesServiceProviderProt
         case NBOMockServiceProviderCategoryOffice.categoryOfficeSFBuilding.id:
             success([])
         default:
-            let error = NSError(domain: "", code: 501, userInfo: nil)
+            let error = NSError(domain: "", code: 504, userInfo: nil)
             failure(error)
         }
     }

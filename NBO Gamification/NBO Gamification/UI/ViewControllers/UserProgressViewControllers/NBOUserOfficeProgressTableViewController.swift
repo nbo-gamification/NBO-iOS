@@ -22,16 +22,14 @@ class NBOUserOfficeProgressTableViewController: UITableViewController {
 
         self.tableView.register(UINib(nibName: NBOCategorySelectionTableViewCell.cellIdentifier, bundle: nil), forCellReuseIdentifier: NBOCategorySelectionTableViewCell.cellIdentifier)
     }
-
-    // MARK: - Table view data source
+    
+    // MARK: Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return categoryOfficeProgressList.count
     }
 
@@ -56,7 +54,7 @@ class NBOUserOfficeProgressTableViewController: UITableViewController {
         cell.updateCategoryCompletionBarWidth()
     }
  
-    // MARK: - Table view delegate
+    // MARK: Table view delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate?.userOfficeProgressViewControllerDidSelectCategoryOfficeProgress(selectedCategoryOffice: categoryOfficeProgressList[indexPath.row], self)

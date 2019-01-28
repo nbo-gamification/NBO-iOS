@@ -31,11 +31,13 @@
 		2A6801AC21ACC1510012015E /* NBOOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6801AB21ACC1510012015E /* NBOOffice.swift */; };
 		2A6801AE21ACC1AE0012015E /* NBOPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6801AD21ACC1AE0012015E /* NBOPlayer.swift */; };
 		2A6801B021ACC1E80012015E /* NBOPlayerOfficeProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6801AF21ACC1E80012015E /* NBOPlayerOfficeProgress.swift */; };
+		2A83024321C8178C003C068B /* NBOActivityCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83024221C8178C003C068B /* NBOActivityCoordinator.swift */; };
+		2A83024521C8195E003C068B /* NBOActivityViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83024421C8195E003C068B /* NBOActivityViewControllerDelegate.swift */; };
 		2A88AC7F21A07A9F005854DD /* NBOCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88AC7E21A07A9F005854DD /* NBOCoordinator.swift */; };
 		2A88AC8121A07AF7005854DD /* NBOApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88AC8021A07AF7005854DD /* NBOApplicationCoordinator.swift */; };
 		2A88AC8321A0ABDD005854DD /* NBOLogInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88AC8221A0ABDD005854DD /* NBOLogInCoordinator.swift */; };
 		2A88AC8521A0AC12005854DD /* NBOUserProgressCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88AC8421A0AC12005854DD /* NBOUserProgressCoordinator.swift */; };
-		2A88AC8721A0AC2F005854DD /* NBOActivitiesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88AC8621A0AC2F005854DD /* NBOActivitiesCoordinator.swift */; };
+		2A88AC8721A0AC2F005854DD /* NBOActivitiesFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88AC8621A0AC2F005854DD /* NBOActivitiesFlowCoordinator.swift */; };
 		2A998D3521A865A600B32752 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A998D3421A865A600B32752 /* EndPointType.swift */; };
 		2A998D3721A868A300B32752 /* HTTPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A998D3621A868A300B32752 /* HTTPConstants.swift */; };
 		2A998D3921A869CE00B32752 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A998D3821A869CE00B32752 /* HTTPTask.swift */; };
@@ -117,11 +119,13 @@
 		2A6801AB21ACC1510012015E /* NBOOffice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOOffice.swift; sourceTree = "<group>"; };
 		2A6801AD21ACC1AE0012015E /* NBOPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOPlayer.swift; sourceTree = "<group>"; };
 		2A6801AF21ACC1E80012015E /* NBOPlayerOfficeProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOPlayerOfficeProgress.swift; sourceTree = "<group>"; };
+		2A83024221C8178C003C068B /* NBOActivityCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOActivityCoordinator.swift; sourceTree = "<group>"; };
+		2A83024421C8195E003C068B /* NBOActivityViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOActivityViewControllerDelegate.swift; sourceTree = "<group>"; };
 		2A88AC7E21A07A9F005854DD /* NBOCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOCoordinator.swift; sourceTree = "<group>"; };
 		2A88AC8021A07AF7005854DD /* NBOApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOApplicationCoordinator.swift; sourceTree = "<group>"; };
 		2A88AC8221A0ABDD005854DD /* NBOLogInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOLogInCoordinator.swift; sourceTree = "<group>"; };
 		2A88AC8421A0AC12005854DD /* NBOUserProgressCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOUserProgressCoordinator.swift; sourceTree = "<group>"; };
-		2A88AC8621A0AC2F005854DD /* NBOActivitiesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOActivitiesCoordinator.swift; sourceTree = "<group>"; };
+		2A88AC8621A0AC2F005854DD /* NBOActivitiesFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOActivitiesFlowCoordinator.swift; sourceTree = "<group>"; };
 		2A998D3421A865A600B32752 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		2A998D3621A868A300B32752 /* HTTPConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPConstants.swift; sourceTree = "<group>"; };
 		2A998D3821A869CE00B32752 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
@@ -221,6 +225,16 @@
 			path = UserProgressViewControllers;
 			sourceTree = "<group>";
 		};
+		2A5ACC2A21C2AD1600A708E2 /* ActivitiesViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2A83024421C8195E003C068B /* NBOActivityViewControllerDelegate.swift */,
+				FEECFD9421B465BD00BDC757 /* ConnectViewControllers */,
+				FEECFD8D21B356E200BDC757 /* TriviaViewControllers */,
+			);
+			path = ActivitiesViewControllers;
+			sourceTree = "<group>";
+		};
 		2A6801A421ACC04D0012015E /* ModelCodables */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,15 +253,14 @@
 			path = ModelCodables;
 			sourceTree = "<group>";
 		};
-		2A6801B121ACC3C20012015E /* Providers */ = {
+		2A6801B121ACC3C20012015E /* NBOAPIProviders */ = {
 			isa = PBXGroup;
 			children = (
 				2A47C2EF21B200B300B2CB75 /* NBOAuthenticationServiceProvider.swift */,
 				2A47C2F121B200C700B2CB75 /* NBOUserProgressServiceProvider.swift */,
 				2A47C2F321B200D900B2CB75 /* NBOActivitiesServiceProvider.swift */,
-				2A998D6021AAF8CD00B32752 /* MockProviders */,
 			);
-			path = Providers;
+			path = NBOAPIProviders;
 			sourceTree = "<group>";
 		};
 		2A88AC7621A07652005854DD /* Application */ = {
@@ -274,9 +287,10 @@
 				2A88AC8021A07AF7005854DD /* NBOApplicationCoordinator.swift */,
 				2A88AC8221A0ABDD005854DD /* NBOLogInCoordinator.swift */,
 				2A88AC8421A0AC12005854DD /* NBOUserProgressCoordinator.swift */,
-				2A88AC8621A0AC2F005854DD /* NBOActivitiesCoordinator.swift */,
-				FEECFD9221B43E8500BDC757 /* NBOTriviaAcitivityCoordinator.swift */,
+				2A88AC8621A0AC2F005854DD /* NBOActivitiesFlowCoordinator.swift */,
+				2A83024221C8178C003C068B /* NBOActivityCoordinator.swift */,
 				FEECFD9921B4746B00BDC757 /* NBOConnectActivityCoordinator.swift */,
+				FEECFD9221B43E8500BDC757 /* NBOTriviaAcitivityCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -284,12 +298,9 @@
 		2A88AC7921A07794005854DD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				2A47C31A21B561C300B2CB75 /* UserProgressViewControllers */,
 				FEBB80ED21A351AA008B33D8 /* LoginViewControllers */,
-				FEECFD9421B465BD00BDC757 /* Connect */,
-				FEECFD8D21B356E200BDC757 /* Trivia */,
-				2A88AC8B21A3088E005854DD /* NBOUserOfficeProgressViewController.swift */,
-				2A88AC8C21A3088E005854DD /* NBOUserOfficeProgressViewController.xib */,
+				2A47C31A21B561C300B2CB75 /* UserProgressViewControllers */,
+				2A5ACC2A21C2AD1600A708E2 /* ActivitiesViewControllers */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -423,7 +434,8 @@
 				2A998D5621AAE82100B32752 /* NBOUserProgressServiceProviderProtocol.swift */,
 				2A998D5821AAE83600B32752 /* NBOActivitiesServiceProviderProtocol.swift */,
 				2A998D5E21AAF86800B32752 /* NBOServiceProviderUtils.swift */,
-				2A6801B121ACC3C20012015E /* Providers */,
+				2A6801B121ACC3C20012015E /* NBOAPIProviders */,
+				2A998D6021AAF8CD00B32752 /* MockProviders */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -506,22 +518,22 @@
 			path = ViewData;
 			sourceTree = "<group>";
 		};
-		FEECFD8D21B356E200BDC757 /* Trivia */ = {
+		FEECFD8D21B356E200BDC757 /* TriviaViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				FEECFD8E21B35AEC00BDC757 /* NBOTriviaActivityViewController.swift */,
 				FEECFD8F21B35AEC00BDC757 /* NBOTriviaActivityViewController.xib */,
 			);
-			path = Trivia;
+			path = TriviaViewControllers;
 			sourceTree = "<group>";
 		};
-		FEECFD9421B465BD00BDC757 /* Connect */ = {
+		FEECFD9421B465BD00BDC757 /* ConnectViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				FEECFD9521B466A400BDC757 /* NBOConnectActivityViewController.swift */,
 				FEECFD9621B466A400BDC757 /* NBOConnectActivityViewController.xib */,
 			);
-			path = Connect;
+			path = ConnectViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -588,9 +600,7 @@
 				2AD0D49021B744F600810F17 /* NBOCategorySelectionTableViewCell.xib in Resources */,
 				2A47C32221B5629400B2CB75 /* NBOOfficeSelectionTableViewCell.xib in Resources */,
 				FEECFD9821B466A400BDC757 /* NBOConnectActivityViewController.xib in Resources */,
-				2A88AC8E21A3088E005854DD /* NBOUserOfficeProgressViewController.xib in Resources */,
 				FEBB80F521A352D2008B33D8 /* NBOLoginViewController.xib in Resources */,
-				2A88AC9421A31751005854DD /* NBOUserOfficeProgressCollectionViewCell.xib in Resources */,
 				FEECFD9121B35AEC00BDC757 /* NBOTriviaActivityViewController.xib in Resources */,
 				2AE1CAFA2159807100D5D419 /* Assets.xcassets in Resources */,
 			);
@@ -620,6 +630,7 @@
 				2A998D4921A9BBCD00B32752 /* NBOGamificationAPI.swift in Sources */,
 				2AB07EF821AD734B00A71BA5 /* NBOBriteling.swift in Sources */,
 				FEECFD8C21B21FC600BDC757 /* LoginViewData.swift in Sources */,
+				2A83024321C8178C003C068B /* NBOActivityCoordinator.swift in Sources */,
 				2A88AC8321A0ABDD005854DD /* NBOLogInCoordinator.swift in Sources */,
 				2A47C2FC21B20E0400B2CB75 /* NBOServiceProviderMockData.swift in Sources */,
 				2AB9A13621B0578E0052A010 /* NBOCategoryOfficeCodable.swift in Sources */,
@@ -629,6 +640,7 @@
 				2A6801AC21ACC1510012015E /* NBOOffice.swift in Sources */,
 				2AB9A13A21B058CB0052A010 /* NBOCategoryOfficeProgressScaleCodable.swift in Sources */,
 				2A6801AE21ACC1AE0012015E /* NBOPlayer.swift in Sources */,
+				2A83024521C8195E003C068B /* NBOActivityViewControllerDelegate.swift in Sources */,
 				2AD0D48F21B744F600810F17 /* NBOCategorySelectionTableViewCell.swift in Sources */,
 				2A47C2FA21B201C500B2CB75 /* NBOActivitiesServiceMockProvider.swift in Sources */,
 				2AB9A13421B056CD0052A010 /* NBOPlayerCategoryOfficeProgressCodable.swift in Sources */,
@@ -636,7 +648,7 @@
 				FEECFD9C21B4D5E100BDC757 /* ConnectActivityViewData.swift in Sources */,
 				2AB07EEC21AD72B300A71BA5 /* NBOCategoryOfficeProgressScale.swift in Sources */,
 				2A47C2EA21B1FD3E00B2CB75 /* NBOActivityCodable.swift in Sources */,
-				2A88AC8721A0AC2F005854DD /* NBOActivitiesCoordinator.swift in Sources */,
+				2A88AC8721A0AC2F005854DD /* NBOActivitiesFlowCoordinator.swift in Sources */,
 				2A998D5721AAE82100B32752 /* NBOUserProgressServiceProviderProtocol.swift in Sources */,
 				2AB07EF221AD730600A71BA5 /* NBOActivity.swift in Sources */,
 				2AD0D49321B7496C00810F17 /* NBOUserOfficeProgressTableViewController.swift in Sources */,
