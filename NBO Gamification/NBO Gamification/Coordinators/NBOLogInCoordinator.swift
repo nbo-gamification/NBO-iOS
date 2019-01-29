@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 protocol NBOLoginCoordinatorDelegate : CoordinatorDelegate {
-    func nboLoginCoordinatorDidFinish(_ coordinator: NBOLogInCoordinator, playerOfficeProgressList: [NBOPlayerOfficeProgress])
+    func nboLoginCoordinatorDidFinish(_ coordinator: NBOLogInCoordinator, player: NBOPlayer)
 }
 
 class NBOLogInCoordinator : NBOCoordinator {
@@ -36,9 +36,9 @@ extension NBOLogInCoordinator: NBOLoginViewControllerDelegate {
     func viewControllerDidSignIn(_ loginVC: NBOLoginViewController, email: String, password: String) {
         NBOAuthenticationService.login(email: email, password: password, success:
             { authenticationLoginResponse in
-                let playerOfficeProgressList = authenticationLoginResponse.playerOfficeProgressList
+                let player = authenticationLoginResponse
                 self.delegate?.coordinatorDidFinish(self, completion: {
-                    self.delegate?.nboLoginCoordinatorDidFinish(self, playerOfficeProgressList: playerOfficeProgressList)
+                    self.delegate?.nboLoginCoordinatorDidFinish(self, player: player)
                 })
         }, failure: {error in
             print(error)

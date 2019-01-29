@@ -9,6 +9,18 @@
 import Foundation
 
 public class NBOUserProgressServiceMockProvider : NBOUserProgressServiceProviderProtocol {
+    func getOfficesByPlayerId(idPlayer: Int, success: @escaping UserProgressServiceProviderGetOfficesByPlayerIdSuccessClosure, failure: @escaping ServiceProviderFailureClosure) {
+        switch idPlayer {
+        case NBOMockServiceProviderPlayer.player1.id:
+            success([
+                NBOMockServiceProviderPlayerOfficeProgress.player1ProgressMendoza,
+                NBOMockServiceProviderPlayerOfficeProgress.player1ProgressSF
+                ])
+        default:
+            let error = NSError(domain: "", code: 501, userInfo: nil)
+            failure(error)
+        }
+    }
     
     public func selectOffice(idPlayerOfficeProgress: Int, success: @escaping UserProgressServiceProviderSelectOfficeSuccessClosure, failure: @escaping ServiceProviderFailureClosure) {
         

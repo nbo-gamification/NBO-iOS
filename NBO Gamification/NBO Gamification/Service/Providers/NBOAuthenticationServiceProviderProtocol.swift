@@ -8,7 +8,7 @@
 
 import Foundation
 
-public typealias AuthenticationServiceProviderLoginSuccessClosure = ((NBOAuthenticationServiceLoginResponse) -> Void)
+public typealias AuthenticationServiceProviderLoginSuccessClosure = ((NBOPlayer) -> Void)
 public typealias AuthenticationServiceProviderLogoutSuccessClosure = (() -> Void)
 
 protocol NBOAuthenticationServiceProviderProtocol {

@@ -16,7 +16,6 @@ public class NBOActivitiesService : NBOAppService {
     private static let activitiesServiceProvider : NBOActivitiesServiceProviderProtocol = NBOActivitiesServiceMockProvider()
     
     public static func getOfficeActivitiesForCategory(idCategoryOffice: Int, success: @escaping ActivitiesServiceGetOfficeActivitiesForCategorySuccessClosure, failure: @escaping ServiceFailureClosure) {
-        
         activitiesServiceProvider.getOfficeActivitiesForCategory(idCategoryOffice: idCategoryOffice, success: { (categoryOfficeActivityList) in
             success(categoryOfficeActivityList)
         }) { (error) in
@@ -25,7 +24,6 @@ public class NBOActivitiesService : NBOAppService {
     }
     
     public static func registerActivityAttempt(result: Bool, idPlayerCategoryOfficeProgress: Int, success: @escaping ActivitiesServiceRegisterActivityAttemptSuccessClosure, failure: @escaping ServiceFailureClosure) {
-        
         activitiesServiceProvider.registerActivityAttempt(result: result, idPlayerCategoryOfficeProgress: idPlayerCategoryOfficeProgress, success: { (categoryOfficeActivityAttempt) in
             success(categoryOfficeActivityAttempt)
         }) { (error) in

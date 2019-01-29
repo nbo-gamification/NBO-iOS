@@ -10,6 +10,7 @@ import Foundation
 
 public struct NBOPlayerCodable: Codable {
     
+    public let id : Int?
     public let email: String?
     public let firstName: String?
     public let lastName: String?
@@ -17,6 +18,7 @@ public struct NBOPlayerCodable: Codable {
     public let isActive: Bool?
     
     enum CodingKeys: String, CodingKey {
+        case id
         case email
         case firstName
         case lastName
