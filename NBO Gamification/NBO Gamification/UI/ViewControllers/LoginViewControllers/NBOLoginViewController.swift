@@ -37,6 +37,7 @@ class NBOLoginViewController: UIViewController {
         case emailNotAllowed
         case incorrectEmailOrPassword
     }
+    @IBOutlet weak var scrollView: UIScrollView!
 
     @IBOutlet weak var signInButton: UIButton! {
         didSet {
@@ -58,6 +59,24 @@ class NBOLoginViewController: UIViewController {
             return
         }
         delegate?.viewControllerDidSignIn(self, email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
+    }
+
+    @IBOutlet weak var emailTopConstraint: NSLayoutConstraint!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear), name: Notification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear), name: Notification.Name.UIKeyboardWillHide, object: nil)
+    }
+
+    @objc func keyboardWillDisappear() {
+        self.scrollView.adjustBottomScrollInstestsAndPosition(bottomIndicatorInsets: 0, bottomContentInsets: 0, shouldScrollToPosition: CGPoint(x: 0, y: 0))
+    }
+
+    @objc func keyboardWillAppear(notification: NSNotification) {
+        let keyBoardSize = ScrollViewHelper.getKeyboardSize(notification: notification, view: view)
+        let positionToScroll = CGPoint(x: 0, y: self.emailTopConstraint.constant == 0 ? 0 : self.emailTopConstraint.constant - 50)
+        self.scrollView.adjustBottomScrollInstestsAndPosition(bottomIndicatorInsets: keyBoardSize, bottomContentInsets: keyBoardSize, shouldScrollToPosition: positionToScroll)
     }
 
     func isValidEmail(email: String?) -> Bool {
@@ -86,9 +105,7 @@ class NBOLoginViewController: UIViewController {
         })
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
-
-
 }
