@@ -8,25 +8,27 @@
 
 import UIKit
 
-protocol NBOUserProgressCoordinatorDelegate {
+protocol NBOUserProgressCoordinatorDelegate : CoordinatorDelegate {
     func userProgressCoordinatorDidSelectCategory(selectedCategoryOffice: NBOPlayerCategoryOfficeProgress, _ coordinator: NBOUserProgressCoordinator)
     func userProgressCoordinatorDidSignOut(_ coordinator: NBOUserProgressCoordinator)
 }
 
 class NBOUserProgressCoordinator : NBOCoordinator {
     
-    var coordinatorDelegate: NBOUserProgressCoordinatorDelegate? = nil
+    weak var delegate: NBOUserProgressCoordinatorDelegate? {
+        get { return coordinatorDelegate as? NBOUserProgressCoordinatorDelegate }
+        set { coordinatorDelegate = newValue }
+    }
     var officeProgressList : [NBOPlayerOfficeProgress]?
     
     override func start() {
         let officeSelectionVC = NBOOfficeSelectionTableViewController()
-        
         officeSelectionVC.title = "Select Office"
-        
         officeSelectionVC.delegate = self
         officeSelectionVC.officeProgressList = officeProgressList ?? []
         
-        pushViewController(officeSelectionVC)
+        viewController = officeSelectionVC
+        super.start()
     }
 }
 
@@ -42,6 +44,7 @@ extension NBOUserProgressCoordinator : NBOOfficeSelectionViewControllerDelegate 
             categorySelectionVC.delegate = self
             categorySelectionVC.categoryOfficeProgressList = playerCategoryOfficeProgressList
             
+            self.viewController = categorySelectionVC
             self.pushViewController(categorySelectionVC)
         
         }) { (error) in
@@ -53,6 +56,6 @@ extension NBOUserProgressCoordinator : NBOOfficeSelectionViewControllerDelegate 
 
 extension NBOUserProgressCoordinator : NBOUserOfficeProgressViewControllerDelegate {
     func userOfficeProgressViewControllerDidSelectCategoryOfficeProgress(selectedCategoryOffice: NBOPlayerCategoryOfficeProgress, _ NBOUserOfficeProgressVC: NBOUserOfficeProgressTableViewController) {
-        coordinatorDelegate?.userProgressCoordinatorDidSelectCategory(selectedCategoryOffice: selectedCategoryOffice, self)
+        delegate?.userProgressCoordinatorDidSelectCategory(selectedCategoryOffice: selectedCategoryOffice, self)
     }
 }

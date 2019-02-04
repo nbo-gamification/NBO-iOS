@@ -8,8 +8,13 @@
 
 import UIKit
 
-class NBOCoordinator: NSObject {
+protocol CoordinatorDelegate: class {
+    func coordinatorDidFinish(_ coordinator: NBOCoordinator, completion: (() -> Void)?)
+}
 
+class NBOCoordinator: NSObject {
+    
+    weak var coordinatorDelegate: CoordinatorDelegate?
     internal weak var parentCoordinator: NBOCoordinator?
     internal let presentingViewController: UIViewController
     internal var childCoordinators = [NBOCoordinator]()
@@ -18,6 +23,7 @@ class NBOCoordinator: NSObject {
     internal var presentModal = false
  
     // MARK: Coordinator Lifecycle
+    
     init(withViewController viewController: UIViewController) {
         presentingViewController = viewController
         super.init()
@@ -46,7 +52,7 @@ class NBOCoordinator: NSObject {
         }
     }
     
-    func popViewController(_ viewController: UIViewController?, fromPresentingViewController presenting: UIViewController?, completion: (() -> Void)? = nil) {
+    func popViewController(_ viewController: UIViewController?, fromPresentingViewController presenting: UIViewController?, animated: Bool = true, completion: (() -> Void)? = nil) {
         switch presenting ?? presentingViewController {
         case let nav as UINavigationController:
             if nav.viewControllers.first == viewController && presentingViewController.presentedViewController != nil {
@@ -55,7 +61,7 @@ class NBOCoordinator: NSObject {
                 if let viewController = viewController,
                     let index = nav.viewControllers.index(of: viewController),
                     index > 0 {
-                    nav.popToViewController(nav.viewControllers[index - 1], animated: true)
+                    nav.popToViewController(nav.viewControllers[index - 1], animated: animated)
                 } else if nav.presentedViewController == viewController {
                     nav.dismiss(animated: true, completion: completion)
                 } else if viewController != nil {
@@ -84,11 +90,11 @@ class NBOCoordinator: NSObject {
         coordinator.start()
     }
     
-    func popCoordinator(_ coordinator: NBOCoordinator, completion: (() -> Void)? = nil) {
+    func popCoordinator(_ coordinator: NBOCoordinator, animated: Bool = true, completion: (() -> Void)? = nil) {
         for child in coordinator.childCoordinators {
             popCoordinator(child)
         }
-        popViewController(coordinator.viewController, fromPresentingViewController: coordinator.presentingViewController, completion: completion)
+        popViewController(coordinator.viewController, fromPresentingViewController: coordinator.presentingViewController, animated: animated, completion: completion)
         assert(coordinator.parentCoordinator != nil, "Can't pop coordinator \(coordinator) with no parent!")
         let parent = coordinator.parentCoordinator ?? self
         if let index = parent.childCoordinators.index(of: coordinator) {
@@ -101,5 +107,11 @@ class NBOCoordinator: NSObject {
         if viewController.parent == nil {
             pushViewController(viewController, presentModal: presentModal)
         }
+    }
+}
+
+extension NBOCoordinator: CoordinatorDelegate {
+    func coordinatorDidFinish(_ coordinator: NBOCoordinator, completion: (() -> Void)? = nil) {
+        popCoordinator(coordinator, completion: completion)
     }
 }

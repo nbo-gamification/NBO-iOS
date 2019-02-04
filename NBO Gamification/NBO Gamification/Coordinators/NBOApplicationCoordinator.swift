@@ -27,19 +27,19 @@ class NBOApplicationCoordinator : NBOCoordinator {
         loginCoordinator.coordinatorDelegate = self
         self.pushCoordinator(loginCoordinator)
     }
-
 }
 
-//MARK: NBOLoginCoordinatorDelegate
+// MARK: NBOLoginCoordinatorDelegate
+
 extension NBOApplicationCoordinator: NBOLoginCoordinatorDelegate {
 
     func nboLoginCoordinatorDidFinish(_ coordinator: NBOLogInCoordinator, playerOfficeProgressList: [NBOPlayerOfficeProgress]) {
-        popCoordinator(coordinator)
         startUserProgressCoordinatorWithOfficeList(playerOfficeProgressList)
     }
 }
 
-// Add User progress funcionality
+// MARK: Add User progress functionality
+
 extension NBOApplicationCoordinator {
     func startUserProgressCoordinatorWithOfficeList (_ officeProgressList : [NBOPlayerOfficeProgress]) {
         
@@ -54,10 +54,9 @@ extension NBOApplicationCoordinator {
 extension NBOApplicationCoordinator: NBOUserProgressCoordinatorDelegate {
     func userProgressCoordinatorDidSelectCategory(selectedCategoryOffice: NBOPlayerCategoryOfficeProgress, _ coordinator: NBOUserProgressCoordinator) {
 
-        let nboActivitiesCoordinator = NBOActivitiesCoordinator(withViewController: presentingViewController)
+        let nboActivitiesCoordinator = NBOActivitiesFlowCoordinator(withViewController: presentingViewController)
         nboActivitiesCoordinator.coordinatorDelegate = self
         nboActivitiesCoordinator.selectedCategoryOffice = selectedCategoryOffice
-        nboActivitiesCoordinator.officeProgressTableVC = presentingViewController.childViewControllers.last
         self.pushCoordinator(nboActivitiesCoordinator)
     }
     
@@ -65,4 +64,3 @@ extension NBOApplicationCoordinator: NBOUserProgressCoordinatorDelegate {
         // TODO: handle sign out
     }
 }
-

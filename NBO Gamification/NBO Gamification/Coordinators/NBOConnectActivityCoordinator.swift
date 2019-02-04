@@ -6,23 +6,19 @@
 //  Copyright © 2018 nbogamification. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-protocol NBOConnectActivityCoordinatorDelegate {
-    func activityDidSubmit(connectActivityCoordinator: NBOConnectActivityCoordinator, categoryOfficeActivityAttempt: NBOCategoryOfficeActivityAttempt)
-    func activityDidSkip(connectActivityCoordinator: NBOConnectActivityCoordinator)
-}
-
-class NBOConnectActivityCoordinator: NBOCoordinator {
-
-    var coordinatorDelegate: NBOConnectActivityCoordinatorDelegate?
+class NBOConnectActivityCoordinator: NBOActivityCoordinator {
+    
     var activity: NBOConnectActivity?
-
+    
     override func start() {
         let connectVC = NBOConnectActivityViewController()
         connectVC.delegate = self
-        self.fillActivityData(connectVC: connectVC, activityData: activity)
-        self.pushViewController(connectVC)
+        fillActivityData(connectVC: connectVC, activityData: activity)
+
+        viewController = connectVC
+        super.start()
     }
 
     func fillActivityData(connectVC: NBOConnectActivityViewController, activityData: NBOConnectActivity?) {
@@ -33,24 +29,27 @@ class NBOConnectActivityCoordinator: NBOCoordinator {
             connectVC.viewData?.connectActivity = activityData
         }
     }
-
 }
 
 // MARK: ConnectActivityViewControllerDelegate
-extension NBOConnectActivityCoordinator: NBOConnectActivityViewControllerDelegate {
-    func viewControllerDidSkip(_ connectVC: NBOConnectActivityViewController) {
-        coordinatorDelegate?.activityDidSkip(connectActivityCoordinator: self)
-    }
 
-    func viewControllerDidSelectSubmitButton(_ connectVC: NBOConnectActivityViewController, answer: String) {
+extension NBOConnectActivityCoordinator: NBOActivityViewControllerDelegate {
+    func viewControllerDidExit(_ activityVC: UIViewController) {
+        delegate?.activityDidExit(self, completion: nil)
+    }
+    
+    func viewControllerDidSkip(_ activityVC: UIViewController) {
+        delegate?.activityDidSkip(self, completion: nil)
+    }
+    
+    func viewControllerDidSelectSubmitButton(_ activityVC: UIViewController, answer: String) {
+        let connectVC = activityVC as! NBOConnectActivityViewController
         if answer == connectVC.viewData?.connectActivity?.solutionCode {
             NBOActivitiesService.registerActivityAttempt(result: true, idPlayerCategoryOfficeProgress: NBOMockServiceProviderPlayerCategoryOfficeProgress.progressMendozaSocial.id, success: {categoryOfficeActivityAttempt in
-                self.coordinatorDelegate?.activityDidSubmit(connectActivityCoordinator: self, categoryOfficeActivityAttempt: categoryOfficeActivityAttempt)
+                self.delegate?.activityDidSubmit(self, categoryOfficeActivityAttempt: categoryOfficeActivityAttempt)
             }, failure: {error in
                 print(error)
             })
         }
     }
-
-
 }

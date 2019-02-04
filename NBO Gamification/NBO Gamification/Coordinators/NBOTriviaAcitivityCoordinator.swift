@@ -12,6 +12,8 @@ class NBOTriviaActivityCoordinator: NBOCoordinator {
 
     override func start() {
         let triviaVC = NBOTriviaActivityViewController()
-        self.pushViewController(triviaVC)
+        
+        viewController = triviaVC
+        super.start()
     }
 }

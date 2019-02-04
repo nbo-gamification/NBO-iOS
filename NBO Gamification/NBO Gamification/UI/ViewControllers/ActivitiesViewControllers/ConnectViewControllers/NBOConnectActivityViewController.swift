@@ -8,27 +8,23 @@
 
 import UIKit
 
-protocol NBOConnectActivityViewControllerDelegate: class {
-    func viewControllerDidSelectSubmitButton(_ connectVC: NBOConnectActivityViewController, answer: String)
-    func viewControllerDidSkip(_ connectVC: NBOConnectActivityViewController)
-}
-
 class NBOConnectActivityViewController: UIViewController {
 
-    var delegate: NBOConnectActivityViewControllerDelegate?
+    var delegate: NBOActivityViewControllerDelegate?
+    
     struct ViewData {
         var connectActivity: NBOConnectActivity?
     }
 
     var viewData: ViewData?
 
+    // MARK: Outlets/IBActions
+    
     @IBOutlet weak var question: UILabel! {
         didSet {
             question.text = self.viewData?.connectActivity?.instructions
         }
     }
-
-
 
     @IBOutlet weak var instructions: UILabel! {
         didSet {
@@ -38,14 +34,20 @@ class NBOConnectActivityViewController: UIViewController {
 
     @IBOutlet weak var answer: UITextField!
 
-
+    @IBOutlet var exit: UIBarButtonItem! {
+        didSet {
+            exit.title = "Exit"
+        }
+    }
+    @IBAction func exitButtonSelected(_ sender: UIBarButtonItem) {
+        delegate?.viewControllerDidExit(self)
+    }
+    
     @IBOutlet var skip: UIBarButtonItem! {
         didSet {
             skip.title = "Skip"
         }
     }
-
-
     @IBAction func skipButtonSelected(_ sender: Any) {
         delegate?.viewControllerDidSkip(self)
     }
@@ -55,17 +57,16 @@ class NBOConnectActivityViewController: UIViewController {
             submitButton.cornerRadius = 5
         }
     }
-
-    
     @IBAction func submitButtonSelected(_ sender: Any) {
         delegate?.viewControllerDidSelectSubmitButton(self, answer: answer.text ?? "")
     }
-
+    
+    // MARK: Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    self.navigationItem.setHidesBackButton(true, animated: true)
+        
+        self.navigationItem.leftBarButtonItem = exit
         self.navigationItem.rightBarButtonItem = skip
-
     }
 }
