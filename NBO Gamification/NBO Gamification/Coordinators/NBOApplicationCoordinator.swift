@@ -33,8 +33,12 @@ class NBOApplicationCoordinator : NBOCoordinator {
 
 extension NBOApplicationCoordinator: NBOLoginCoordinatorDelegate {
 
-    func nboLoginCoordinatorDidFinish(_ coordinator: NBOLogInCoordinator, playerOfficeProgressList: [NBOPlayerOfficeProgress]) {
-        startUserProgressCoordinatorWithOfficeList(playerOfficeProgressList)
+    func nboLoginCoordinatorDidFinish(_ coordinator: NBOLogInCoordinator, player: NBOPlayer) {
+        NBOUserProgressService.getOfficesByPlayerId(idPlayer: player.id, success: { (playerOfficeProgressList) in
+            self.startUserProgressCoordinatorWithOfficeList(playerOfficeProgressList)
+        }) { (error) in
+            print(error)
+        }
     }
 }
 

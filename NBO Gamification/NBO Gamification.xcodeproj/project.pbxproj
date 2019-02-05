@@ -276,14 +276,14 @@
 			path = ModelCodables;
 			sourceTree = "<group>";
 		};
-		2A6801B121ACC3C20012015E /* NBOAPIProviders */ = {
+		2A6801B121ACC3C20012015E /* NetworkProviders */ = {
 			isa = PBXGroup;
 			children = (
 				2A47C2EF21B200B300B2CB75 /* NBOAuthenticationServiceProvider.swift */,
 				2A47C2F121B200C700B2CB75 /* NBOUserProgressServiceProvider.swift */,
 				2A47C2F321B200D900B2CB75 /* NBOActivitiesServiceProvider.swift */,
 			);
-			path = NBOAPIProviders;
+			path = NetworkProviders;
 			sourceTree = "<group>";
 		};
 		2A88AC7621A07652005854DD /* Application */ = {
@@ -458,7 +458,7 @@
 				2A998D5621AAE82100B32752 /* NBOUserProgressServiceProviderProtocol.swift */,
 				2A998D5821AAE83600B32752 /* NBOActivitiesServiceProviderProtocol.swift */,
 				2A998D5E21AAF86800B32752 /* NBOServiceProviderUtils.swift */,
-				2A6801B121ACC3C20012015E /* NBOAPIProviders */,
+				2A6801B121ACC3C20012015E /* NetworkProviders */,
 				2A998D6021AAF8CD00B32752 /* MockProviders */,
 			);
 			path = Providers;

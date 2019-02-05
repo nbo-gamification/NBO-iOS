@@ -9,6 +9,9 @@
 import Foundation
 
 public class NBOUserProgressServiceProvider : NBOUserProgressServiceProviderProtocol {
+    func getOfficesByPlayerId(idPlayer: Int, success: @escaping UserProgressServiceProviderGetOfficesByPlayerIdSuccessClosure, failure: @escaping ServiceProviderFailureClosure) {
+        
+    }
     
     public func selectOffice(idPlayerOfficeProgress: Int, success: @escaping UserProgressServiceProviderSelectOfficeSuccessClosure, failure: @escaping ServiceProviderFailureClosure) {
         

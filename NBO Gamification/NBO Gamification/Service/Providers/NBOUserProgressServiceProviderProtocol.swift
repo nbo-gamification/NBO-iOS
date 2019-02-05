@@ -8,8 +8,10 @@
 
 import Foundation
 
+public typealias UserProgressServiceProviderGetOfficesByPlayerIdSuccessClosure = (([NBOPlayerOfficeProgress]) -> Void)
 public typealias UserProgressServiceProviderSelectOfficeSuccessClosure = (([NBOPlayerCategoryOfficeProgress]) -> Void)
 
 protocol NBOUserProgressServiceProviderProtocol {
+    func getOfficesByPlayerId(idPlayer: Int, success: @escaping UserProgressServiceProviderGetOfficesByPlayerIdSuccessClosure, failure: @escaping ServiceProviderFailureClosure)
     func selectOffice(idPlayerOfficeProgress: Int, success: @escaping UserProgressServiceProviderSelectOfficeSuccessClosure, failure: @escaping ServiceProviderFailureClosure)
 }
