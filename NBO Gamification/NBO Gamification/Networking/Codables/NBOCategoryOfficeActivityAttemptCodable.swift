@@ -11,14 +11,14 @@ import Foundation
 public struct NBOCategoryOfficeActivityAttemptCodable : Codable {
     
     public let id : Int?
-    public let datetime : Date?
+    public let date : Date?
     public let result : Bool?
     public let playerCategoryOfficeProgress : NBOPlayerCategoryOfficeProgressCodable?
     public let categoryOfficeActivity : NBOCategoryOfficeActivityCodable?
     
     enum CodingKeys: String, CodingKey {
         case id
-        case datetime
+        case date
         case result
         case playerCategoryOfficeProgress
         case categoryOfficeActivity

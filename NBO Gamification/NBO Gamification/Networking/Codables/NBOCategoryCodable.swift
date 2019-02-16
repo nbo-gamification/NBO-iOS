@@ -11,12 +11,12 @@ import Foundation
 public struct NBOCategoryCodable : Codable {
     
     public let id : Int?
-    public let name : String?
+    public let categoryName : String?
     public let description : String?
     
     enum CodingKeys: String, CodingKey {
         case id
-        case name
+        case categoryName
         case description
     }
 }

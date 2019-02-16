@@ -31,7 +31,7 @@ public class NBOActivitiesServiceMockProvider : NBOActivitiesServiceProviderProt
         }
     }
     
-    public func registerActivityAttempt(result: Bool, idPlayerCategoryOfficeProgress: Int, success: @escaping ActivitiesServiceProviderRegisterActivityAttemptSuccessClosure, failure: @escaping ServiceProviderFailureClosure) {
+    public func registerActivityAttempt(result: Bool, idPlayerCategoryOfficeProgress: Int, idCategoryOfficeActivity: Int, success: @escaping ActivitiesServiceProviderRegisterActivityAttemptSuccessClosure, failure: @escaping ServiceProviderFailureClosure) {
         switch result {
         case true:
             success(NBOMockServiceProviderCategoryOfficeActivityAttempt.assertAtempt)

@@ -11,12 +11,12 @@ import Foundation
 public struct NBOOfficeCodable: Codable {
     
     public let id: Int?
-    public let name: String?
-    public let image: String?
+    public let officeName: String?
+    public let officeImagen: String?
     
     enum CodingKeys: String, CodingKey {
         case id
-        case name
-        case image
+        case officeName
+        case officeImagen
     }
 }

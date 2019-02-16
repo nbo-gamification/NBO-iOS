@@ -13,7 +13,7 @@ public typealias ActivitiesServiceRegisterActivityAttemptSuccessClosure = ((NBOC
 
 public class NBOActivitiesService : NBOAppService {
     
-    private static let activitiesServiceProvider : NBOActivitiesServiceProviderProtocol = NBOActivitiesServiceMockProvider()
+    private static let activitiesServiceProvider : NBOActivitiesServiceProviderProtocol = NBOActivitiesServiceProvider()
     
     public static func getOfficeActivitiesForCategory(idCategoryOffice: Int, success: @escaping ActivitiesServiceGetOfficeActivitiesForCategorySuccessClosure, failure: @escaping ServiceFailureClosure) {
         activitiesServiceProvider.getOfficeActivitiesForCategory(idCategoryOffice: idCategoryOffice, success: { (categoryOfficeActivityList) in
@@ -23,8 +23,8 @@ public class NBOActivitiesService : NBOAppService {
         }
     }
     
-    public static func registerActivityAttempt(result: Bool, idPlayerCategoryOfficeProgress: Int, success: @escaping ActivitiesServiceRegisterActivityAttemptSuccessClosure, failure: @escaping ServiceFailureClosure) {
-        activitiesServiceProvider.registerActivityAttempt(result: result, idPlayerCategoryOfficeProgress: idPlayerCategoryOfficeProgress, success: { (categoryOfficeActivityAttempt) in
+    public static func registerActivityAttempt(result: Bool, idPlayerCategoryOfficeProgress: Int, idCategoryOfficeActivity: Int, success: @escaping ActivitiesServiceRegisterActivityAttemptSuccessClosure, failure: @escaping ServiceFailureClosure) {
+        activitiesServiceProvider.registerActivityAttempt(result: result, idPlayerCategoryOfficeProgress: idPlayerCategoryOfficeProgress, idCategoryOfficeActivity: idCategoryOfficeActivity, success: { (categoryOfficeActivityAttempt) in
             success(categoryOfficeActivityAttempt)
         }) { (error) in
             failure(error)

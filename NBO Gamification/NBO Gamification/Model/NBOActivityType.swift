@@ -18,8 +18,6 @@ public final class NBOActivityType {
         self.name = name
         self.typeKeys = TypeKeys(name: name)
     }
-
-
 }
 
 public enum TypeKeys: String {
