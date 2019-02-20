@@ -44,8 +44,10 @@ extension NBOConnectActivityCoordinator: NBOActivityViewControllerDelegate {
     
     func viewControllerDidSelectSubmitButton(_ activityVC: UIViewController, answer: String) {
         let connectVC = activityVC as! NBOConnectActivityViewController
-        if answer == connectVC.viewData?.connectActivity?.solutionCode {
-            NBOActivitiesService.registerActivityAttempt(result: true, idPlayerCategoryOfficeProgress: NBOMockServiceProviderPlayerCategoryOfficeProgress.progressMendozaSocial.id, success: {categoryOfficeActivityAttempt in
+        if answer == connectVC.viewData?.connectActivity?.solutionCode,
+            let activityData = activity
+        {
+            NBOActivitiesService.registerActivityAttempt(result: true, idPlayerCategoryOfficeProgress: NBOMockServiceProviderPlayerCategoryOfficeProgress.progressMendozaSocial.id, idCategoryOfficeActivity: activityData.id, success: {categoryOfficeActivityAttempt in
                 self.delegate?.activityDidSubmit(self, categoryOfficeActivityAttempt: categoryOfficeActivityAttempt)
             }, failure: {error in
                 print(error)

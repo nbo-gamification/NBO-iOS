@@ -13,7 +13,7 @@ public typealias UserProgressServiceSelectOfficeSuccessClosure = (([NBOPlayerCat
 
 public class NBOUserProgressService : NBOAppService {
     
-    private static let userProgressServiceProvider : NBOUserProgressServiceProviderProtocol = NBOUserProgressServiceMockProvider()
+    private static let userProgressServiceProvider : NBOUserProgressServiceProviderProtocol = NBOUserProgressServiceProvider()
     
     public static func getOfficesByPlayerId(idPlayer: Int, success: @escaping UserProgressServiceGetOfficesByPlayerIdSuccessClosure, failure: @escaping ServiceFailureClosure) {
         userProgressServiceProvider.getOfficesByPlayerId(idPlayer: idPlayer, success: { (playerOfficeProgressList) in

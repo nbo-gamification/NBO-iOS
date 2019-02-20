@@ -11,18 +11,19 @@ import Foundation
 public enum NBOGamificationAPI {
     case login(id:Int)
     case logout(id:Int)
-    case selectOffice(page:Int)
-    case activitiesForCategory(page:Int)
-    case registerActivityAttempt(id:Int)
+    case getPlayerOffices(playerId:Int)
+    case selectOffice(playerOfficeProgressId:Int)
+    case activitiesForCategory(categoryOfficeId:Int)
+    case registerActivityAttempt(attemptData:String)
 }
 
 extension NBOGamificationAPI: EndPointType {
 
     var environmentBaseURL : String {
         switch NBONetworkManager.environment {
-            case .production: return "https://api.nbo.org/"
-            case .qa: return "https://qa..nbo.org/"
-            case .staging: return "https://staging.nbo.org/"
+            case .production: return "https://nbo-gamification.herokuapp.com/api/"
+            case .qa: return "https://nbo-gamification.herokuapp.com/api/"
+            case .staging: return "https://nbo-gamification.herokuapp.com/api/"
         }
     }
     
@@ -37,21 +38,49 @@ extension NBOGamificationAPI: EndPointType {
             return ""
         case .logout:
             return ""
-        case .selectOffice:
-            return ""
-        case .activitiesForCategory:
-            return ""
+        case .getPlayerOffices(let id):
+            return "getOfficesByPlayer/\(id)"
+        case .selectOffice(let id):
+            return "selectOffice/\(id)"
+        case .activitiesForCategory(let id):
+            return "getActivitiesbyCategoryOffice/\(id)"
         case .registerActivityAttempt:
-            return ""
+            return "registerActivityAttempt/"
         }
     }
     
     var httpMethod: HTTPMethod {
-        return .get
+        switch self {
+        case .login:
+            return .get
+        case .logout:
+            return .get
+        case .getPlayerOffices:
+            return .get
+        case .selectOffice:
+            return .get
+        case .activitiesForCategory:
+            return .get
+        case .registerActivityAttempt:
+            return .post
+        }
     }
     
     var task: HTTPTask {
-        return .request
+        switch self {
+        case .login:
+            return .request
+        case .logout:
+            return .request
+        case .getPlayerOffices:
+            return .request
+        case .selectOffice:
+            return .request
+        case .activitiesForCategory:
+            return .request
+        case .registerActivityAttempt(let attemptData):
+            return .requestWithParameters(bodyParameters: ["data":attemptData], urlParameters: nil)
+        }
     }
     
     var headers: HTTPHeaders {

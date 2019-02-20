@@ -8,6 +8,15 @@
 
 import Foundation
 
+public struct NBOPlayerOfficeProgressCodableList: Decodable {
+    public let list: NBOPlayerOfficeProgressCodable?
+    
+    public init(from decoder: Decoder) throws {
+        var container = try decoder.unkeyedContainer()
+        list = try container.decode(NBOPlayerOfficeProgressCodable.self)
+    }
+}
+
 public struct NBOPlayerOfficeProgressCodable: Codable {
     
     public let id: Int?

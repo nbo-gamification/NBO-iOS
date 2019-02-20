@@ -8,12 +8,16 @@
 
 import Foundation
 
-public class NBOUserProgressServiceProvider : NBOUserProgressServiceProviderProtocol {
+public class NBOUserProgressServiceProvider: NBONetworkProvider, NBOUserProgressServiceProviderProtocol {
     func getOfficesByPlayerId(idPlayer: Int, success: @escaping UserProgressServiceProviderGetOfficesByPlayerIdSuccessClosure, failure: @escaping ServiceProviderFailureClosure) {
-        
+        networkManager.getOfficesByPlayer { (playerOfficeProgressList, error) in
+            // TODO: return NBOPlayerOfficeProgress list or error
+        }
     }
     
     public func selectOffice(idPlayerOfficeProgress: Int, success: @escaping UserProgressServiceProviderSelectOfficeSuccessClosure, failure: @escaping ServiceProviderFailureClosure) {
-        
+        networkManager.selectOffice(playerOfficeProgressId: idPlayerOfficeProgress) { (playerCategoryOfficeProgressList, error) in
+             // TODO: return NBOPlayerCategoryOfficeProgress list or error
+        }
     }
 }

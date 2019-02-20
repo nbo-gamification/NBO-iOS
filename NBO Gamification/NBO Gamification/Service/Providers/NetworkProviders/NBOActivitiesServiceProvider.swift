@@ -8,13 +8,18 @@
 
 import Foundation
 
-public class NBOActivitiesServiceProvider : NBOActivitiesServiceProviderProtocol {
+public class NBOActivitiesServiceProvider: NBONetworkProvider, NBOActivitiesServiceProviderProtocol {
     
     public func getOfficeActivitiesForCategory(idCategoryOffice: Int, success: @escaping ActivitiesServiceProviderGetOfficeActivitiesForCategorySuccessClosure, failure: @escaping ServiceProviderFailureClosure) {
-        
+        networkManager.getActivitiesbyCategoryOffice(idCategoryOffice: idCategoryOffice, completion: { (categoryOfficeActivityList, error) in
+            // TODO: return NBOCategoryOfficeActivity list or error
+        })
     }
     
-    public func registerActivityAttempt(result: Bool, idPlayerCategoryOfficeProgress: Int, success: @escaping ActivitiesServiceProviderRegisterActivityAttemptSuccessClosure, failure: @escaping ServiceProviderFailureClosure) {
-        
+    public func registerActivityAttempt(result: Bool, idPlayerCategoryOfficeProgress: Int, idCategoryOfficeActivity: Int, success: @escaping ActivitiesServiceProviderRegisterActivityAttemptSuccessClosure, failure: @escaping ServiceProviderFailureClosure) {
+        let attemptData = NBORegisterActivityAttemptData(result: result, playerCategoryOfficeProgressId: idPlayerCategoryOfficeProgress, categoryOfficeActivityId: idCategoryOfficeActivity)
+        networkManager.registerActivityAttempt(attemptData: attemptData) { (categoryOfficeActivityAttempt, error) in
+            // TODO: return NBOCategoryOfficeActivityAttempt or error
+        }
     }
 }
