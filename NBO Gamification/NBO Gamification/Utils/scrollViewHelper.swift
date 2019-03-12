@@ -14,8 +14,8 @@ class ScrollViewHelper {
     public static func getKeyboardSize(notification: NSNotification, view: UIView) -> CGFloat {
         let userInfo = notification.userInfo!
 
-        let keyboardScreenBeginFrame = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let keyboardScreenBeginFrame = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        let keyboardScreenEndFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
 
         let keyboardViewBeginFrame = view.convert(keyboardScreenBeginFrame, from: view.window)
         let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)

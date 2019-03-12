@@ -15,8 +15,8 @@ enum NBOMockServiceProviderCategory {
 }
 
 enum NBOMockServiceProviderPlayer {
-    static let player1 = NBOPlayer(id: 2, email: "dante@evbqa.com", firstName: "Dante", lastName: "Canizo", password: "12345")
-    static let player2 = NBOPlayer(id: 1, email: "karinap@evbqa.com", firstName: "Karina", lastName: "Pangaro", password: "12345")
+    static let player1 = NBOPlayer(id: 1, email: "dante@evbqa.com", firstName: "Dante", lastName: "Canizo", password: "12345")
+    static let player2 = NBOPlayer(id: 2, email: "karinap@evbqa.com", firstName: "Karina", lastName: "Pangaro", password: "12345")
 }
 
 enum NBOMockServiceProviderOffice {

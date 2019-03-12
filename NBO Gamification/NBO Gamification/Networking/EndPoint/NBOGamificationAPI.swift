@@ -9,7 +9,7 @@
 import Foundation
 
 public enum NBOGamificationAPI {
-    case login(id:Int)
+    case login(loginData:String)
     case logout(id:Int)
     case getPlayerOffices(playerId:Int)
     case selectOffice(playerOfficeProgressId:Int)
@@ -21,9 +21,9 @@ extension NBOGamificationAPI: EndPointType {
 
     var environmentBaseURL : String {
         switch NBONetworkManager.environment {
-            case .production: return "https://nbo-gamification.herokuapp.com/api/"
-            case .qa: return "https://nbo-gamification.herokuapp.com/api/"
-            case .staging: return "https://nbo-gamification.herokuapp.com/api/"
+            case .production: return "https://nbo-gamification.herokuapp.com/"
+            case .qa: return "https://nbo-gamification.herokuapp.com/"
+            case .staging: return "https://nbo-gamification.herokuapp.com/"
         }
     }
     
@@ -35,24 +35,24 @@ extension NBOGamificationAPI: EndPointType {
     var path: String {
         switch self {
         case .login:
-            return ""
+            return "rest-auth/login/"
         case .logout:
             return ""
         case .getPlayerOffices(let id):
-            return "getOfficesByPlayer/\(id)"
+            return "api/getOfficesByPlayer/\(id)"
         case .selectOffice(let id):
-            return "selectOffice/\(id)"
+            return "api/selectOffice/\(id)"
         case .activitiesForCategory(let id):
-            return "getActivitiesbyCategoryOffice/\(id)"
+            return "api/getActivitiesbyCategoryOffice/\(id)"
         case .registerActivityAttempt:
-            return "registerActivityAttempt/"
+            return "api/registerActivityAttempt/"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
         case .login:
-            return .get
+            return .post
         case .logout:
             return .get
         case .getPlayerOffices:
@@ -68,8 +68,8 @@ extension NBOGamificationAPI: EndPointType {
     
     var task: HTTPTask {
         switch self {
-        case .login:
-            return .request
+        case .login(let loginData):
+            return .requestWithParameters(bodyParameters: ["data":loginData], urlParameters: nil)
         case .logout:
             return .request
         case .getPlayerOffices:

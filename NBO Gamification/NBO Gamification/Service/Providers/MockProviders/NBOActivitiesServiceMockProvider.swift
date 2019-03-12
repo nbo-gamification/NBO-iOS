@@ -26,8 +26,7 @@ public class NBOActivitiesServiceMockProvider : NBOActivitiesServiceProviderProt
         case NBOMockServiceProviderCategoryOffice.categoryOfficeSFBuilding.id:
             success([])
         default:
-            let error = NSError(domain: "", code: 504, userInfo: nil)
-            failure(error)
+            failure("getOfficeActivitiesForCategory error")
         }
     }
     
@@ -36,8 +35,7 @@ public class NBOActivitiesServiceMockProvider : NBOActivitiesServiceProviderProt
         case true:
             success(NBOMockServiceProviderCategoryOfficeActivityAttempt.assertAtempt)
         case false:
-            let error = NSError(domain: "", code: 501, userInfo: nil)
-            failure(error)
+            failure("registerActivityAttempt error")
         }
     }
 }

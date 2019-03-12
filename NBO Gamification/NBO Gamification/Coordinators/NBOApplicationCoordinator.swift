@@ -34,6 +34,8 @@ class NBOApplicationCoordinator : NBOCoordinator {
 extension NBOApplicationCoordinator: NBOLoginCoordinatorDelegate {
 
     func nboLoginCoordinatorDidFinish(_ coordinator: NBOLogInCoordinator, player: NBOPlayer) {
+        // TODO: set player id from logged in user
+        AppContext.shared.currentUserId.set(newValue: 2)
         NBOUserProgressService.getOfficesByPlayerId(idPlayer: player.id, success: { (playerOfficeProgressList) in
             self.startUserProgressCoordinatorWithOfficeList(playerOfficeProgressList)
         }) { (error) in

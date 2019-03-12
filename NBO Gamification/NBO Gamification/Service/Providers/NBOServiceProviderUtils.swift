@@ -8,4 +8,4 @@
 
 import Foundation
 
-public typealias ServiceProviderFailureClosure = (_ error : Swift.Error) -> Void
+public typealias ServiceProviderFailureClosure = (_ error : String) -> Void

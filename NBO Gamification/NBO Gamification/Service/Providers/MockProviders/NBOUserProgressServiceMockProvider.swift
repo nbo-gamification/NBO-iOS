@@ -17,8 +17,7 @@ public class NBOUserProgressServiceMockProvider : NBOUserProgressServiceProvider
                 NBOMockServiceProviderPlayerOfficeProgress.player1ProgressSF
                 ])
         default:
-            let error = NSError(domain: "", code: 501, userInfo: nil)
-            failure(error)
+            failure("getOfficesByPlayerId error")
         }
     }
     
@@ -38,8 +37,7 @@ public class NBOUserProgressServiceMockProvider : NBOUserProgressServiceProvider
                 NBOMockServiceProviderPlayerCategoryOfficeProgress.progressSFProduct
                 ])
         default:
-            let error = NSError(domain: "", code: 501, userInfo: nil)
-            failure(error)
+            failure("selectOffice error")
         }
     }
 }

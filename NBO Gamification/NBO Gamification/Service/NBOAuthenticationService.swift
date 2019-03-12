@@ -11,7 +11,7 @@ import Foundation
 public typealias AuthenticationServiceLoginSuccessClosure = ((NBOPlayer) -> Void)
 public typealias AuthenticationServiceLogoutSuccessClosure = (() -> Void)
 
-public class NBOAuthenticationService : NBOAppService {
+public class NBOAuthenticationService {
     
     private static let authenticationServiceProvider : NBOAuthenticationServiceProviderProtocol = NBOAuthenticationServiceMockProvider()
     
