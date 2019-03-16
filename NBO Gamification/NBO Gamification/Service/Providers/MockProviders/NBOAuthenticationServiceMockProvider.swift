@@ -20,12 +20,10 @@ public class NBOAuthenticationServiceMockProvider : NBOAuthenticationServiceProv
                 success(response)
             }
             else {
-                let error = NSError(domain: "", code: 401, userInfo: nil)
-                failure(error)
+                failure("Wrong password error")
             }
         } else {
-            let error = NSError(domain: "", code: 401, userInfo: nil)
-            failure(error)
+            failure("Email non existent")
         }
     }
     

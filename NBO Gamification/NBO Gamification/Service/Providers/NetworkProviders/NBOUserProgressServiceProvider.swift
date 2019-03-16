@@ -11,13 +11,35 @@ import Foundation
 public class NBOUserProgressServiceProvider: NBONetworkProvider, NBOUserProgressServiceProviderProtocol {
     func getOfficesByPlayerId(idPlayer: Int, success: @escaping UserProgressServiceProviderGetOfficesByPlayerIdSuccessClosure, failure: @escaping ServiceProviderFailureClosure) {
         networkManager.getOfficesByPlayer { (playerOfficeProgressList, error) in
-            // TODO: return NBOPlayerOfficeProgress list or error
+            // return NBOPlayerOfficeProgress list or error
+            if let error = error {
+                failure(error)
+            }
+            var modelObjectList = [NBOPlayerOfficeProgress]()
+            if let codableObjectList = playerOfficeProgressList {
+                for codableObject in codableObjectList {
+                    guard let modelObject = NBOPlayerOfficeProgress.initFromCodable(object: codableObject) else {continue}
+                    modelObjectList.append(modelObject)
+                }
+            }
+            success(modelObjectList)
         }
     }
     
     public func selectOffice(idPlayerOfficeProgress: Int, success: @escaping UserProgressServiceProviderSelectOfficeSuccessClosure, failure: @escaping ServiceProviderFailureClosure) {
         networkManager.selectOffice(playerOfficeProgressId: idPlayerOfficeProgress) { (playerCategoryOfficeProgressList, error) in
-             // TODO: return NBOPlayerCategoryOfficeProgress list or error
+            // return NBOPlayerCategoryOfficeProgress list or error
+            if let error = error {
+                failure(error)
+            }
+            var modelObjectList = [NBOPlayerCategoryOfficeProgress]()
+            if let codableObjectList = playerCategoryOfficeProgressList {
+                for codableObject in codableObjectList {
+                    guard let modelObject = NBOPlayerCategoryOfficeProgress.initFromCodable(object: codableObject) else {continue}
+                    modelObjectList.append(modelObject)
+                }
+            }
+            success(modelObjectList)
         }
     }
 }

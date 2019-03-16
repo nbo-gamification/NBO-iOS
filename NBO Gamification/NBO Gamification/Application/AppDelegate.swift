@@ -15,7 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private var applicationCoordinator: NBOApplicationCoordinator?
     
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        AppContext.initialize()
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         let applicationCoordinator = NBOApplicationCoordinator(window: window)

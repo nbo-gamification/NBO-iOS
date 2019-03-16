@@ -11,7 +11,7 @@ import Foundation
 public typealias UserProgressServiceGetOfficesByPlayerIdSuccessClosure = (([NBOPlayerOfficeProgress]) -> Void)
 public typealias UserProgressServiceSelectOfficeSuccessClosure = (([NBOPlayerCategoryOfficeProgress]) -> Void)
 
-public class NBOUserProgressService : NBOAppService {
+public class NBOUserProgressService {
     
     private static let userProgressServiceProvider : NBOUserProgressServiceProviderProtocol = NBOUserProgressServiceProvider()
     

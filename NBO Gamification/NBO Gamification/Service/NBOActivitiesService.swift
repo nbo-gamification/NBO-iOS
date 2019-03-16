@@ -11,7 +11,7 @@ import Foundation
 public typealias ActivitiesServiceGetOfficeActivitiesForCategorySuccessClosure = (([NBOCategoryOfficeActivity]) -> Void)
 public typealias ActivitiesServiceRegisterActivityAttemptSuccessClosure = ((NBOCategoryOfficeActivityAttempt) -> Void)
 
-public class NBOActivitiesService : NBOAppService {
+public class NBOActivitiesService {
     
     private static let activitiesServiceProvider : NBOActivitiesServiceProviderProtocol = NBOActivitiesServiceProvider()
     

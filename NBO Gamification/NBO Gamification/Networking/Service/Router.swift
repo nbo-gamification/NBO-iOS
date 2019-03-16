@@ -12,11 +12,11 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
     
     private var task: URLSessionTask?
     
-    func request(_ route: Router.EndPoint, completion: @escaping NetworkRouterCompletion) {
+    func request(_ route: Router.EndPoint, securityToken: String?, completion: @escaping NetworkRouterCompletion) {
         
         let session = URLSession.shared
         do {
-            let request = try self.buildRequest(from: route)
+            let request = try self.buildRequest(from: route, with: securityToken)
             task = session.dataTask(with: request, completionHandler: {data, response, error in completion(data, response, error)})
         } catch {
             completion (nil, nil, error)
@@ -25,7 +25,7 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
         self.task?.resume()
     }
     
-    fileprivate func buildRequest(from route: EndPoint) throws -> URLRequest {
+    fileprivate func buildRequest(from route: EndPoint, with securityToken: String?) throws -> URLRequest {
         
         var request = URLRequest(url: route.baseURL.appendingPathComponent(route.path),
                                  cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
@@ -36,14 +36,21 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
             switch route.task {
             
             case .request:
+                if let token = securityToken {
+                    self.addAdditionalHeaders(["X-CSRFToken" : token], request: &request)
+                }
                 request.setValue(HTTPHeaderValueMediaTypeApplication.json, forHTTPHeaderField: HTTPHeaderField.contentType)
             
             case .requestWithParameters(let bodyParameters, let urlParameters):
-                
+                if let token = securityToken {
+                    self.addAdditionalHeaders(["X-CSRFToken" : token], request: &request)
+                }
                 try self.configureParameters(bodyParameters: bodyParameters, urlParameters: urlParameters, request: &request)
                 
             case .requestWithParametersAndHeaders(let bodyParameters, let urlParameters, let additionalHeaders):
-                
+                if let token = securityToken {
+                    self.addAdditionalHeaders(["X-CSRFToken" : token], request: &request)
+                }
                 self.addAdditionalHeaders(additionalHeaders, request: &request)
                 try self.configureParameters(bodyParameters: bodyParameters, urlParameters: urlParameters, request: &request)
             }

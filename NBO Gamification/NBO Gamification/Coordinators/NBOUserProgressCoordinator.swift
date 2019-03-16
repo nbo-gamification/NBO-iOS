@@ -49,7 +49,7 @@ extension NBOUserProgressCoordinator : NBOOfficeSelectionViewControllerDelegate 
         
         }) { (error) in
             // TODO: handle error in service call
-            print(error.localizedDescription)
+            print(error)
         }
     }
 }
