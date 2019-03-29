@@ -145,8 +145,7 @@ extension NBONetworkManager {
                     do {
                         let decoder = JSONDecoder()
                         decoder.keyDecodingStrategy = .convertFromSnakeCase
-                        let apiResponse = try decoder.decode(NBOPlayerCategoryOfficeProgressCodable.self, from: responseData)
-                        let playerOfficeProgressCodableList = [apiResponse];
+                        let playerOfficeProgressCodableList = try decoder.decode([NBOPlayerCategoryOfficeProgressCodable].self, from: responseData)
                         completion(playerOfficeProgressCodableList, nil)
                         
                     } catch {

@@ -44,8 +44,9 @@ class NBOCategorySelectionTableViewCell: UITableViewCell {
     func updateCategoryCompletionBarWidth() {
     
         let barMaxSize = categoryCompletionBarMaxSize()
-        let barSize = barMaxSize * CGFloat(categoryCompletionRatio ?? 0)
-      
+        var barSize = barMaxSize * CGFloat(categoryCompletionRatio ?? 0)
+        barSize = barSize == 0 ? 1 : barSize
+        
         self.layoutIfNeeded()
         
         self.categoryCompletionBarWidth.constant = barSize

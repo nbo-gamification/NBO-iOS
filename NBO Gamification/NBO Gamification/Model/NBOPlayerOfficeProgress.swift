@@ -11,14 +11,14 @@ import Foundation
 public final class NBOPlayerOfficeProgress {
     
     public let id: Int
-    public let player: NBOPlayer
     public let office: NBOOffice
     public var categoryOfficeProgressList : [NBOPlayerCategoryOfficeProgress]
+    public let player: NBOPlayer?
     
-    init(id: Int, player: NBOPlayer, office: NBOOffice, categoryOfficeProgressList : [NBOPlayerCategoryOfficeProgress]) {
+    init(id: Int, office: NBOOffice, categoryOfficeProgressList : [NBOPlayerCategoryOfficeProgress], player: NBOPlayer?) {
         self.id = id
-        self.player = player
         self.office = office
         self.categoryOfficeProgressList = categoryOfficeProgressList
+        self.player = player
     }
 }

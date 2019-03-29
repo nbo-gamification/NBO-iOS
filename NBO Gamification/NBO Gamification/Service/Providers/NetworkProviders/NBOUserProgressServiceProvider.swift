@@ -13,7 +13,9 @@ public class NBOUserProgressServiceProvider: NBONetworkProvider, NBOUserProgress
         networkManager.getOfficesByPlayer { (playerOfficeProgressList, error) in
             // return NBOPlayerOfficeProgress list or error
             if let error = error {
-                failure(error)
+                DispatchQueue.main.async {
+                    failure(error)
+                }
             }
             var modelObjectList = [NBOPlayerOfficeProgress]()
             if let codableObjectList = playerOfficeProgressList {
@@ -22,7 +24,9 @@ public class NBOUserProgressServiceProvider: NBONetworkProvider, NBOUserProgress
                     modelObjectList.append(modelObject)
                 }
             }
-            success(modelObjectList)
+            DispatchQueue.main.async {
+                success(modelObjectList)
+            }
         }
     }
     
@@ -30,7 +34,9 @@ public class NBOUserProgressServiceProvider: NBONetworkProvider, NBOUserProgress
         networkManager.selectOffice(playerOfficeProgressId: idPlayerOfficeProgress) { (playerCategoryOfficeProgressList, error) in
             // return NBOPlayerCategoryOfficeProgress list or error
             if let error = error {
-                failure(error)
+                DispatchQueue.main.async {
+                    failure(error)
+                }
             }
             var modelObjectList = [NBOPlayerCategoryOfficeProgress]()
             if let codableObjectList = playerCategoryOfficeProgressList {
@@ -39,7 +45,9 @@ public class NBOUserProgressServiceProvider: NBONetworkProvider, NBOUserProgress
                     modelObjectList.append(modelObject)
                 }
             }
-            success(modelObjectList)
+            DispatchQueue.main.async {
+                success(modelObjectList)
+            }
         }
     }
 }

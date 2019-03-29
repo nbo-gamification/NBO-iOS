@@ -45,9 +45,11 @@ enum NBOMockServiceProviderPlayerCategoryOfficeProgress {
 }
 
 enum NBOMockServiceProviderPlayerOfficeProgress {
-    static let player1ProgressMendoza = NBOPlayerOfficeProgress (id: 1, player: NBOMockServiceProviderPlayer.player1, office: NBOMockServiceProviderOffice.officeMendoza, categoryOfficeProgressList: [NBOMockServiceProviderPlayerCategoryOfficeProgress.progressMendozaSocial , NBOMockServiceProviderPlayerCategoryOfficeProgress.progressMendozaProduct , NBOMockServiceProviderPlayerCategoryOfficeProgress.progressMendozaBuilding])
+    static let player1ProgressMendoza = NBOPlayerOfficeProgress (id: 1, office: NBOMockServiceProviderOffice.officeMendoza, categoryOfficeProgressList: [NBOMockServiceProviderPlayerCategoryOfficeProgress.progressMendozaSocial, NBOMockServiceProviderPlayerCategoryOfficeProgress.progressMendozaProduct , NBOMockServiceProviderPlayerCategoryOfficeProgress.progressMendozaBuilding],
+        player: NBOMockServiceProviderPlayer.player1)
     
-    static let player1ProgressSF = NBOPlayerOfficeProgress (id: 2, player: NBOMockServiceProviderPlayer.player1, office: NBOMockServiceProviderOffice.officeSanFrancisco, categoryOfficeProgressList: [NBOMockServiceProviderPlayerCategoryOfficeProgress.progressSFSocial , NBOMockServiceProviderPlayerCategoryOfficeProgress.progressSFProduct , NBOMockServiceProviderPlayerCategoryOfficeProgress.progressSFBuilding])
+    static let player1ProgressSF = NBOPlayerOfficeProgress (id: 2, office: NBOMockServiceProviderOffice.officeSanFrancisco, categoryOfficeProgressList: [NBOMockServiceProviderPlayerCategoryOfficeProgress.progressSFSocial , NBOMockServiceProviderPlayerCategoryOfficeProgress.progressSFProduct , NBOMockServiceProviderPlayerCategoryOfficeProgress.progressSFBuilding],
+        player: NBOMockServiceProviderPlayer.player1)
 }
 
 enum NBOMockServiceProviderActivityType {

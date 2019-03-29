@@ -16,25 +16,26 @@ extension NBOPlayerOfficeProgress: ParseProtocol {
         var playerCategoryOfficeProgressList: [NBOPlayerCategoryOfficeProgress] = []
 
         guard let id = object.id,
-            let playerCodable = object.player,
-            let officeCodable = object.office,
-            let categoryOfficeProgressList = object.categoryOfficeProgressList
+            let officeCodable = object.office
             else { return nil }
 
-        guard
-            let nboPlayer = NBOPlayer.initFromCodable(object: playerCodable),
-            let nboOffice = NBOOffice.initFromCodable(object: officeCodable)
-            else { return nil }
-
-        for playerCategoryOfficeProgressCodable in categoryOfficeProgressList {
-            guard let playerCategoryOfficeProgressCodable = NBOPlayerCategoryOfficeProgress.initFromCodable(
-                object: playerCategoryOfficeProgressCodable)
-                else { break }
-            playerCategoryOfficeProgressList.append(playerCategoryOfficeProgressCodable)
+        guard let nboOffice = NBOOffice.initFromCodable(object: officeCodable) else { return nil }
+        
+        var nboPlayer: NBOPlayer?
+        if let playerCodable = object.player {
+            nboPlayer = NBOPlayer.initFromCodable(object: playerCodable)
         }
-
-        return NBOPlayerOfficeProgress(id: id, player: nboPlayer, office: nboOffice, categoryOfficeProgressList: playerCategoryOfficeProgressList)
+        
+        if let categoryOfficeProgressList = object.categoryOfficeProgressList{
+            for playerCategoryOfficeProgressCodable in categoryOfficeProgressList {
+                guard let playerCategoryOfficeProgressCodable = NBOPlayerCategoryOfficeProgress.initFromCodable(
+                    object: playerCategoryOfficeProgressCodable)
+                    else { break }
+                playerCategoryOfficeProgressList.append(playerCategoryOfficeProgressCodable)
+            }
+        }
+        
+        return NBOPlayerOfficeProgress(id: id, office: nboOffice, categoryOfficeProgressList: playerCategoryOfficeProgressList, player: nboPlayer)
     }
-
 }
 

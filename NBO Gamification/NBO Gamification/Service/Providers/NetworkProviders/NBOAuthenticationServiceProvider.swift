@@ -11,10 +11,14 @@ import Foundation
 public class NBOAuthenticationServiceProvider: NBONetworkProvider, NBOAuthenticationServiceProviderProtocol {
     
     public func login(email: String, password: String, success: @escaping AuthenticationServiceProviderLoginSuccessClosure, failure: @escaping ServiceProviderFailureClosure) {
-        
+        DispatchQueue.main.async {
+
+        }
     }
     
     public func logout(success: @escaping AuthenticationServiceProviderLogoutSuccessClosure, failure: @escaping ServiceProviderFailureClosure) {
-        
+        DispatchQueue.main.async {
+            
+        }
     }
 }
