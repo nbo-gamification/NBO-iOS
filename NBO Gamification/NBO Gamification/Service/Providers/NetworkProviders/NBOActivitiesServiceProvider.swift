@@ -14,7 +14,9 @@ public class NBOActivitiesServiceProvider: NBONetworkProvider, NBOActivitiesServ
         networkManager.getActivitiesbyCategoryOffice(idCategoryOffice: idCategoryOffice, completion: { (categoryOfficeActivityList, error) in
             // return NBOCategoryOfficeActivity list or error
             if let error = error {
-                failure(error)
+                DispatchQueue.main.async {
+                    failure(error)
+                }
             }
             var modelObjectList = [NBOCategoryOfficeActivity]()
             if let codableObjectList = categoryOfficeActivityList {
@@ -23,7 +25,9 @@ public class NBOActivitiesServiceProvider: NBONetworkProvider, NBOActivitiesServ
                     modelObjectList.append(modelObject)
                 }
             }
-            success(modelObjectList)
+            DispatchQueue.main.async {
+                success(modelObjectList)
+            }
         })
     }
     
@@ -32,13 +36,19 @@ public class NBOActivitiesServiceProvider: NBONetworkProvider, NBOActivitiesServ
         networkManager.registerActivityAttempt(attemptData: attemptData) { (categoryOfficeActivityAttempt, error) in
             // return NBOCategoryOfficeActivityAttempt or error
             if let error = error {
-                failure(error)
+                DispatchQueue.main.async {
+                    failure(error)
+                }
             }
             if let codableObject = categoryOfficeActivityAttempt,
                 let modelObject = NBOCategoryOfficeActivityAttempt.initFromCodable(object: codableObject) {
-                success(modelObject)
+                DispatchQueue.main.async {
+                    success(modelObject)
+                }
             }
-            failure("Error: empty or not valid attempt")
+            DispatchQueue.main.async {
+                failure("Error: empty or not valid attempt")
+            }
         }
     }
 }
