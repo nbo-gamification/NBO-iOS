@@ -108,6 +108,15 @@ class NBOCoordinator: NSObject {
             pushViewController(viewController, presentModal: presentModal)
         }
     }
+
+    func showSpinner(from viewController: UIViewController) {
+        viewController.navigationController?.isNavigationBarHidden = true
+        viewController.showSpinner(onView: viewController.view)
+    }
+
+    func hideSpinner(from viewController: UIViewController) {
+        viewController.removeSpinner()
+    }
 }
 
 extension NBOCoordinator: CoordinatorDelegate {

@@ -34,6 +34,7 @@ class NBOLogInCoordinator : NBOCoordinator {
 
 extension NBOLogInCoordinator: NBOLoginViewControllerDelegate {
     func viewControllerDidSignIn(_ loginVC: NBOLoginViewController, email: String, password: String) {
+        showSpinner(from: loginVC)
         NBOAuthenticationService.login(email: email, password: password, success:
             { authenticationLoginResponse in
                 let player = authenticationLoginResponse
@@ -44,5 +45,6 @@ extension NBOLogInCoordinator: NBOLoginViewControllerDelegate {
             print(error)
             loginVC.showEmailErrorMessageAnimated(errorToShow: NBOLoginViewController.ErrorMessages.incorrectEmailOrPassword)
         })
+        hideSpinner(from: loginVC)
     }
 }

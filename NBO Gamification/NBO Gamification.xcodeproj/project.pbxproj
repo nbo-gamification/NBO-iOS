@@ -97,6 +97,7 @@
 		FEECFD9321B43E8500BDC757 /* NBOTriviaAcitivityCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEECFD9221B43E8500BDC757 /* NBOTriviaAcitivityCoordinator.swift */; };
 		FEECFD9A21B4746B00BDC757 /* NBOConnectActivityCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEECFD9921B4746B00BDC757 /* NBOConnectActivityCoordinator.swift */; };
 		FEECFD9C21B4D5E100BDC757 /* ConnectActivityViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEECFD9B21B4D5E100BDC757 /* ConnectActivityViewData.swift */; };
+		FEEDCA2222511F0D0030AC7F /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDCA2122511F0D0030AC7F /* UIViewController+extensions.swift */; };
 		FEF79D6C221DE18B00B13EA1 /* ModelParseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF79D6B221DE18B00B13EA1 /* ModelParseProtocol.swift */; };
 		FEF79D6E221E112000B13EA1 /* NBOPlayerCategoryOfficeProgress+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF79D6D221E112000B13EA1 /* NBOPlayerCategoryOfficeProgress+extensions.swift */; };
 		FEF79D70221E140A00B13EA1 /* NBOPlayer+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF79D6F221E140A00B13EA1 /* NBOPlayer+extensions.swift */; };
@@ -203,6 +204,7 @@
 		FEECFD9221B43E8500BDC757 /* NBOTriviaAcitivityCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOTriviaAcitivityCoordinator.swift; sourceTree = "<group>"; };
 		FEECFD9921B4746B00BDC757 /* NBOConnectActivityCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBOConnectActivityCoordinator.swift; sourceTree = "<group>"; };
 		FEECFD9B21B4D5E100BDC757 /* ConnectActivityViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectActivityViewData.swift; sourceTree = "<group>"; };
+		FEEDCA2122511F0D0030AC7F /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
 		FEF79D6B221DE18B00B13EA1 /* ModelParseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelParseProtocol.swift; sourceTree = "<group>"; };
 		FEF79D6D221E112000B13EA1 /* NBOPlayerCategoryOfficeProgress+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NBOPlayerCategoryOfficeProgress+extensions.swift"; sourceTree = "<group>"; };
 		FEF79D6F221E140A00B13EA1 /* NBOPlayer+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NBOPlayer+extensions.swift"; sourceTree = "<group>"; };
@@ -571,6 +573,7 @@
 				FEB442B021A9AD1D009C2896 /* UIView+extensions.swift */,
 				2A47C32321B562CC00B2CB75 /* UICell+extensions.swift */,
 				FE0BE4E621FCB9770050C9D9 /* ScrollView+Extensions.swift */,
+				FEEDCA2122511F0D0030AC7F /* UIViewController+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -750,6 +753,7 @@
 				2A998D4F21AAE6ED00B32752 /* NBOAuthenticationService.swift in Sources */,
 				2A998D3D21A870D500B32752 /* NetworkError.swift in Sources */,
 				2A998D5F21AAF86800B32752 /* NBOServiceProviderUtils.swift in Sources */,
+				FEEDCA2222511F0D0030AC7F /* UIViewController+extensions.swift in Sources */,
 				2A998D3721A868A300B32752 /* HTTPConstants.swift in Sources */,
 				2A47C2F021B200B300B2CB75 /* NBOAuthenticationServiceProvider.swift in Sources */,
 				2A6801A621ACC0960012015E /* NBOOfficeCodable.swift in Sources */,
