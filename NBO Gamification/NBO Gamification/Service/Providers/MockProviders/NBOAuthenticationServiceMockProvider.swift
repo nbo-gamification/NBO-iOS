@@ -12,17 +12,12 @@ public class NBOAuthenticationServiceMockProvider : NBOAuthenticationServiceProv
     
     public func login(email: String, password: String, success: @escaping AuthenticationServiceProviderLoginSuccessClosure, failure: @escaping ServiceProviderFailureClosure) {
         let user_mock = NBOMockServiceProviderPlayer.player1
-        
+
         if (user_mock.email == email) {
-            
-            if (user_mock.password! == password){
-                let response = NBOPlayer(id: user_mock.id, email: user_mock.email, firstName: user_mock.firstName, lastName: user_mock.lastName)
-                success(response)
-            }
-            else {
-                failure("Wrong password error")
-            }
-        } else {
+            let response = NBOPlayer(id: user_mock.id, email: user_mock.email, firstName: user_mock.firstName, lastName: user_mock.lastName)
+            success(response)
+        }
+        else {
             failure("Email non existent")
         }
     }

@@ -9,7 +9,7 @@
 import Foundation
 
 public enum NBOGamificationAPI {
-    case login(loginData:String)
+    case login(loginData:[String: String])
     case logout(id:Int)
     case getPlayerOffices(playerId:Int)
     case selectOffice(playerOfficeProgressId:Int)
@@ -69,11 +69,11 @@ extension NBOGamificationAPI: EndPointType {
     var task: HTTPTask {
         switch self {
         case .login(let loginData):
-            return .requestWithParameters(bodyParameters: ["data":loginData], urlParameters: nil)
+            return .requestWithParameters(bodyParameters: loginData, urlParameters: nil)
         case .logout:
             return .request
-        case .getPlayerOffices:
-            return .request
+        case .getPlayerOffices(let playerId):
+            return .requestWithParameters(bodyParameters: nil, urlParameters: ["":playerId])
         case .selectOffice:
             return .request
         case .activitiesForCategory:

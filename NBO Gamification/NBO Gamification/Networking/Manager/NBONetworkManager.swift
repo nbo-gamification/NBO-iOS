@@ -57,12 +57,13 @@ struct NBONetworkManager {
 extension NBONetworkManager {
     func login(loginData: NBOLoginData, completion: @escaping (_ user: NBOPlayerCodable?, _ error: String?) -> ()) {
         do {
-            let encoder = JSONEncoder()
-            encoder.keyEncodingStrategy = .convertToSnakeCase
-            let encodedLoginDataJson = try encoder.encode(loginData)
-            guard let encodedLoginDataString = String(data: encodedLoginDataJson, encoding: .utf8) else {throw NSError(domain: "encoding", code: 0, userInfo: nil)}
-            
-            router.request(.login(loginData: encodedLoginDataString), securityToken: self.getSecurityToken()) { (data, response, error) in
+            guard let email = loginData.email, let password = loginData.password else { return }
+            let loginDataParameters: [String: String] = [
+                "username": loginData.user ?? "",
+                "email": email,
+                "password": password
+            ]
+            router.request(.login(loginData: loginDataParameters), securityToken: self.getSecurityToken()) { (data, response, error) in
                 if error != nil {
                     completion(nil, "Network error: \(error?.localizedDescription ?? "unknown error")")
                 }
@@ -94,7 +95,13 @@ extension NBONetworkManager {
     }
 
     func logout(completion: @escaping (_ success: Bool, _ error: String?) -> ()) {
-        
+        router.request(.logout(id: self.getPlayerId()), securityToken: self.getSecurityToken()) { (data, response, error) in
+            if error != nil {
+                completion(false, "Network error: \(error?.localizedDescription ?? "unknown error")")
+            } else {
+                completion(true, nil)
+            }
+        }
     }
 
     func getOfficesByPlayer(completion: @escaping (_ playerOfficeProgressList: [NBOPlayerOfficeProgressCodable]?, _ error: String?) -> ()) {

@@ -18,10 +18,10 @@ extension NBOPlayer: ParseProtocol {
             let email = object.email,
             let firstName = object.firstName,
             let lastName = object.lastName,
-            let password = object.password
+            let token = object.token
             else { return nil }
 
-        return NBOPlayer(id: id, email: email, firstName: firstName, lastName: lastName, password: password)
+        return NBOPlayer(id: id, email: email, firstName: firstName, lastName: lastName, token: token)
     }
 
 }
