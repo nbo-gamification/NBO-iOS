@@ -19,4 +19,10 @@ public struct NBOLoginData : Codable {
         case email
         case password
     }
+
+    init(user : String?, email : String?, password : String?) {
+        self.user = user
+        self.email = email
+        self.password = password
+    }
 }

@@ -14,15 +14,13 @@ public struct NBOPlayerCodable: Codable {
     public let email: String?
     public let firstName: String?
     public let lastName: String?
-    public let password: String?
-    public let isActive: Bool?
+    public let token: String?
     
     enum CodingKeys: String, CodingKey {
-        case id
+        case id = "pk"
         case email
         case firstName
         case lastName
-        case password
-        case isActive
+        case token = "key"
     }
 }

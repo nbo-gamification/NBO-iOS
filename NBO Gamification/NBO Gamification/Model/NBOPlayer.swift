@@ -14,9 +14,8 @@ public final class NBOPlayer {
     public let email : String
     public var firstName : String
     public var lastName : String
-    public var password: String?
-    public var isActive: Bool?
-   
+    public var token: String?
+
     init(id: Int, email : String, firstName : String, lastName : String) {
         self.id = id
         self.email = email
@@ -24,8 +23,8 @@ public final class NBOPlayer {
         self.lastName = lastName
     }
     
-    convenience init(id: Int, email : String, firstName : String, lastName : String, password: String) {
+    convenience init(id: Int, email : String, firstName : String, lastName : String, token: String) {
         self.init(id: id, email: email, firstName: firstName, lastName: lastName)
-        self.password = password
+        self.token = token
     }
 }
