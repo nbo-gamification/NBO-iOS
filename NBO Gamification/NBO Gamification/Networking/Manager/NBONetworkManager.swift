@@ -52,48 +52,44 @@ struct NBONetworkManager {
 
 extension NBONetworkManager {
     func login(loginData: NBOLoginData, completion: @escaping (_ user: NBOPlayerCodable?, _ error: String?) -> ()) {
-        do {
-            guard let email = loginData.email, let password = loginData.password else { return }
-            let loginDataParameters: [String: String] = [
-                "username": loginData.user ?? "",
-                "email": email,
-                "password": password
-            ]
-            let session = URLSession.shared
-            session.reset {
-                self.router.request(.login(loginData: loginDataParameters), securityToken: nil) { (data, response, error) in
-                    if error != nil {
-                        completion(nil, "Network error: \(error?.localizedDescription ?? "unknown error")")
-                    }
-                    if let response = response as? HTTPURLResponse {
-                        let result = handleNetworkResponse(response)
-                        switch result {
-                        case .success:
-                            guard let responseData = data else {
-                                completion(nil, NetworkResponse.noData.rawValue)
-                                return
-                            }
-                            do {
-                                let decoder = JSONDecoder()
-                                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                                let user = try decoder.decode(NBOPlayerCodable.self, from: responseData)
-                                completion(user, nil)
-                                
-                            } catch {
-                                completion(nil, NetworkResponse.unableToDecode.rawValue)
-                            }
-                        case .failure(let networkFailureError):
-                            var networkError = networkFailureError
-                            if let errorDescription = NSString(data: data!, encoding: String.Encoding.utf8.rawValue) {
-                                networkError = "\(networkFailureError): \(errorDescription)"
-                            }
-                            completion(nil, networkError)
+        guard let email = loginData.email, let password = loginData.password else { return }
+        let loginDataParameters: [String: String] = [
+            "username": loginData.user ?? "",
+            "email": email,
+            "password": password
+        ]
+        let session = URLSession.shared
+        session.reset {
+            self.router.request(.login(loginData: loginDataParameters), securityToken: nil) { (data, response, error) in
+                if error != nil {
+                    completion(nil, "Network error: \(error?.localizedDescription ?? "unknown error")")
+                }
+                if let response = response as? HTTPURLResponse {
+                    let result = handleNetworkResponse(response)
+                    switch result {
+                    case .success:
+                        guard let responseData = data else {
+                            completion(nil, NetworkResponse.noData.rawValue)
+                            return
                         }
+                        do {
+                            let decoder = JSONDecoder()
+                            decoder.keyDecodingStrategy = .convertFromSnakeCase
+                            let user = try decoder.decode(NBOPlayerCodable.self, from: responseData)
+                            completion(user, nil)
+                            
+                        } catch {
+                            completion(nil, NetworkResponse.unableToDecode.rawValue)
+                        }
+                    case .failure(let networkFailureError):
+                        var networkError = networkFailureError
+                        if let errorDescription = NSString(data: data!, encoding: String.Encoding.utf8.rawValue) {
+                            networkError = "\(networkFailureError): \(errorDescription)"
+                        }
+                        completion(nil, networkError)
                     }
                 }
             }
-        } catch let error {
-            completion(nil, "Data encoding error: \(error.localizedDescription)")
         }
     }
 

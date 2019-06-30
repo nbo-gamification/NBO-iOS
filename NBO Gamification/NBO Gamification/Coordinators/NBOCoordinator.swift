@@ -59,7 +59,7 @@ class NBOCoordinator: NSObject {
                 presentingViewController.dismiss(animated: true, completion: completion)
             } else {
                 if let viewController = viewController,
-                    let index = nav.viewControllers.index(of: viewController),
+                    let index = nav.viewControllers.firstIndex(of: viewController),
                     index > 0 {
                     nav.popToViewController(nav.viewControllers[index - 1], animated: animated)
                 } else if nav.presentedViewController == viewController {
@@ -97,7 +97,7 @@ class NBOCoordinator: NSObject {
         popViewController(coordinator.viewController, fromPresentingViewController: coordinator.presentingViewController, animated: animated, completion: completion)
         assert(coordinator.parentCoordinator != nil, "Can't pop coordinator \(coordinator) with no parent!")
         let parent = coordinator.parentCoordinator ?? self
-        if let index = parent.childCoordinators.index(of: coordinator) {
+        if let index = parent.childCoordinators.firstIndex(of: coordinator) {
             parent.childCoordinators.remove(at: index)
         }
     }
