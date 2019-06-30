@@ -13,10 +13,14 @@ protocol NBOOfficeSelectionViewControllerDelegate {
 }
 
 class NBOOfficeSelectionTableViewController: UITableViewController {
-    
+
     var delegate: NBOOfficeSelectionViewControllerDelegate?
-    var officeProgressList : [NBOPlayerOfficeProgress] = []
-    
+    var officeProgressList : [NBOPlayerOfficeProgress] = [] {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

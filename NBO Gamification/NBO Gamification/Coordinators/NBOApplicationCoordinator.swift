@@ -34,26 +34,18 @@ class NBOApplicationCoordinator : NBOCoordinator {
 extension NBOApplicationCoordinator: NBOLoginCoordinatorDelegate {
 
     func nboLoginCoordinatorDidFinish(_ coordinator: NBOLogInCoordinator, player: NBOPlayer) {
-        // TODO: set player id from logged in user
-        AppContext.shared.currentUserId.set(newValue: 2)
-        NBOUserProgressService.getOfficesByPlayerId(idPlayer: player.id, success: { (playerOfficeProgressList) in
-            self.startUserProgressCoordinatorWithOfficeList(playerOfficeProgressList)
-        }) { (error) in
-            print(error)
-        }
+        AppContext.shared.currentUserId.set(newValue: player.id)
+        startUserProgressCoordinator()
     }
 }
 
 // MARK: Add User progress functionality
 
 extension NBOApplicationCoordinator {
-    func startUserProgressCoordinatorWithOfficeList (_ officeProgressList : [NBOPlayerOfficeProgress]) {
-        
+    func startUserProgressCoordinator () {
         let userProgressFlow = NBOUserProgressCoordinator(withViewController: presentingViewController)
         userProgressFlow.coordinatorDelegate = self
-        userProgressFlow.officeProgressList = officeProgressList
-        
-        self.pushCoordinator(userProgressFlow)
+        pushCoordinator(userProgressFlow)
     }
 }
 
@@ -63,10 +55,11 @@ extension NBOApplicationCoordinator: NBOUserProgressCoordinatorDelegate {
         let nboActivitiesCoordinator = NBOActivitiesFlowCoordinator(withViewController: presentingViewController)
         nboActivitiesCoordinator.coordinatorDelegate = self
         nboActivitiesCoordinator.selectedCategoryOffice = selectedCategoryOffice
-        self.pushCoordinator(nboActivitiesCoordinator)
+        pushCoordinator(nboActivitiesCoordinator)
     }
     
     func userProgressCoordinatorDidSignOut(_ coordinator: NBOUserProgressCoordinator) {
         // TODO: handle sign out
+        AppContext.shared.clearUserData()
     }
 }

@@ -41,10 +41,11 @@ extension NBOLogInCoordinator: NBOLoginViewControllerDelegate {
                 self.delegate?.coordinatorDidFinish(self, completion: {
                     self.delegate?.nboLoginCoordinatorDidFinish(self, player: player)
                 })
+                self.hideSpinner(from: loginVC)
         }, failure: {error in
+            self.hideSpinner(from: loginVC)
             print(error)
             loginVC.showEmailErrorMessageAnimated(errorToShow: NBOLoginViewController.ErrorMessages.incorrectEmailOrPassword)
         })
-        hideSpinner(from: loginVC)
     }
 }

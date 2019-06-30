@@ -18,4 +18,10 @@ public class AppContext {
     // Stored properties and configuration
     public var currentUserId = StoredConfig<Int>(key: .currentUserId, defaultValue: -1)
     public var currentUserToken = StoredConfig<String>(key: .currentUserToken, defaultValue: "")
+    
+    // Helper methods
+    func clearUserData() {
+        currentUserId.clear()
+        currentUserToken.clear()
+    }
 }
