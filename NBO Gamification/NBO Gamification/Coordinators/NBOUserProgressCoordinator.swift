@@ -19,15 +19,19 @@ class NBOUserProgressCoordinator : NBOCoordinator {
         get { return coordinatorDelegate as? NBOUserProgressCoordinatorDelegate }
         set { coordinatorDelegate = newValue }
     }
-    var officeProgressList : [NBOPlayerOfficeProgress]?
     
     override func start() {
         let officeSelectionVC = NBOOfficeSelectionTableViewController()
         officeSelectionVC.title = "Select Office"
         officeSelectionVC.delegate = self
-        officeSelectionVC.officeProgressList = officeProgressList ?? []
-        
         viewController = officeSelectionVC
+
+        NBOUserProgressService.getOfficesByPlayerId(idPlayer: AppContext.shared.currentUserId.get(), success: { (playerOfficeProgressList) in
+            officeSelectionVC.officeProgressList = playerOfficeProgressList
+        }) { (error) in
+            print(error)
+        }
+
         super.start()
     }
 }

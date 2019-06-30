@@ -13,20 +13,24 @@ public class NBOActivitiesServiceProvider: NBONetworkProvider, NBOActivitiesServ
     public func getOfficeActivitiesForCategory(idCategoryOffice: Int, success: @escaping ActivitiesServiceProviderGetOfficeActivitiesForCategorySuccessClosure, failure: @escaping ServiceProviderFailureClosure) {
         networkManager.getActivitiesbyCategoryOffice(idCategoryOffice: idCategoryOffice, completion: { (categoryOfficeActivityList, error) in
             // return NBOCategoryOfficeActivity list or error
-            if let error = error {
-                DispatchQueue.main.async {
-                    failure(error)
-                }
-            }
-            var modelObjectList = [NBOCategoryOfficeActivity]()
-            if let codableObjectList = categoryOfficeActivityList {
+            switch (categoryOfficeActivityList, error) {
+            case (let codableObjectList?, nil):
+                var modelObjectList = [NBOCategoryOfficeActivity]()
                 for codableObject in codableObjectList {
                     guard let modelObject = NBOCategoryOfficeActivity.initFromCodable(object: codableObject) else {continue}
                     modelObjectList.append(modelObject)
                 }
-            }
-            DispatchQueue.main.async {
-                success(modelObjectList)
+                DispatchQueue.main.async {
+                    success(modelObjectList)
+                }
+            case (nil, let error?):
+                DispatchQueue.main.async {
+                    failure(error)
+                }
+            default:
+                DispatchQueue.main.async {
+                    failure("Error: empty or not valid attempt")
+                }
             }
         })
     }
@@ -35,19 +39,21 @@ public class NBOActivitiesServiceProvider: NBONetworkProvider, NBOActivitiesServ
         let attemptData = NBORegisterActivityAttemptData(result: result, playerCategoryOfficeProgressId: idPlayerCategoryOfficeProgress, categoryOfficeActivityId: idCategoryOfficeActivity)
         networkManager.registerActivityAttempt(attemptData: attemptData) { (categoryOfficeActivityAttempt, error) in
             // return NBOCategoryOfficeActivityAttempt or error
-            if let error = error {
+            switch (categoryOfficeActivityAttempt, error) {
+            case (let codableObject?, nil):
+                if let modelObject = NBOCategoryOfficeActivityAttempt.initFromCodable(object: codableObject) {
+                    DispatchQueue.main.async {
+                        success(modelObject)
+                    }
+                }
+            case (nil, let error?):
                 DispatchQueue.main.async {
                     failure(error)
                 }
-            }
-            if let codableObject = categoryOfficeActivityAttempt,
-                let modelObject = NBOCategoryOfficeActivityAttempt.initFromCodable(object: codableObject) {
+            default:
                 DispatchQueue.main.async {
-                    success(modelObject)
+                    failure("Error: empty or not valid attempt")
                 }
-            }
-            DispatchQueue.main.async {
-                failure("Error: empty or not valid attempt")
             }
         }
     }

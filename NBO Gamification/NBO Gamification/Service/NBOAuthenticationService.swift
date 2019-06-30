@@ -13,10 +13,10 @@ public typealias AuthenticationServiceLogoutSuccessClosure = (() -> Void)
 
 public class NBOAuthenticationService {
     
-    private static let authenticationServiceProvider : NBOAuthenticationServiceProviderProtocol = NBOAuthenticationServiceMockProvider()
+    private static let authenticationServiceProvider : NBOAuthenticationServiceProviderProtocol = NBOAuthenticationServiceProvider()
     
     public static func login(email: String, password: String, success: @escaping AuthenticationServiceLoginSuccessClosure, failure: @escaping ServiceFailureClosure) {
-        
+
         authenticationServiceProvider.login(email: email, password: password, success: { (authenticationServiceLoginResponse) in
             success(authenticationServiceLoginResponse)
         }, failure: { (error) in
