@@ -51,15 +51,15 @@ extension NBOApplicationCoordinator {
 
 extension NBOApplicationCoordinator: NBOUserProgressCoordinatorDelegate {
     func userProgressCoordinatorDidSelectCategory(selectedCategoryOffice: NBOPlayerCategoryOfficeProgress, _ coordinator: NBOUserProgressCoordinator) {
-
         let nboActivitiesCoordinator = NBOActivitiesFlowCoordinator(withViewController: presentingViewController)
         nboActivitiesCoordinator.coordinatorDelegate = self
         nboActivitiesCoordinator.selectedCategoryOffice = selectedCategoryOffice
         pushCoordinator(nboActivitiesCoordinator)
     }
     
-    func userProgressCoordinatorDidSignOut(_ coordinator: NBOUserProgressCoordinator) {
+    func userProgressCoordinatorDidLogOut(_ coordinator: NBOUserProgressCoordinator) {
         // TODO: handle sign out
         AppContext.shared.clearUserData()
+        popCoordinator(coordinator)
     }
 }

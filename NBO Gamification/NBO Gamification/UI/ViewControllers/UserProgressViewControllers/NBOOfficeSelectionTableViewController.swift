@@ -10,6 +10,7 @@ import UIKit
 
 protocol NBOOfficeSelectionViewControllerDelegate {
     func nboOfficeSelectionViewControllerDidSelectOffice (selectedOfficeProgress : NBOPlayerOfficeProgress, _ NBOOfficeSelectionVC: NBOOfficeSelectionTableViewController)
+    func nboOfficeSelectionViewControllerDidLogOut(_ NBOOfficeSelectionVC: NBOOfficeSelectionTableViewController)
 }
 
 class NBOOfficeSelectionTableViewController: UITableViewController {
@@ -25,10 +26,19 @@ class NBOOfficeSelectionTableViewController: UITableViewController {
         super.viewDidLoad()
 
         self.tableView.register(UINib(nibName: NBOOfficeSelectionTableViewCell.cellIdentifier, bundle: nil), forCellReuseIdentifier: NBOOfficeSelectionTableViewCell.cellIdentifier)
-        
+
+        self.navigationController?.isNavigationBarHidden = false
         self.navigationItem.hidesBackButton = true
+        let logOutButton = UIBarButtonItem(title: "Log out", style: UIBarButtonItem.Style.done, target: self, action: #selector(logOutAction))
+        self.navigationItem.leftBarButtonItem  = logOutButton
     }
-    
+
+    // MARK: Actions
+
+    @objc func logOutAction() {
+        delegate?.nboOfficeSelectionViewControllerDidLogOut(self)
+    }
+
     // MARK: Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
