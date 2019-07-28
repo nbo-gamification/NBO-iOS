@@ -69,6 +69,10 @@ class NBOLoginViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+
     @objc func keyboardWillDisappear() {
         self.scrollView.adjustBottomScrollInstestsAndPosition(bottomIndicatorInsets: 0, bottomContentInsets: 0, shouldScrollToPosition: CGPoint(x: 0, y: 0))
     }

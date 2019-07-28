@@ -13,16 +13,16 @@ protocol NBOUserOfficeProgressViewControllerDelegate {
 }
 
 class NBOUserOfficeProgressTableViewController: UITableViewController {
-    
+
     var delegate: NBOUserOfficeProgressViewControllerDelegate?
     var categoryOfficeProgressList : [NBOPlayerCategoryOfficeProgress] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.tableView.register(UINib(nibName: NBOCategorySelectionTableViewCell.cellIdentifier, bundle: nil), forCellReuseIdentifier: NBOCategorySelectionTableViewCell.cellIdentifier)
     }
-    
+
     // MARK: Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

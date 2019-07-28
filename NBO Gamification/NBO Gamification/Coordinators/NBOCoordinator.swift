@@ -111,7 +111,6 @@ class NBOCoordinator: NSObject {
 
     func showSpinner(from viewController: UIViewController?) {
         if let viewController = viewController {
-            viewController.navigationController?.isNavigationBarHidden = true
             viewController.showSpinner(onView: viewController.view)
         }
     }
